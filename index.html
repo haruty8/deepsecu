@@ -39,7 +39,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 60px; /* 모바일 하단 플로팅 바 여백 */
+  padding-bottom: 60px;
 }
 
 @media(min-width:961px) {
@@ -146,7 +146,7 @@ nav{
   box-shadow:0 4px 12px var(--shadow);
   transition:all .25s;
 }
-.card:hover{border-color:#b4fee0; transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
+.card:hover{border-color:var(--bright); transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
 
 /* 🏠 HOME PAGE */
 #page-home .hero{
@@ -182,9 +182,23 @@ nav{
 
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-.svc-card{position:relative;background:#ffffff;}
-.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:16px;}
-.svc-icon{font-size:1.8rem;margin-bottom:16px;}
+.svc-card{position:relative;background:#ffffff;display:flex;flex-direction:column;align-items:flex-start;}
+.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:12px;}
+
+/* 💡 홈화면 카드 내 테크니컬 SVG 아이콘 랩 */
+.svc-icon-svg {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svc-icon-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
 .svc-title{font-size:1.25rem;font-weight:800;color:var(--text-main);margin-bottom:10px;}
 .svc-desc{font-size:0.95rem;color:var(--text-light);line-height:1.6;margin-bottom:24px;}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -302,7 +316,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 (새로 추가) */
+/* 📱 모바일 하단 플로팅 퀵바 */
 .mobile-quick-bar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -318,14 +332,12 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .quick-item.active { color: var(--accent); }
 .quick-item.highlight { background: var(--accent); color: #ffffff; }
 
-/* 📱 MOBILE & TABLET RESPONSIVE DEEP REBUILD */
 @media(max-width:960px){
   nav { padding:0 20px; height:60px; }
   .gnb, .nav-right { display:none; }
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
-  /* [Anthropic 감성 적용] 모바일 메인 히어로를 정돈된 하이테크 스타일로 변모 */
   #page-home .hero { 
     padding:60px 20px 80px; 
     min-height:auto;
@@ -337,18 +349,17 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; }
   .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #94a3b8; word-break:keep-all; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
-  .hero-stats { display: none; } /* 모바일 레이아웃 복잡도 최소화를 위한 숨김 */
+  .hero-stats { display: none; }
   
-  /* [Linear 감성 적용] 블로그형 나열 탈출 - 정밀한 스마트 카드 그리드화 */
   .svc-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
-  .card { padding: 24px 20px; border-radius: 10px; }
-  .svc-num { display: none; } /* 미니멀리즘 처리를 위한 번호 생략 */
-  .svc-icon { margin-bottom: 10px; font-size: 1.5rem; }
-  .svc-title { font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; }
-  .svc-desc { font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px; color: var(--text-light); }
+  .card { padding: 28px 24px; border-radius: 10px; }
+  .svc-num { display: block; font-size: 0.9rem; margin-bottom: 8px; }
+  .svc-icon-svg { margin-bottom: 16px; width: 40px; height: 40px; }
+  .svc-title { font-size: 1.2rem; margin-bottom: 8px; font-weight: 800; }
+  .svc-desc { font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; color: var(--text-light); }
   .svc-tags { display: flex; gap: 4px; }
   .tag { font-size: 0.72rem; padding: 2px 8px; }
-  .svc-more { font-size: 0.82rem; margin-top: 12px; }
+  .svc-more { font-size: 0.85rem; margin-top: 16px; }
 
   .num-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
   .num-item { padding: 24px 16px; }
@@ -468,50 +479,102 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
         <h2 class="sec-title">전문 IT 자문 및 컨설팅</h2>
         <p class="sec-desc" style="margin:0 auto;">공공기관 및 유관단체의 정보시스템 효율화와 보안 거버넌스를 정립하는 맞춤형 포트폴리오입니다.</p>
       </div>
+      
       <div class="svc-grid">
         <div class="card svc-card">
           <div class="svc-num">01</div>
-          <div class="svc-icon">📊</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="15" width="30" height="22" rx="3" stroke="#1e6fcf" stroke-width="3" stroke-dasharray="2 2"/>
+              <rect x="55" y="15" width="30" height="22" rx="3" stroke="#1b7cf2" stroke-width="3"/>
+              <rect x="30" y="58" width="40" height="24" rx="4" stroke="#1e6fcf" stroke-width="3.5"/>
+              <path d="M30 26H55" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M50 37V58" stroke="#1e6fcf" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="47" r="4" fill="#1b7cf2"/>
+            </svg>
+          </div>
           <h3 class="svc-title">통합 구축 자문 · PMO</h3>
           <p class="svc-desc">공공 프로젝트 및 시스템 통합 사업의 성공을 위한 고품질 기술 아키텍처와 PMO 관리를 지원합니다.</p>
           <div class="svc-tags"><span class="tag">통합 구축</span><span class="tag">PMO 역할</span></div>
           <button class="svc-more" onclick="showPage('business',0)">서비스 상세 보기 →</button>
         </div>
+
         <div class="card svc-card">
           <div class="svc-num">02</div>
-          <div class="svc-icon">💡</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 28C30 36 70 36 70 28M30 48C30 56 70 56 70 48M30 68C30 76 70 76 70 68" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="25" y="15" width="50" height="68" rx="6" stroke="#1e6fcf" stroke-width="3.5"/>
+              <circle cx="50" cy="48" r="8" stroke="#1e6fcf" stroke-width="2"/>
+            </svg>
+          </div>
           <h3 class="svc-title">공공데이터 자문</h3>
           <p class="svc-desc">행정·공공기관이 보유한 데이터의 민간 개방 표준 수립 및 데이터 품질 관리 체계를 완벽하게 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 개방</span><span class="tag">품질관리</span></div>
           <button class="svc-more" onclick="showPage('business',1)">서비스 상세 보기 →</button>
         </div>
+
         <div class="card svc-card">
           <div class="svc-num">03</div>
-          <div class="svc-icon">🏛️</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="60" height="18" rx="3" stroke="#1e6fcf" stroke-width="3"/>
+              <rect x="20" y="41" width="60" height="18" rx="3" stroke="#1e6fcf" stroke-width="3"/>
+              <rect x="20" y="67" width="60" height="18" rx="3" stroke="#1b7cf2" stroke-width="3"/>
+              <circle cx="30" cy="24" r="2" fill="#1b7cf2"/><circle cx="30" cy="50" r="2" fill="#1b7cf2"/><circle cx="30" cy="76" r="2" fill="#22c55e"/>
+              <line x1="65" y1="24" x2="72" y2="24" stroke="#64748b" stroke-width="2.5"/>
+              <line x1="65" y1="50" x2="72" y2="50" stroke="#64748b" stroke-width="2.5"/>
+              <line x1="65" y1="76" x2="72" y2="76" stroke="#22c55e" stroke-width="2.5"/>
+            </svg>
+          </div>
           <h3 class="svc-title">공공기관 전산 자문</h3>
           <p class="svc-desc">일선 공공기관 전산실 인프라 고도화, 전산 장비 사양 검토, 정보화 계획 수립을 밀착 가이드합니다.</p>
           <div class="svc-tags"><span class="tag">전산 인프라</span><span class="tag">장비 규격 검토</span></div>
           <button class="svc-more" onclick="showPage('business',2)">서비스 상세 보기 →</button>
         </div>
+
         <div class="card svc-card">
           <div class="svc-num">04</div>
-          <div class="svc-icon">🔒</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" stroke="#1e6fcf" stroke-width="2" stroke-dasharray="3 3"/>
+              <path d="M50 22C66 22 76 32 76 48C76 68 50 84 50 84C50 84 24 68 24 48C24 32 34 22 50 22Z" stroke="#1e6fcf" stroke-width="3.5" fill="#f8fafc" fill-opacity="0.2"/>
+              <circle cx="50" cy="46" r="6" stroke="#1b7cf2" stroke-width="2.5"/>
+            </svg>
+          </div>
           <h3 class="svc-title">정보보안 컨설팅</h3>
           <p class="svc-desc">IT 인프라 전반의 위협요소를 철저히 진단하고, 공공 지침에 부합하는 보안 프레임워크를 설계합니다.</p>
           <div class="svc-tags"><span class="tag">취약점 분석</span><span class="tag">인프라 진단</span></div>
           <button class="svc-more" onclick="showPage('business',3)">서비스 상세 보기 →</button>
         </div>
+
         <div class="card svc-card">
           <div class="svc-num">05</div>
-          <div class="svc-icon">👤</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="44" width="40" height="30" rx="4" stroke="#1e6fcf" stroke-width="3.5"/>
+              <path d="M38 44V34C38 26 43 20 50 20C57 20 62 26 62 34V44" stroke="#1b7cf2" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="50" cy="56" r="3.5" fill="#1b7cf2"/>
+              <path d="M50 60V66" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3 class="svc-title">개인정보보호 컨설팅</h3>
           <p class="svc-desc">개인정보보호법 컴플라이언스 준수 체계 수립 및 공공기관 실무 중심의 정밀 보호수준 평가 대응을 지원합니다.</p>
           <div class="svc-tags"><span class="tag">보호수준 평가</span><span class="tag">내부관리계획</span></div>
           <button class="svc-more" onclick="showPage('business',4)">서비스 상세 보기 →</button>
         </div>
+
         <div class="card svc-card">
           <div class="svc-num">06</div>
-          <div class="svc-icon">📚</div>
+          <div class="svc-icon-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 76H80" stroke="#1e6fcf" stroke-width="4" stroke-linecap="round"/>
+              <rect x="26" y="20" width="48" height="44" rx="3" stroke="#1e6fcf" stroke-width="3.5"/>
+              <path d="M36 36L46 46L64 26" stroke="#1b7cf2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="44" y1="64" x2="38" y2="76" stroke="#1e6fcf" stroke-width="2.5"/>
+              <line x1="56" y1="64" x2="62" y2="76" stroke="#1e6fcf" stroke-width="2.5"/>
+            </svg>
+          </div>
           <h3 class="svc-title">교육·훈련 및 세미나</h3>
           <p class="svc-desc">공공단체를 위한 맞춤형 악성메일 모의훈련 시스템 대행 및 수료증 발급형 실무 세미나를 정기 운영합니다.</p>
           <div class="svc-tags"><span class="tag">모의 훈련</span><span class="tag">수료증 발급</span></div>
@@ -864,7 +927,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 </footer>
 
 <script>
-/* ── 파티클 캔버스 (기존 로직 보존) ── */
+/* ── 파티클 캔버스 ── */
 const canvas=document.getElementById('bg-canvas');
 const ctx=canvas.getContext('2d');
 let pts=[];
@@ -875,7 +938,7 @@ for(let i=0;i<60;i++)pts.push(new P());
 function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.upd();p.drw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<80){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(30,111,207,${.05*(1-d/80)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(anim);}
 anim();
 
-/* ── 페이지 전환 로직 (모바일 플로팅바 상태 연동 최적화) ── */
+/* ── 페이지 전환 로직 ── */
 function showPage(id, sub){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
@@ -890,19 +953,17 @@ function showPage(id, sub){
     }, 200);
   }
   
-  // GNB 액티브 클래스 제어
   document.querySelectorAll('.gnb > li > a').forEach(a=>a.classList.remove('active'));
   const map={company:'회사소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
   if(map[id]) document.querySelectorAll('.gnb > li > a').forEach(a=>{if(a.textContent.trim()===map[id])a.classList.add('active');});
   
-  // 📱 모바일 플로팅 퀵바 액티브 동기화
   document.querySelectorAll('.quick-item').forEach(item=>item.classList.remove('active'));
   if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
   if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
   if(id === 'performance') document.getElementById('m-btn-perf')?.classList.add('active');
 }
 
-/* ── 탭 전환 함수군 (기존 동일) ── */
+/* ── 탭 제어 ── */
 function switchBizTab(idx){
   const tabs=document.querySelectorAll('#bizTabs .biz-tab');
   const panels=document.querySelectorAll('[id^="bp"]');
