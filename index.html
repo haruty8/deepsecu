@@ -39,7 +39,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 60px;
+  padding-bottom: 60px; /* 모바일 하단 플로팅 바 여백 */
 }
 
 @media(min-width:961px) {
@@ -146,7 +146,7 @@ nav{
   box-shadow:0 4px 12px var(--shadow);
   transition:all .25s;
 }
-.card:hover{border-color:var(--bright); transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
+.card:hover{border-color:#b4fee0; transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
 
 /* 🏠 HOME PAGE */
 #page-home .hero{
@@ -182,21 +182,8 @@ nav{
 
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-
-/* 🔒 6대 서비스 카드 전용 디자인 (뒷배경 보안 SVG 패턴 픽토그램 레이어 삽입 완료) */
-.svc-card{
-  position:relative;
-  background:#ffffff;
-  /* 아주 투명하고 세련된 형태의 자물쇠/네트워크 보안 노드 회로 패턴을 SVG 데이터로 내장 처리 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 12v6M24 18h12v14H24z M21 26h18M30 40v8' stroke='%231e6fcf' stroke-width='0.8' stroke-opacity='0.04' fill='none'/%3E%3Ccircle cx='30' cy='30' r='24' stroke='%231e6fcf' stroke-width='0.6' stroke-opacity='0.03' fill='none'/%3E%3C/svg%3E");
-  background-position: right 15px bottom 15px;
-  background-repeat: no-repeat;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-}
-
-.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:12px;}
+.svc-card{position:relative;background:#ffffff;}
+.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:16px;}
 .svc-icon{font-size:1.8rem;margin-bottom:16px;}
 .svc-title{font-size:1.25rem;font-weight:800;color:var(--text-main);margin-bottom:10px;}
 .svc-desc{font-size:0.95rem;color:var(--text-light);line-height:1.6;margin-bottom:24px;}
@@ -315,7 +302,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 📱 모바일 하단 플로팅 퀵바 */
+/* 모바일 하단 플로팅 네비 바 (새로 추가) */
 .mobile-quick-bar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -331,12 +318,14 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .quick-item.active { color: var(--accent); }
 .quick-item.highlight { background: var(--accent); color: #ffffff; }
 
+/* 📱 MOBILE & TABLET RESPONSIVE DEEP REBUILD */
 @media(max-width:960px){
   nav { padding:0 20px; height:60px; }
   .gnb, .nav-right { display:none; }
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
+  /* [Anthropic 감성 적용] 모바일 메인 히어로를 정돈된 하이테크 스타일로 변모 */
   #page-home .hero { 
     padding:60px 20px 80px; 
     min-height:auto;
@@ -348,21 +337,18 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; }
   .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #94a3b8; word-break:keep-all; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
-  .hero-stats { display: none; }
+  .hero-stats { display: none; } /* 모바일 레이아웃 복잡도 최소화를 위한 숨김 */
   
+  /* [Linear 감성 적용] 블로그형 나열 탈출 - 정밀한 스마트 카드 그리드화 */
   .svc-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
-  .card { padding: 28px 24px; border-radius: 10px; }
-  .svc-card { 
-    background-size: 50px 50px; 
-    background-position: right 10px bottom 10px; 
-  }
-  .svc-num { display: block; font-size: 0.9rem; margin-bottom: 8px; }
-  .svc-icon { margin-bottom: 12px; font-size: 1.5rem; }
-  .svc-title { font-size: 1.2rem; margin-bottom: 8px; font-weight: 800; }
-  .svc-desc { font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; color: var(--text-light); }
+  .card { padding: 24px 20px; border-radius: 10px; }
+  .svc-num { display: none; } /* 미니멀리즘 처리를 위한 번호 생략 */
+  .svc-icon { margin-bottom: 10px; font-size: 1.5rem; }
+  .svc-title { font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; }
+  .svc-desc { font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px; color: var(--text-light); }
   .svc-tags { display: flex; gap: 4px; }
   .tag { font-size: 0.72rem; padding: 2px 8px; }
-  .svc-more { font-size: 0.85rem; margin-top: 16px; }
+  .svc-more { font-size: 0.82rem; margin-top: 12px; }
 
   .num-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
   .num-item { padding: 24px 16px; }
@@ -390,7 +376,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- 상단 내비게이션 바 -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
     <svg viewBox="0 0 40 48" fill="none">
@@ -440,7 +425,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </nav>
 
-<!-- 📱 모바일 전용 고정 하단바 -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
@@ -459,7 +443,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </a>
 </div>
 
-<!-- 🏠 메인 홈 페이지 -->
 <div id="page-home" class="page active">
   <div class="hero">
     <div class="hero-grid"></div>
@@ -485,8 +468,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
         <h2 class="sec-title">전문 IT 자문 및 컨설팅</h2>
         <p class="sec-desc" style="margin:0 auto;">공공기관 및 유관단체의 정보시스템 효율화와 보안 거버넌스를 정립하는 맞춤형 포트폴리오입니다.</p>
       </div>
-      
-      <!-- 💼 6대 서비스 카드 그리드 (image_181711.png 카드 레이아웃의 내부 뒷배경에 보안 패턴이 투명하게 적용되었습니다.) -->
       <div class="svc-grid">
         <div class="card svc-card">
           <div class="svc-num">01</div>
@@ -559,7 +540,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
-<!-- 🏢 회사소개 페이지 -->
 <div id="page-company" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Company</span></div>
@@ -614,7 +594,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </div>
 
-<!-- 💼 사업영역 페이지 -->
 <div id="page-business" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Business</span></div>
@@ -721,7 +700,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
-<!-- 📈 수행실적 페이지 -->
 <div id="page-performance" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Performance</span></div>
@@ -784,7 +762,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </div>
 
-<!-- 📞 문의하기 페이지 -->
 <div id="page-contact" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Contact Us</span></div>
@@ -857,7 +834,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
-<!-- 📋 푸터 섹션 -->
 <footer>
   <div class="footer-top inner">
     <div class="footer-brand">
@@ -888,7 +864,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 </footer>
 
 <script>
-/* ── 파티클 캔버스 ── */
+/* ── 파티클 캔버스 (기존 로직 보존) ── */
 const canvas=document.getElementById('bg-canvas');
 const ctx=canvas.getContext('2d');
 let pts=[];
@@ -899,7 +875,7 @@ for(let i=0;i<60;i++)pts.push(new P());
 function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.upd();p.drw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<80){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(30,111,207,${.05*(1-d/80)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(anim);}
 anim();
 
-/* ── 페이지 전환 로직 ── */
+/* ── 페이지 전환 로직 (모바일 플로팅바 상태 연동 최적화) ── */
 function showPage(id, sub){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
@@ -914,17 +890,19 @@ function showPage(id, sub){
     }, 200);
   }
   
+  // GNB 액티브 클래스 제어
   document.querySelectorAll('.gnb > li > a').forEach(a=>a.classList.remove('active'));
   const map={company:'회사소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
   if(map[id]) document.querySelectorAll('.gnb > li > a').forEach(a=>{if(a.textContent.trim()===map[id])a.classList.add('active');});
   
+  // 📱 모바일 플로팅 퀵바 액티브 동기화
   document.querySelectorAll('.quick-item').forEach(item=>item.classList.remove('active'));
   if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
   if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
   if(id === 'performance') document.getElementById('m-btn-perf')?.classList.add('active');
 }
 
-/* ── 탭 제어 ── */
+/* ── 탭 전환 함수군 (기존 동일) ── */
 function switchBizTab(idx){
   const tabs=document.querySelectorAll('#bizTabs .biz-tab');
   const panels=document.querySelectorAll('[id^="bp"]');
