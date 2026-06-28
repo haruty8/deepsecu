@@ -39,7 +39,6 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.65;
   overflow-x: hidden;
-  padding-bottom: 0; /* 모바일 퀵메뉴 패딩은 미디어쿼리에서 처리 */
 }
 
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;}
@@ -54,7 +53,7 @@ nav{
   border-bottom:2px solid var(--border);
   transition:background .3s;
 }
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;position:relative;z-index:210;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;}
 .nav-logo svg{width:32px;height:32px;}
 .nav-logo span{font-family:'Plus Jakarta Sans', sans-serif;font-size:1.55rem;font-weight:800;color:var(--text-main);letter-spacing:-0.5px;}
 .nav-logo span em{color:var(--accent);font-style:normal;}
@@ -107,54 +106,6 @@ nav{
   transition:all .3s;box-shadow:0 4px 14px rgba(30,111,207,.3);
 }
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(30,111,207,.45);}
-
-/* 📱 모바일 메뉴 토글 버튼 (기본 숨김) */
-.m-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  position: relative;
-  z-index: 210;
-}
-.m-menu-btn span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text-main);
-  margin: 5px 0;
-  transition: all 0.3s;
-}
-/* 모바일 메뉴 열렸을 때 애니메이션 */
-.m-menu-btn.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 5px); }
-.m-menu-btn.open span:nth-child(2) { opacity: 0; }
-.m-menu-btn.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -5px); }
-
-/* 📱 모바일 하단 고정 퀵 메뉴 (기본 숨김) */
-.m-sticky-bar {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border);
-  z-index: 190;
-  grid-template-columns: 1fr 1.2fr;
-  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
-}
-.m-sticky-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-.m-sticky-btn.tel { color: var(--text-main); background: #ffffff; }
-.m-sticky-btn.cta { color: #ffffff; background: linear-gradient(135deg, var(--accent), var(--bright)); }
 
 /* 📄 PAGE SYSTEM */
 .page{display:none;min-height:100vh;padding-top:72px;}
@@ -478,43 +429,16 @@ footer{
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* 📱 ──────────────────────────────────────────────────────────
-   MOBILE & TABLET HIGH-DENSITY OPTIMIZATION (모바일 전면 개조 및 보완)
+   MOBILE & TABLET HIGH-DENSITY OPTIMIZATION (모바일 전면 개조)
    ────────────────────────────────────────────────────────── */
 @media(max-width:960px){
-  body { padding-bottom: 60px; } /* 하단 고정 퀵바 공간 확보 */
-  nav { padding:0 20px; height:64px; }
+  nav { padding:0 24px; height:68px; }
+  .gnb, .nav-tel { display:none; }
+  .sec, .page-banner { padding:70px 24px; }
   
-  /* 1. 모바일 GNB 사이드 플라이아웃 메뉴 구현 */
-  .gnb {
-    position: fixed; top: 64px; right: -100%; width: 280px; height: calc(100vh - 64px);
-    background: #ffffff; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    flex-direction: column; gap: 0; margin-left: 0; padding: 20px 0;
-    transition: right 0.3s ease; overflow-y: auto; z-index: 200;
-    display: flex;
-  }
-  .gnb.open { right: 0; }
-  .gnb > li > a { height: auto; padding: 16px 24px; border-bottom: none; font-size: 1.1rem; justify-content: space-between; }
-  .gnb > li > a::after { content: '▾'; font-size: 0.8rem; opacity: 0.5; }
-  
-  /* 모바일 드롭다운 아코디언 스타일 변환 */
-  .dropdown {
-    position: relative; top: 0; left: 0; width: 100%; min-width: 100%;
-    box-shadow: none; border: none; background: #f8fafc; padding: 0;
-    display: none; opacity: 1; visibility: visible; transform: none;
-  }
-  .gnb > li.active .dropdown { display: block; }
-  .dropdown a { padding: 12px 36px; font-size: 0.95rem; border-left: none; background: none !important; }
-  
-  /* 모바일 네비게이션 버튼들 활성화 */
-  .m-menu-btn { display: block; }
-  .m-sticky-bar { display: grid; }
-  .nav-right, .nav-tel { display:none; }
-  
-  .sec, .page-banner { padding:50px 20px; }
-  
-  /* 2. 홈 히어로 영역 가독성 대폭 향상 */
+  /* 1. 홈 히어로 영역을 앱 대시보드 풍의 화려하고 깊이감 있는 그라디언트로 모바일 보정 */
   #page-home .hero { 
-    padding:50px 20px 100px; 
+    padding:60px 24px 130px; 
     min-height:auto;
     background: radial-gradient(circle at 50% -10%, #e4effb 0%, #f4f8fd 60%, #ffffff 100%);
   }
@@ -524,55 +448,55 @@ footer{
     border-radius:50%; pointer-events:none;
   }
   .hero-content { text-align:center; margin:0 auto; }
-  .hero-badge { margin-bottom:16px; font-size:0.75rem; padding:5px 14px; justify-content:center; }
-  .hero-title { font-size:1.85rem; line-height:1.4; margin-bottom:16px; word-break:keep-all; }
-  .hero-sub { font-size:1rem; line-height:1.65; margin-bottom:28px; word-break:keep-all; }
+  .hero-badge { margin-bottom:20px; font-size:0.75rem; padding:5px 14px; justify-content:center; }
+  .hero-title { font-size:1.95rem; line-height:1.35; margin-bottom:20px; word-break:keep-all; }
+  .hero-sub { font-size:1.05rem; line-height:1.7; margin-bottom:32px; word-break:keep-all; }
   .hero-btns { justify-content:center; flex-direction:column; gap:10px; width:100%; max-width:290px; margin:0 auto; }
   .btn-p, .btn-o { width:100%; text-align:center; padding:14px 20px; font-size:0.98rem; }
   
-  .hero-stats { position:relative; left:0; right:0; bottom:0; margin-top:40px; justify-content:center; gap:16px; background:rgba(255,255,255,0.85); border:1px solid var(--border); padding:16px; border-radius:12px; backdrop-filter:blur(8px); }
-  .stat-num { font-size:1.9rem; }
+  .hero-stats { left:24px; right:24px; bottom:24px; justify-content:center; gap:20px; background:rgba(255,255,255,0.8); border:1px solid var(--border); padding:16px; border-radius:12px; backdrop-filter:blur(8px); }
+  .stat-num { font-size:2.1rem; }
   .stat-label { font-size:0.75rem; }
 
-  /* 3. 플랫폼 카드형 2열 배치 정교화 */
-  .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 30px; }
-  .card { padding: 20px 16px; border-radius: 12px; box-shadow: 0 4px 12px rgba(10,17,40,0.04); }
-  .svc-icon { width:40px; height:40px; font-size:1.2rem; margin-bottom:12px; }
-  .svc-num { font-size: 2.2rem; top: 6px; right: 10px; }
-  .svc-title { font-size: 1.05rem; margin-bottom: 6px; font-weight: 800; }
-  .svc-desc { font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px; word-break:keep-all; }
-  .svc-tags { display:none; } 
-  .svc-more { margin-top: 6px; font-size: 0.82rem; }
+  /* 2. 블로그 나열 느낌을 지우고 촘촘하고 세련된 '플랫폼 카드형 2열 배치'로 재구성 */
+  .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 36px; }
+  .card { padding: 24px 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(10,17,40,0.04); }
+  .svc-icon { width:44px; height:44px; font-size:1.3rem; margin-bottom:14px; }
+  .svc-num { font-size: 2.5rem; top: 8px; right: 12px; }
+  .svc-title { font-size: 1.1rem; margin-bottom: 8px; font-weight: 800; }
+  .svc-desc { font-size: 0.88rem; line-height: 1.55; margin-bottom: 14px; word-break:keep-all; }
+  .svc-tags { display:none; } /* 모바일에서 지저분한 태그 숨김으로 심플화 */
+  .svc-more { margin-top: 8px; font-size: 0.85rem; }
 
-  /* 4. 기타 그리드 요소 정렬 */
-  .num-grid { grid-template-columns: 1fr 1fr; border-radius: 10px; margin-top: 30px; }
-  .num-item { padding: 24px 14px; }
-  .num-big { font-size: 2.5rem; }
-  .num-label { font-size: 0.82rem; }
+  /* 3. 수치 그리드 및 실적 그리드 최적 가독성 정렬 */
+  .num-grid { grid-template-columns: 1fr 1fr; border-radius: 10px; margin-top: 36px; }
+  .num-item { padding: 28px 16px; }
+  .num-big { font-size: 2.8rem; }
+  .num-label { font-size: 0.85rem; }
 
-  .about-grid, .biz-detail, .contact-grid, .footer-top { grid-template-columns:1fr; gap:32px; }
+  .about-grid, .biz-detail, .contact-grid, .footer-top { grid-template-columns:1fr; gap:36px; }
   .about-feat-grid { grid-template-columns:1fr; gap:12px; }
-  .pf-grid { grid-template-columns:1fr; gap:12px; }
-  .client-grid { grid-template-columns: 1fr 1fr; gap:10px; }
-  .perf-stats { grid-template-columns:1fr; gap:12px; margin-bottom:30px; }
-  .perf-stat { padding: 20px; }
-  .perf-stat .big { font-size: 2.5rem; }
+  .pf-grid { grid-template-columns:1fr; gap:14px; }
+  .client-grid { grid-template-columns: 1fr 1fr; gap:12px; }
+  .perf-stats { grid-template-columns:1fr; gap:14px; margin-bottom:36px; }
+  .perf-stat { padding: 24px; }
+  .perf-stat .big { font-size: 2.8rem; }
 
-  .contact-form { padding: 24px 16px; }
+  /* 4. 문의 폼 패딩 최적화 */
+  .contact-form { padding: 28px 20px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
-  .map-info { padding: 16px; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .map-info { padding: 18px; flex-direction: column; align-items: flex-start; gap: 16px; }
   .map-link { width: 100%; justify-content: center; }
 
-  footer { padding:0 20px; }
-  .footer-top { padding:40px 0 24px; gap:24px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; padding: 20px 0; }
+  footer { padding:0 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; }
 }
 
-/* 초소형 모바일 기기 */
+/* 초소형 모바일 대응 */
 @media(max-width:480px){
-  .svc-grid { grid-template-columns: 1fr; gap: 12px; }
-  .hero-stats { gap: 10px; padding: 10px; }
-  .stat-num { font-size: 1.6rem; }
+  .svc-grid { grid-template-columns: 1fr; gap: 14px; } /* 화면이 너무 좁은 폰은 1열 전환 */
+  .hero-stats { gap: 14px; padding: 12px; }
+  .stat-num { font-size: 1.8rem; }
 }
 </style>
 </head>
@@ -581,7 +505,7 @@ footer{
 <canvas id="bg-canvas"></canvas>
 
 <nav>
-  <div style="display:flex;align-items:center;gap:0; width:100%; justify-content:space-between;">
+  <div style="display:flex;align-items:center;gap:0;">
     <div class="nav-logo" onclick="showPage('home')">
       <svg viewBox="0 0 40 48" fill="none">
         <path d="M20 2L4 10V26C4 34.8 11.2 43.2 20 46C28.8 43.2 36 34.8 36 26V10L20 2Z" fill="#1e6fcf" opacity=".9"/>
@@ -590,61 +514,49 @@ footer{
       </svg>
       <span>Deep<em>Secu</em></span>
     </div>
-    
-    <ul class="gnb" id="mainGnb">
+    <ul class="gnb">
       <li>
-        <a href="#" onclick="handleMMenuClick(this); return false;">회사소개</a>
+        <a href="#" onclick="showPage('company');return false;">회사소개</a>
         <div class="dropdown">
-          <a href="#" onclick="showPage('company','about'); closeMMenu(); return false;">회사 소개</a>
-          <a href="#" onclick="showPage('company','history'); closeMMenu(); return false;">걸어온 길</a>
+          <a href="#" onclick="showPage('company','about');return false;">회사 소개</a>
+          <a href="#" onclick="showPage('company','history');return false;">걸어온 길</a>
         </div>
       </li>
       <li>
-        <a href="#" onclick="handleMMenuClick(this); return false;">사업영역</a>
+        <a href="#" onclick="showPage('business');return false;">사업영역</a>
         <div class="dropdown">
-          <a href="#" onclick="showPage('business',0); closeMMenu(); return false;">통합 구축 자문 · PMO</a>
-          <a href="#" onclick="showPage('business',1); closeMMenu(); return false;">공공데이터 자문</a>
-          <a href="#" onclick="showPage('business',2); closeMMenu(); return false;">공공기관 전산 자문</a>
-          <a href="#" onclick="showPage('business',3); closeMMenu(); return false;">정보보안 컨설팅</a>
-          <a href="#" onclick="showPage('business',4); closeMMenu(); return false;">개인정보보호 컨설팅</a>
-          <a href="#" onclick="showPage('business',5); closeMMenu(); return false;">교육·훈련 및 세미나</a>
+          <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
+          <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
+          <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
+          <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
+          <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
+          <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
         </div>
       </li>
       <li>
-        <a href="#" onclick="handleMMenuClick(this); return false;">수행실적</a>
+        <a href="#" onclick="showPage('performance');return false;">수행실적</a>
         <div class="dropdown">
-          <a href="#" onclick="showPage('performance','records'); closeMMenu(); return false;">수행 실적</a>
-          <a href="#" onclick="showPage('performance','clients'); closeMMenu(); return false;">주요 고객사</a>
+          <a href="#" onclick="showPage('performance','records');return false;">수행 실적</a>
+          <a href="#" onclick="showPage('performance','clients');return false;">주요 고객사</a>
         </div>
       </li>
       <li>
-        <a href="#" onclick="handleMMenuClick(this); return false;">문의하기</a>
+        <a href="#" onclick="showPage('contact');return false;">문의하기</a>
         <div class="dropdown">
-          <a href="#" onclick="showPage('contact','form'); closeMMenu(); return false;">문의하기</a>
-          <a href="#" onclick="showPage('contact','location'); closeMMenu(); return false;">오시는 길</a>
+          <a href="#" onclick="showPage('contact','form');return false;">문의하기</a>
+          <a href="#" onclick="showPage('contact','location');return false;">오시는 길</a>
         </div>
       </li>
     </ul>
-
-    <button class="m-menu-btn" id="mMenuBtn" onclick="toggleMMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
-  
   <div class="nav-right">
     <div class="nav-tel">대표번호 <span>02-6285-6210</span></div>
     <a class="nav-cta" href="#" onclick="showPage('contact');return false;">종합 자문 상담</a>
   </div>
 </nav>
 
-<div class="m-sticky-bar">
-  <a href="tel:02-6285-6210" class="m-sticky-btn tel">📞 전화 상담</a>
-  <a href="#" onclick="showPage('contact'); return false;" class="m-sticky-btn cta">📋 온라인 자문 신청</a>
-</div>
-
 <div id="page-home" class="page active">
+
   <div class="hero">
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
@@ -865,12 +777,14 @@ footer{
         </div>
       </div>
 
+      <!-- 2번 탭: 공공기관 전산 자문 -->
       <div class="biz-panel" id="bp2">
         <div class="biz-detail">
           <div class="biz-visual" style="padding:0; overflow:hidden; position:relative;">
             <img src="IT_Infrastructure.jpg" alt="IT Infrastructure" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
             <h3 style="position:absolute; bottom:20px; left:0; right:0; text-align:center; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.85);">전산 인프라 설계</h3>
           </div>
+          <!-- 우측 텍스트 설명 영역 -->
           <div class="biz-info">
             <h2>공공 전산 행정 인프라의 합리적 최적화</h2>
             <p>지자체, 산하 도시관리공단 및 정부 출자기관의 전산 장비 도입 규격 검토, 네트워크 고도화 설계 및 정보화 예산 편성을 위한 전문 솔루션 스펙 가이드를 다년간의 경험으로 지원합니다.</p>
@@ -883,7 +797,6 @@ footer{
           </div>
         </div>
       </div>
-
       <div class="biz-panel" id="bp3">
         <div class="biz-detail">
           <div class="biz-visual" style="padding:0; overflow:hidden; position:relative;">
@@ -940,6 +853,7 @@ footer{
           </div>
         </div>
       </div>
+
     </div>
   </section>
 </div>
@@ -1143,31 +1057,6 @@ class P{constructor(){this.r();}r(){this.x=Math.random()*canvas.width;this.y=Mat
 for(let i=0;i<100;i++)pts.push(new P());
 function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.upd();p.drw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<90){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(30,111,207,${.08*(1-d/90)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(anim);}
 anim();
-
-/* 📱 ── 모바일 네비게이션 제어 스크립트 (추가됨) ── */
-function toggleMMenu() {
-  const btn = document.getElementById('mMenuBtn');
-  const gnb = document.getElementById('mainGnb');
-  btn.classList.toggle('open');
-  gnb.classList.toggle('open');
-}
-
-function closeMMenu() {
-  const btn = document.getElementById('mMenuBtn');
-  const gnb = document.getElementById('mainGnb');
-  if(btn && gnb) {
-    btn.classList.remove('open');
-    gnb.classList.remove('open');
-  }
-}
-
-function handleMMenuClick(link) {
-  // 모바일 환경일 때만 대메뉴 클릭 시 아코디언 토글 처리
-  if (window.innerWidth <= 960) {
-    const parentLi = link.parentElement;
-    parentLi.classList.toggle('active');
-  }
-}
 
 /* ── 페이지 전환 ── */
 function showPage(id, sub){
