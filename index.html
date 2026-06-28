@@ -180,16 +180,71 @@ nav{
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:#ffffff;line-height:1;}
 .stat-label{font-size:0.85rem;color:#64748b;margin-top:6px;font-weight:600;}
 
+/* 핵심 서비스 섹션 (첫 번째 이미지 스타일 커스텀 반영) */
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-.svc-card{position:relative;background:#ffffff;}
-.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:16px;}
-.svc-icon{font-size:1.8rem;margin-bottom:16px;}
-.svc-title{font-size:1.25rem;font-weight:800;color:var(--text-main);margin-bottom:10px;}
-.svc-desc{font-size:0.95rem;color:var(--text-light);line-height:1.6;margin-bottom:24px;}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.tag{background:var(--bg-gray);color:var(--text-muted);font-size:0.78rem;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid var(--border);}
-.svc-more{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-size:0.9rem;font-weight:700;cursor:pointer;border:none;background:none;margin-top:auto;}
+
+/* 서비스 카드를 하이테크 이미지 배경형으로 전면 리빌딩 */
+.svc-card{
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:none;
+  overflow:hidden;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  min-height:380px;
+}
+/* 각 카드별 배경 이미지 지정 */
+.svc-card.bg-01 { background-image: url('seminar.jpg'); }
+.svc-card.bg-02 { background-image: url('public_data.jpg'); }
+.svc-card.bg-03 { background-image: url('IT_Infrastructure.jpg'); }
+.svc-card.bg-04 { background-image: url('seminar.jpg'); }
+.svc-card.bg-05 { background-image: url('privacy.jpg'); }
+.svc-card.bg-06 { background-image: url('seminar.jpg'); }
+
+/* 이미지 위에 어두운 그라데이션 오버레이를 깔아 가독성 확보 (Dim 처리) */
+.svc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 17, 40, 0.6) 0%, rgba(10, 17, 40, 0.9) 100%);
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+.svc-card:hover::before {
+  background: linear-gradient(to bottom, rgba(30, 111, 207, 0.7) 0%, rgba(10, 17, 40, 0.95) 100%);
+}
+
+.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.4);margin-bottom:12px;}
+.svc-icon{font-size:2rem;margin-bottom:16px;}
+.svc-title{font-size:1.3rem;font-weight:800;color:#ffffff;margin-bottom:12px;letter-spacing:-0.5px;}
+.svc-desc{font-size:0.95rem;color:#cbd5e1;line-height:1.6;margin-bottom:24px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
+.svc-card .tag{background:rgba(255,255,255,0.1);color:#ffffff;font-size:0.78rem;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(255,255,255,0.15);}
+
+/* 하단 Learn More 스타일 버튼 매칭 */
+.svc-more{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  background: #4a73be;
+  color:#ffffff;
+  font-size:0.9rem;
+  font-weight:700;
+  padding:10px 24px;
+  border-radius:30px;
+  cursor:pointer;
+  border:none;
+  margin-top:auto;
+  align-self:center;
+  transition:all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.svc-more:hover{background:var(--bright); transform:scale(1.05);}
 
 .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;}
 .num-item{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:36px 24px;text-align:center;box-shadow:0 4px 12px var(--shadow);}
@@ -223,7 +278,7 @@ nav{
 }
 .biz-tab.active,.biz-tab:hover{color:var(--accent);border-bottom-color:var(--accent);}
 .biz-panel{display:none;}
-.biz-panel.active{display:block;}
+.biz-panel.active {display:block;}
 
 .biz-detail{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;}
 .biz-visual{
@@ -338,7 +393,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
   .hero-stats { display: none; } 
   
-  /* 💼 [모바일 비즈니스 탭 UX 최적화] 잘리는 스크롤 대신 2열 격자 구조 채택 */
+  /* 모바일 비즈니스 탭 2열 격자 구조 */
   .biz-tabs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -366,15 +421,14 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
     border-color: var(--accent);
   }
 
-  .svc-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
-  .card { padding: 24px 20px; border-radius: 10px; }
+  /* 모바일 반응형 서비스 그리드 */
+  .svc-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .svc-card { padding: 32px 24px; min-height: 340px; border-radius: 12px; }
   .svc-num { display: none; } 
-  .svc-icon { margin-bottom: 10px; font-size: 1.5rem; }
-  .svc-title { font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; }
-  .svc-desc { font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px; color: var(--text-light); }
-  .svc-tags { display: flex; gap: 4px; }
-  .tag { font-size: 0.72rem; padding: 2px 8px; }
-  .svc-more { font-size: 0.82rem; margin-top: 12px; }
+  .svc-icon { margin-bottom: 10px; font-size: 1.8rem; }
+  .svc-title { font-size: 1.2rem; margin-bottom: 8px; font-weight: 800; }
+  .svc-desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+  .svc-more { font-size: 0.85rem; width: 100%; padding: 12px; border-radius: 30px; }
 
   .num-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
   .num-item { padding: 24px 16px; }
@@ -494,54 +548,56 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
         <h2 class="sec-title">전문 IT 자문 및 컨설팅</h2>
         <p class="sec-desc" style="margin:0 auto;">공공기관 및 유관단체의 정보시스템 효율화와 보안 거버넌스를 정립하는 맞춤형 포트폴리오입니다.</p>
       </div>
+      
+      <!-- 🛠️ 이미지 배경 스타일이 적용된 서비스 카드 섹션 -->
       <div class="svc-grid">
-        <div class="card svc-card">
+        <div class="card svc-card bg-01">
           <div class="svc-num">01</div>
           <div class="svc-icon">📊</div>
           <h3 class="svc-title">통합 구축 자문 · PMO</h3>
           <p class="svc-desc">공공 프로젝트 및 시스템 통합 사업의 성공을 위한 고품질 기술 아키텍처와 PMO 관리를 지원합니다.</p>
           <div class="svc-tags"><span class="tag">통합 구축</span><span class="tag">PMO 역할</span></div>
-          <button class="svc-more" onclick="showPage('business',0)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',0)">Learn More →</button>
         </div>
-        <div class="card svc-card">
+        <div class="card svc-card bg-02">
           <div class="svc-num">02</div>
           <div class="svc-icon">💡</div>
           <h3 class="svc-title">공공데이터 자문</h3>
           <p class="svc-desc">행정·공공기관이 보유한 데이터의 민간 개방 표준 수립 및 데이터 품질 관리 체계를 완벽하게 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 개방</span><span class="tag">품질관리</span></div>
-          <button class="svc-more" onclick="showPage('business',1)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',1)">Learn More →</button>
         </div>
-        <div class="card svc-card">
+        <div class="card svc-card bg-03">
           <div class="svc-num">03</div>
           <div class="svc-icon">🏛️</div>
           <h3 class="svc-title">공공기관 전산 자문</h3>
           <p class="svc-desc">일선 공공기관 전산실 인프라 고도화, 전산 장비 사양 검토, 정보화 계획 수립을 밀착 가이드합니다.</p>
           <div class="svc-tags"><span class="tag">전산 인프라</span><span class="tag">장비 규격 검토</span></div>
-          <button class="svc-more" onclick="showPage('business',2)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',2)">Learn More →</button>
         </div>
-        <div class="card svc-card">
+        <div class="card svc-card bg-04">
           <div class="svc-num">04</div>
           <div class="svc-icon">🔒</div>
           <h3 class="svc-title">정보보안 컨설팅</h3>
           <p class="svc-desc">IT 인프라 전반의 위협요소를 철저히 진단하고, 공공 지침에 부합하는 보안 프레임워크를 설계합니다.</p>
           <div class="svc-tags"><span class="tag">취약점 분석</span><span class="tag">인프라 진단</span></div>
-          <button class="svc-more" onclick="showPage('business',3)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',3)">Learn More →</button>
         </div>
-        <div class="card svc-card">
+        <div class="card svc-card bg-05">
           <div class="svc-num">05</div>
           <div class="svc-icon">👤</div>
           <h3 class="svc-title">개인정보보호 컨설팅</h3>
           <p class="svc-desc">개인정보보호법 컴플라이언스 준수 체계 수립 및 공공기관 실무 중심의 정밀 보호수준 평가 대응을 지원합니다.</p>
           <div class="svc-tags"><span class="tag">보호수준 평가</span><span class="tag">내부관리계획</span></div>
-          <button class="svc-more" onclick="showPage('business',4)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',4)">Learn More →</button>
         </div>
-        <div class="card svc-card">
+        <div class="card svc-card bg-06">
           <div class="svc-num">06</div>
           <div class="svc-icon">📚</div>
           <h3 class="svc-title">교육·훈련 및 세미나</h3>
           <p class="svc-desc">공공단체를 위한 맞춤형 악성메일 모의훈련 시스템 대행 및 수료증 발급형 실무 세미나를 정기 운영합니다.</p>
           <div class="svc-tags"><span class="tag">모의 훈련</span><span class="tag">수료증 발급</span></div>
-          <button class="svc-more" onclick="showPage('business',5)">서비스 상세 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',5)">Learn More →</button>
         </div>
       </div>
     </div>
@@ -893,7 +949,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 </footer>
 
 <script>
-/* ── 파티클 캔버스 (기존 로직 보존) ── */
+/* ── 파티클 캔버스 ── */
 const canvas=document.getElementById('bg-canvas');
 const ctx=canvas.getContext('2d');
 let pts=[];
@@ -904,7 +960,7 @@ for(let i=0;i<60;i++)pts.push(new P());
 function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(p=>{p.upd();p.drw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<80){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(30,111,207,${.05*(1-d/80)})`;ctx.lineWidth=.5;ctx.stroke();}}requestAnimationFrame(anim);}
 anim();
 
-/* ── 페이지 전환 로직 (모바일 플로팅바 상태 연동 최적화) ── */
+/* ── 페이지 전환 로직 ── */
 function showPage(id, sub){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
@@ -924,7 +980,7 @@ function showPage(id, sub){
   const map={company:'회사소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
   if(map[id]) document.querySelectorAll('.gnb > li > a').forEach(a=>{if(a.textContent.trim()===map[id])a.classList.add('active');});
   
-  // 📱 모바일 플로팅 퀵바 액티브 동기화
+  // 모바일 플로팅 퀵바 액티브 동기화
   document.querySelectorAll('.quick-item').forEach(item=>item.classList.remove('active'));
   if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
   if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
