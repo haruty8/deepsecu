@@ -146,7 +146,7 @@ nav{
   box-shadow:0 4px 12px var(--shadow);
   transition:all .25s;
 }
-.card:hover{border-color:#b4fee0; transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
+.card:hover{border-color:#cbd5e1; transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
 
 /* 🏠 HOME PAGE */
 #page-home .hero{
@@ -302,7 +302,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 (새로 추가) */
+/* 모바일 하단 플로팅 네비 바 */
 .mobile-quick-bar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -325,7 +325,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
-  /* [Anthropic 감성 적용] 모바일 메인 히어로를 정돈된 하이테크 스타일로 변모 */
   #page-home .hero { 
     padding:60px 20px 80px; 
     min-height:auto;
@@ -337,12 +336,39 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; }
   .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #94a3b8; word-break:keep-all; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
-  .hero-stats { display: none; } /* 모바일 레이아웃 복잡도 최소화를 위한 숨김 */
+  .hero-stats { display: none; } 
   
-  /* [Linear 감성 적용] 블로그형 나열 탈출 - 정밀한 스마트 카드 그리드화 */
+  /* 💼 [모바일 비즈니스 탭 UX 최적화] 잘리는 스크롤 대신 2열 격자 구조 채택 */
+  .biz-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    border-bottom: none;
+    margin-bottom: 32px;
+  }
+  .biz-tab {
+    padding: 12px 10px;
+    font-size: 0.88rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #ffffff;
+    white-space: normal;
+    word-break: keep-all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+  }
+  .biz-tab.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+  }
+
   .svc-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
   .card { padding: 24px 20px; border-radius: 10px; }
-  .svc-num { display: none; } /* 미니멀리즘 처리를 위한 번호 생략 */
+  .svc-num { display: none; } 
   .svc-icon { margin-bottom: 10px; font-size: 1.5rem; }
   .svc-title { font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; }
   .svc-desc { font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px; color: var(--text-light); }
@@ -905,7 +931,7 @@ function showPage(id, sub){
   if(id === 'performance') document.getElementById('m-btn-perf')?.classList.add('active');
 }
 
-/* ── 탭 전환 함수군 (기존 동일) ── */
+/* ── 탭 전환 함수군 ── */
 function switchBizTab(idx){
   const tabs=document.querySelectorAll('#bizTabs .biz-tab');
   const panels=document.querySelectorAll('[id^="bp"]');
