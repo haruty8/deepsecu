@@ -182,23 +182,22 @@ nav{
 
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-.svc-card{position:relative;background:#ffffff;display:flex;flex-direction:column;align-items:flex-start;}
+
+/* 🔒 6대 서비스 카드 전용 디자인 (뒷배경 보안 SVG 패턴 픽토그램 레이어 삽입 완료) */
+.svc-card{
+  position:relative;
+  background:#ffffff;
+  /* 아주 투명하고 세련된 형태의 자물쇠/네트워크 보안 노드 회로 패턴을 SVG 데이터로 내장 처리 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 12v6M24 18h12v14H24z M21 26h18M30 40v8' stroke='%231e6fcf' stroke-width='0.8' stroke-opacity='0.04' fill='none'/%3E%3Ccircle cx='30' cy='30' r='24' stroke='%231e6fcf' stroke-width='0.6' stroke-opacity='0.03' fill='none'/%3E%3C/svg%3E");
+  background-position: right 15px bottom 15px;
+  background-repeat: no-repeat;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
 .svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text-light);margin-bottom:12px;}
-
-/* 💡 홈화면 카드 내 테크니컬 SVG 아이콘 랩 */
-.svc-icon-svg {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.svc-icon-svg svg {
-  width: 100%;
-  height: 100%;
-}
-
+.svc-icon{font-size:1.8rem;margin-bottom:16px;}
 .svc-title{font-size:1.25rem;font-weight:800;color:var(--text-main);margin-bottom:10px;}
 .svc-desc{font-size:0.95rem;color:var(--text-light);line-height:1.6;margin-bottom:24px;}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -353,8 +352,12 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   
   .svc-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
   .card { padding: 28px 24px; border-radius: 10px; }
+  .svc-card { 
+    background-size: 50px 50px; 
+    background-position: right 10px bottom 10px; 
+  }
   .svc-num { display: block; font-size: 0.9rem; margin-bottom: 8px; }
-  .svc-icon-svg { margin-bottom: 16px; width: 40px; height: 40px; }
+  .svc-icon { margin-bottom: 12px; font-size: 1.5rem; }
   .svc-title { font-size: 1.2rem; margin-bottom: 8px; font-weight: 800; }
   .svc-desc { font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; color: var(--text-light); }
   .svc-tags { display: flex; gap: 4px; }
@@ -387,6 +390,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 
 <canvas id="bg-canvas"></canvas>
 
+<!-- 상단 내비게이션 바 -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
     <svg viewBox="0 0 40 48" fill="none">
@@ -436,6 +440,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </nav>
 
+<!-- 📱 모바일 전용 고정 하단바 -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
@@ -454,6 +459,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </a>
 </div>
 
+<!-- 🏠 메인 홈 페이지 -->
 <div id="page-home" class="page active">
   <div class="hero">
     <div class="hero-grid"></div>
@@ -480,101 +486,51 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
         <p class="sec-desc" style="margin:0 auto;">공공기관 및 유관단체의 정보시스템 효율화와 보안 거버넌스를 정립하는 맞춤형 포트폴리오입니다.</p>
       </div>
       
+      <!-- 💼 6대 서비스 카드 그리드 (image_181711.png 카드 레이아웃의 내부 뒷배경에 보안 패턴이 투명하게 적용되었습니다.) -->
       <div class="svc-grid">
         <div class="card svc-card">
           <div class="svc-num">01</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="15" y="15" width="30" height="22" rx="3" stroke="#1e6fcf" stroke-width="3" stroke-dasharray="2 2"/>
-              <rect x="55" y="15" width="30" height="22" rx="3" stroke="#1b7cf2" stroke-width="3"/>
-              <rect x="30" y="58" width="40" height="24" rx="4" stroke="#1e6fcf" stroke-width="3.5"/>
-              <path d="M30 26H55" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M50 37V58" stroke="#1e6fcf" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
-              <circle cx="50" cy="47" r="4" fill="#1b7cf2"/>
-            </svg>
-          </div>
+          <div class="svc-icon">📊</div>
           <h3 class="svc-title">통합 구축 자문 · PMO</h3>
           <p class="svc-desc">공공 프로젝트 및 시스템 통합 사업의 성공을 위한 고품질 기술 아키텍처와 PMO 관리를 지원합니다.</p>
           <div class="svc-tags"><span class="tag">통합 구축</span><span class="tag">PMO 역할</span></div>
           <button class="svc-more" onclick="showPage('business',0)">서비스 상세 보기 →</button>
         </div>
-
         <div class="card svc-card">
           <div class="svc-num">02</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M30 28C30 36 70 36 70 28M30 48C30 56 70 56 70 48M30 68C30 76 70 76 70 68" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
-              <rect x="25" y="15" width="50" height="68" rx="6" stroke="#1e6fcf" stroke-width="3.5"/>
-              <circle cx="50" cy="48" r="8" stroke="#1e6fcf" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="svc-icon">💡</div>
           <h3 class="svc-title">공공데이터 자문</h3>
           <p class="svc-desc">행정·공공기관이 보유한 데이터의 민간 개방 표준 수립 및 데이터 품질 관리 체계를 완벽하게 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 개방</span><span class="tag">품질관리</span></div>
           <button class="svc-more" onclick="showPage('business',1)">서비스 상세 보기 →</button>
         </div>
-
         <div class="card svc-card">
           <div class="svc-num">03</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="15" width="60" height="18" rx="3" stroke="#1e6fcf" stroke-width="3"/>
-              <rect x="20" y="41" width="60" height="18" rx="3" stroke="#1e6fcf" stroke-width="3"/>
-              <rect x="20" y="67" width="60" height="18" rx="3" stroke="#1b7cf2" stroke-width="3"/>
-              <circle cx="30" cy="24" r="2" fill="#1b7cf2"/><circle cx="30" cy="50" r="2" fill="#1b7cf2"/><circle cx="30" cy="76" r="2" fill="#22c55e"/>
-              <line x1="65" y1="24" x2="72" y2="24" stroke="#64748b" stroke-width="2.5"/>
-              <line x1="65" y1="50" x2="72" y2="50" stroke="#64748b" stroke-width="2.5"/>
-              <line x1="65" y1="76" x2="72" y2="76" stroke="#22c55e" stroke-width="2.5"/>
-            </svg>
-          </div>
+          <div class="svc-icon">🏛️</div>
           <h3 class="svc-title">공공기관 전산 자문</h3>
           <p class="svc-desc">일선 공공기관 전산실 인프라 고도화, 전산 장비 사양 검토, 정보화 계획 수립을 밀착 가이드합니다.</p>
           <div class="svc-tags"><span class="tag">전산 인프라</span><span class="tag">장비 규격 검토</span></div>
           <button class="svc-more" onclick="showPage('business',2)">서비스 상세 보기 →</button>
         </div>
-
         <div class="card svc-card">
           <div class="svc-num">04</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" stroke="#1e6fcf" stroke-width="2" stroke-dasharray="3 3"/>
-              <path d="M50 22C66 22 76 32 76 48C76 68 50 84 50 84C50 84 24 68 24 48C24 32 34 22 50 22Z" stroke="#1e6fcf" stroke-width="3.5" fill="#f8fafc" fill-opacity="0.2"/>
-              <circle cx="50" cy="46" r="6" stroke="#1b7cf2" stroke-width="2.5"/>
-            </svg>
-          </div>
+          <div class="svc-icon">🔒</div>
           <h3 class="svc-title">정보보안 컨설팅</h3>
           <p class="svc-desc">IT 인프라 전반의 위협요소를 철저히 진단하고, 공공 지침에 부합하는 보안 프레임워크를 설계합니다.</p>
           <div class="svc-tags"><span class="tag">취약점 분석</span><span class="tag">인프라 진단</span></div>
           <button class="svc-more" onclick="showPage('business',3)">서비스 상세 보기 →</button>
         </div>
-
         <div class="card svc-card">
           <div class="svc-num">05</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="44" width="40" height="30" rx="4" stroke="#1e6fcf" stroke-width="3.5"/>
-              <path d="M38 44V34C38 26 43 20 50 20C57 20 62 26 62 34V44" stroke="#1b7cf2" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="50" cy="56" r="3.5" fill="#1b7cf2"/>
-              <path d="M50 60V66" stroke="#1b7cf2" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="svc-icon">👤</div>
           <h3 class="svc-title">개인정보보호 컨설팅</h3>
           <p class="svc-desc">개인정보보호법 컴플라이언스 준수 체계 수립 및 공공기관 실무 중심의 정밀 보호수준 평가 대응을 지원합니다.</p>
           <div class="svc-tags"><span class="tag">보호수준 평가</span><span class="tag">내부관리계획</span></div>
           <button class="svc-more" onclick="showPage('business',4)">서비스 상세 보기 →</button>
         </div>
-
         <div class="card svc-card">
           <div class="svc-num">06</div>
-          <div class="svc-icon-svg">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 76H80" stroke="#1e6fcf" stroke-width="4" stroke-linecap="round"/>
-              <rect x="26" y="20" width="48" height="44" rx="3" stroke="#1e6fcf" stroke-width="3.5"/>
-              <path d="M36 36L46 46L64 26" stroke="#1b7cf2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="44" y1="64" x2="38" y2="76" stroke="#1e6fcf" stroke-width="2.5"/>
-              <line x1="56" y1="64" x2="62" y2="76" stroke="#1e6fcf" stroke-width="2.5"/>
-            </svg>
-          </div>
+          <div class="svc-icon">📚</div>
           <h3 class="svc-title">교육·훈련 및 세미나</h3>
           <p class="svc-desc">공공단체를 위한 맞춤형 악성메일 모의훈련 시스템 대행 및 수료증 발급형 실무 세미나를 정기 운영합니다.</p>
           <div class="svc-tags"><span class="tag">모의 훈련</span><span class="tag">수료증 발급</span></div>
@@ -603,6 +559,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
+<!-- 🏢 회사소개 페이지 -->
 <div id="page-company" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Company</span></div>
@@ -657,6 +614,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </div>
 
+<!-- 💼 사업영역 페이지 -->
 <div id="page-business" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Business</span></div>
@@ -763,6 +721,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
+<!-- 📈 수행실적 페이지 -->
 <div id="page-performance" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Performance</span></div>
@@ -825,6 +784,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </div>
 
+<!-- 📞 문의하기 페이지 -->
 <div id="page-contact" class="page">
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Contact Us</span></div>
@@ -897,6 +857,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </section>
 </div>
 
+<!-- 📋 푸터 섹션 -->
 <footer>
   <div class="footer-top inner">
     <div class="footer-brand">
