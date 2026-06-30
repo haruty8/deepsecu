@@ -39,7 +39,6 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  /* 🛠️ PC/모바일 기본 구분 없이 플로팅 바 존재 여부에 대비해 body 자체에 하단 기본 여백을 부여합니다. */
   padding-bottom: 80px; 
 }
 
@@ -101,7 +100,7 @@ nav{
 .nav-cta{
   background:var(--dark-blue);
   color:#fff;padding:10px 20px;border-radius:6px;
-  font-size:0.9rem;font-weight:700;text-decoration:none;
+  font-size:0.9amp;font-weight:700;text-decoration:none;
   transition:all .2s;
 }
 .nav-cta:hover{background:var(--accent);}
@@ -181,6 +180,7 @@ nav{
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
 
+/* 🛠️ 서비스 카드 배경 가시성 개선 */
 .svc-card{
   position:relative;
   background-size:cover;
@@ -192,6 +192,7 @@ nav{
   display:flex;
   flex-direction:column;
   min-height:380px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .svc-card.bg-01 { background-image: url('seminar.jpg'); }
 .svc-card.bg-02 { background-image: url('public_data.jpg'); }
@@ -200,23 +201,26 @@ nav{
 .svc-card.bg-05 { background-image: url('privacy.jpg'); }
 .svc-card.bg-06 { background-image: url('seminar.jpg'); }
 
+/* 기본 어두운 딤 처리를 낮추고, 텍스트 가독성을 위해 하단 그라데이션 적용 */
 .svc-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 17, 40, 0.65) 0%, rgba(10, 17, 40, 0.92) 100%);
+  background: linear-gradient(to bottom, rgba(10, 17, 40, 0.45) 0%, rgba(10, 17, 40, 0.75) 50%, rgba(10, 17, 40, 0.85) 100%);
   z-index: -1;
-  transition: opacity 0.3s;
-}
-.svc-card:hover::before {
-  background: linear-gradient(to bottom, rgba(30, 111, 207, 0.7) 0%, rgba(10, 17, 40, 0.95) 100%);
+  transition: background 0.3s, opacity 0.3s;
 }
 
-.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+/* 마우스 호버 시 참고 사이트 스타일처럼 세련된 딥시큐 블루 레이어가 은은하게 덮이도록 수정 */
+.svc-card:hover::before {
+  background: linear-gradient(to bottom, rgba(30, 111, 207, 0.5) 0%, rgba(10, 17, 40, 0.85) 100%);
+}
+
+.svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:16px;}
 .svc-title{font-size:1.35rem;font-weight:800;color:#ffffff;margin-bottom:12px;letter-spacing:-0.5px;}
-.svc-desc{font-size:0.95rem;color:#cbd5e1;line-height:1.6;margin-bottom:24px;}
+.svc-desc{font-size:0.95rem;color:#e2e8f0;line-height:1.6;margin-bottom:24px;word-break:keep-all;}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
-.svc-card .tag{background:rgba(255,255,255,0.1);color:#ffffff;font-size:0.78rem;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(255,255,255,0.15);}
+.svc-card .tag{background:rgba(255,255,255,0.15);color:#ffffff;font-size:0.78rem;padding:4px 10px;border-radius:4px;font-weight:600;border:1px solid rgba(255,255,255,0.25);backdrop-filter: blur(2px);}
 
 .svc-more{
   display:inline-flex;
@@ -892,7 +896,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 
     <div class="inner">
       <div class="map-wrap" id="map-section">
-        <iframe src="https://map.kakao.com/link/map/DeepSecu,37.499117,127.130883/embed" loading="lazy"></iframe>
+        <iframe src="https://map.kakao.com/link/map/DeepSecu,37.499117,127.130883" loading="lazy"></iframe>
         <div class="map-info">
           <div class="map-info-item"><span>📍</span> 서울시 송파구 마천로8길 1 (5호선 오금역 도보 5분)</div>
           <a class="map-link" href="https://map.kakao.com/link/map/DeepSecu,37.499117,127.130883" target="_blank">🗺️ 카카오맵 연결</a>
