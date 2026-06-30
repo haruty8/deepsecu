@@ -180,7 +180,7 @@ nav{
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:#ffffff;line-height:1;}
 .stat-label{font-size:0.85rem;color:#64748b;margin-top:6px;font-weight:600;}
 
-/* 핵심 서비스 섹션 (미니멀 이미지 배경형 스타일) */
+/* 핵심 서비스 섹션 */
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
 
@@ -203,7 +203,6 @@ nav{
 .svc-card.bg-05 { background-image: url('privacy.jpg'); }
 .svc-card.bg-06 { background-image: url('seminar.jpg'); }
 
-/* 오버레이 암전 처리 효과 최적화 */
 .svc-card::before {
   content: '';
   position: absolute;
@@ -216,7 +215,6 @@ nav{
   background: linear-gradient(to bottom, rgba(30, 111, 207, 0.7) 0%, rgba(10, 17, 40, 0.95) 100%);
 }
 
-/* 아이콘 삭제 후 여백 구조 조정 */
 .svc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.4);margin-bottom:16px;}
 .svc-title{font-size:1.35rem;font-weight:800;color:#ffffff;margin-bottom:12px;letter-spacing:-0.5px;}
 .svc-desc{font-size:0.95rem;color:#cbd5e1;line-height:1.6;margin-bottom:24px;}
@@ -246,7 +244,7 @@ nav{
 .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;}
 .num-item{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:36px 24px;text-align:center;box-shadow:0 4px 12px var(--shadow);}
 .num-big{font-family:'Plus Jakarta Sans',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:12px;}
-.num-label{font-size:0.92rem;color:var(--text-muted);line-5:1.5;font-weight:700;}
+.num-label{font-size:0.92rem;color:var(--text-muted);line-height:1.5;font-weight:700;}
 
 /* 🏢 COMPANY PAGE */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
@@ -352,7 +350,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col h5{font-size:0.9rem;font-weight:700;color:var(--text-main);margin-bottom:14px;}
 .footer-col a{display:block;font-size:0.88rem;color:var(--text-light);text-decoration:none;margin-bottom:10px;}
 .footer-col a:hover{color:var(--accent);}
-.footer-bottom{display:flex;justify-content:between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
 /* 모바일 하단 플로팅 네비 바 */
 .mobile-quick-bar {
@@ -376,6 +374,9 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .gnb, .nav-right { display:none; }
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
+  
+  /* 🛠️ 모바일 환경에서 푸터 콘텐츠가 플로팅 바에 가려지지 않도록 최하단 여백 추가 */
+  footer { padding: 0 20px; padding-bottom: 80px; } 
   
   #page-home .hero { 
     padding:60px 20px 80px; 
@@ -545,7 +546,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
         <p class="sec-desc" style="margin:0 auto;">공공기관 및 유관단체의 정보시스템 효율화와 보안 거버넌스를 정립하는 맞춤형 포트폴리오입니다.</p>
       </div>
       
-      <!-- 🛠️ 이모지 아이콘을 제거하여 직관성과 가독성을 극대화한 카드 디자인 -->
       <div class="svc-grid">
         <div class="card svc-card bg-01">
           <div class="svc-num">01</div>
