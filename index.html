@@ -1010,12 +1010,22 @@ function filterPf(btn,cat){
 <script src="https://q13ayhhogpku06x5f5ey9de9.115.68.218.28.sslip.io/widget.js" data-chatbot-id="c6d234cb-1e27-465b-9f2d-5c15f507152d" data-api-base-url="https://i7k9ydi9gcr0w4bussh20ds5.115.68.218.28.sslip.io/api" data-open-on-load="false" data-launcher-icon="custom" data-launcher-icon-url="https://q13ayhhogpku06x5f5ey9de9.115.68.218.28.sslip.io/widget-icons/generated/8.png"></script>
 
 <style>
-  /* 솔루션에 따라 생성되는 위젯 컨테이너 id나 클래스가 다를 수 있습니다. */
-  /* 일반적인 위젯 레이어 우선순위를 대폭 끌어올립니다. */
-  iframe[id*="chatbot"], div[class*="chatbot"], #widget-parent {
-    z-index: 99999 !important;
+  /* 챗봇 위젯이 하단에 둥둥 떠다니지 않도록 스타일 강제 오버라이딩 */
+  div[class*="widget"], div[id*="widget"], iframe[id*="chatbot"], .chat-widget-container {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 40px auto !important;
+    width: 100% !important;
+    max-width: 450px !important; /* 테스트하기 적당한 박스 크기 */
+    height: 600px !important;
+    display: block !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+    z-index: 1 !important;
   }
 </style>
-
+  
 </body>
 </html>
