@@ -1015,6 +1015,14 @@ function filterPf(btn,cat){
   data-launcher-icon="custom"
   data-launcher-icon-url="https://q13ayhhogpku06x5f5ey9de9.115.68.218.28.sslip.io/widget-icons/generated/8.png">
 </script>
+
+<style>
+  /* 솔루션에 따라 생성되는 위젯 컨테이너 id나 클래스가 다를 수 있습니다. */
+  /* 일반적인 위젯 레이어 우선순위를 대폭 끌어올립니다. */
+  iframe[id*="chatbot"], div[class*="chatbot"], #widget-parent {
+    z-index: 99999 !important;
+  }
+</style>
   
 </body>
 </html>
