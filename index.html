@@ -39,11 +39,8 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 60px; /* 모바일 하단 플로팅 바 여백 */
-}
-
-@media(min-width:961px) {
-  body { padding-bottom: 0; }
+  /* 🛠️ PC/모바일 기본 구분 없이 플로팅 바 존재 여부에 대비해 body 자체에 하단 기본 여백을 부여합니다. */
+  padding-bottom: 80px; 
 }
 
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
@@ -375,8 +372,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
-  /* 🛠️ 모바일 환경에서 푸터 콘텐츠가 플로팅 바에 가려지지 않도록 최하단 여백 추가 */
-  footer { padding: 0 20px; padding-bottom: 80px; } 
+  footer { padding: 0 20px; } 
   
   #page-home .hero { 
     padding:60px 20px 80px; 
