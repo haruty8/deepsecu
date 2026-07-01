@@ -291,32 +291,11 @@ nav{
 .biz-panel.active {display:block;}
 
 .biz-detail{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;}
-
-/* 🛠️ 이미지 프레임 및 개별 정렬 최적화 수정한 부분 */
 .biz-visual{
-  background:var(--bg-gray);
-  border:1px solid var(--border);
-  border-radius:12px;
-  overflow:hidden;
-  height:320px;            /* 고정 높이를 주어 레이아웃 통일 */
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:var(--bg-gray);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;height:320px;
 }
-/* 일반 가로형 실무 사진들은 공백 없이 꽉 채움 */
-.biz-visual img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-/* 챗봇 세로형 목업 이미지만 글자/UI가 안 잘리도록 세로 높이에 맞춰 비율 축소 */
-.biz-visual img.v-contain{
-  width:auto;
-  height:100%;
-  object-fit:contain;
-}
-
+.biz-visual img{width:100%;height:100%;object-fit:cover;}
 .biz-info h2{font-size:1.8rem;font-weight:800;color:var(--text-main);margin-bottom:16px;letter-spacing:-0.03em;}
 .biz-info p{color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:24px;}
 .biz-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
@@ -468,13 +447,7 @@ footer{
   .perf-stat { padding: 20px; }
   .perf-stat .big { font-size: 2.2rem; }
   
-  .biz-visual { 
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  .biz-visual { height: 200px; }
   .contact-form { padding: 24px 16px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .map-info { padding: 16px; flex-direction: column; align-items: stretch; gap: 12px; }
@@ -772,8 +745,7 @@ footer{
 
       <div class="biz-panel active" id="bp0">
         <div class="biz-detail">
-          <!-- 🚀 챗봇 이미지에만 별도로 class="v-contain" 클래스 부여 -->
-          <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot SaaS" class="v-contain"></div>
+          <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot SaaS"></div>
           <div class="biz-info">
             <h2>합리적인 과금 방식의 공공 맞춤형 AI 지능형 챗봇 공급</h2>
             <p>초기 대규모 개발 가이드 설계 부담 없이, 기관 웹 사이트에 간단한 스크립트 플러그인만으로 연동되는 딥시큐 자체 개발 인텔리전트 챗봇 위젯 솔루션 서비스입니다.</p>
@@ -968,13 +940,13 @@ footer{
             <label>요청 자문 분야 *</label>
             <select name="문의서비스" required>
               <option value="">서비스를 선택해주세요</option>
-              <option value="지능형 AI 챗봇 서비스 도입 (SaaS형 과금)">지능형 AI 챗봇 서비스 도입 (SaaS형 과금)</option>
-              <option value="통합 인프라 구축 자문 및 PMO">통합 인프라 구축 자문 및 PMO</option>
-              <option value="공공데이터 개방 및 품질 자문">공공데이터 개방 및 품질 자문</option>
-              <option value="공공기관 전산 장비 및 기술 규격 자문">공공기관 전산 장비 및 기술 규격 자문</option>
-              <option value="정보보안 종합 컨설팅">정보보안 종합 컨설팅</option>
-              <option value="개인정보보호 수준평가 대응">개인정보보호 수준평가 대응</option>
-              <option value="교육·훈련 및 세미나 요청">교육·훈련 및 세미나 요청</option>
+              <option>지능형 AI 챗봇 서비스 도입 (SaaS형 과금)</option>
+              <option>통합 인프라 구축 자문 및 PMO</option>
+              <option>공공데이터 개방 및 품질 자문</option>
+              <option>공공기관 전산 장비 및 기술 규격 자문</option>
+              <option>정보보안 종합 컨설팅</option>
+              <option>개인정보보호 수준평가 대응</option>
+              <option>교육·훈련 및 세미나 요청</option>
             </select>
           </div>
           <div class="fg"><label>자문 요청 배경 요약</label><textarea name="문의내용" placeholder="자문 일치 일정이나 희망 인프라 이슈를 요약해 주시면 신속히 보정 응대해 드립니다."></textarea></div>
