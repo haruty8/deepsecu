@@ -144,26 +144,26 @@ nav{
 }
 .card:hover{border-color:#cbd5e1; transform:translateY(-4px); box-shadow:0 12px 24px rgba(15, 23, 42, 0.08);}
 
-/* 🏠 HOME PAGE HERO AREA (배경 이미지 및 스케일 최적화 반영) */
+/* 🏠 HOME PAGE HERO AREA (원래 글씨 크기 복구 + privacy.jpg 및 투명도 업그레이드) */
 #page-home .hero{
   position:relative;z-index:1;
   min-height:calc(100vh - 72px);
   display:flex;align-items:center;
   padding:80px 40px;
   
-  /* 🛠️ 배경 이미지와 딤(Dim) 처리용 기본 컬러 레이어링 */
+  /* 🛠️ privacy.jpg 배경 지정 */
   background-image: url('privacy.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #060b19;
 }
-/* 🛠️ 가독성 확보를 위한 그라데이션 오버레이 */
+/* 🛠️ 사진이 더 잘 보이도록 오버레이 농도를 부드럽게 조정 */
 #page-home .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(6, 11, 25, 0.92) 0%, rgba(6, 11, 25, 0.82) 40%, rgba(6, 11, 25, 0.55) 100%);
+  background: linear-gradient(to right, rgba(6, 11, 25, 0.75) 0%, rgba(6, 11, 25, 0.6) 40%, rgba(6, 11, 25, 0.35) 100%);
   z-index: 1;
 }
 
@@ -173,13 +173,13 @@ nav{
   background-size:60px 60px;
   mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
   -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
-  z-index: 2; /* 오버레이보다 위 */
+  z-index: 2;
 }
-.hero-content{position:relative;max-width:850px;z-index:3;} /* 텍스트 최상단 정렬 */
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:8px 18px;border-radius:30px;font-size:0.9rem;color:#94a3b8;letter-spacing:0.5px;margin-bottom:28px;font-weight:600;}
-.hero-title{font-size:clamp(2.4rem, 5vw, 4.2rem);font-weight:800;line-height:1.3;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;}
+.hero-content{position:relative;max-width:800px;z-index:3;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:6px 16px;border-radius:30px;font-size:0.8rem;color:#94a3b8;letter-spacing:0.5px;margin-bottom:24px;font-weight:600;}
+.hero-title{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:800;line-height:1.25;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;}
 .hero-title .hl{color:var(--bright);background:linear-gradient(to right, #6366f1, #3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{font-size:1.35rem;color:#cbd5e1;line-height:1.75;margin-bottom:44px;font-weight:400;word-break:keep-all;}
+.hero-sub{font-size:1.2rem;color:#94a3b8;line-height:1.7;margin-bottom:40px;font-weight:400;}
 .hero-btns{display:flex;gap:12px;}
 .hero-btns .btn-p {background: var(--bright);}
 .hero-btns .btn-o {background: transparent; color: #fff; border-color: rgba(255,255,255,.2);}
@@ -191,7 +191,7 @@ nav{
   z-index: 3;
 }
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:#ffffff;line-height:1;}
-.stat-label{font-size:0.85rem;color:#94a3b8;margin-top:6px;font-weight:600;}
+.stat-label{font-size:0.85rem;color:#64748b;margin-top:6px;font-weight:600;}
 
 /* 핵심 서비스 섹션 */
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
@@ -387,18 +387,17 @@ footer{
   footer { padding: 0 20px; padding-bottom: 76px; } 
   
   #page-home .hero { 
-    padding:80px 20px 100px; 
+    padding:60px 20px 80px; 
     min-height:auto;
     text-align: center;
-    background-position: 65% center; /* 모바일 인물 구도에 맞게 배경 살짝 이동 */
   }
   #page-home .hero::before {
-    background: rgba(6, 11, 25, 0.85); /* 모바일 중앙 텍스트 가독성을 위해 전체 정밀 딤처리 */
+    background: rgba(6, 11, 25, 0.75); /* 모바일도 투명도를 맞춰 사진 시인성 향상 */
   }
   .hero-content { margin:0 auto; }
-  .hero-badge { font-size:0.8rem; padding:6px 14px; margin-bottom:18px; }
-  .hero-title { font-size:2.1rem; line-height:1.35; margin-bottom:18px; word-break:keep-all; }
-  .hero-sub { font-size:1.05rem; line-height:1.65; margin-bottom:32px; color: #cbd5e1; word-break:keep-all; }
+  .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; }
+  .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; }
+  .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #94a3b8; word-break:keep-all; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
   .hero-stats { display: none; } 
   
