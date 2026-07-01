@@ -39,7 +39,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 80px; 
+  padding-bottom: 0px; /* 🛠️ 웹 화면 하단 불필요한 기본 여백 제거 */
 }
 
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
@@ -180,7 +180,7 @@ nav{
 .home-services{background:var(--bg-gray);border-bottom:1px solid var(--border);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
 
-/* 🛠️ 서비스 카드 배경 가시성 개선 */
+/* 서비스 카드 배경 */
 .svc-card{
   position:relative;
   background-size:cover;
@@ -342,7 +342,12 @@ nav{
 .map-link{background:var(--bg-gray);color:var(--text-main);padding:10px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;font-weight:700;border:1px solid var(--border);}
 
 /* 📋 FOOTER */
-footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40px;}
+footer{
+  background:var(--bg-gray);
+  border-top:1px solid var(--border);
+  padding:0 40px;
+  padding-bottom: 24px; /* 🛠️ 웹 화면 주소 아래 여백을 깔끔하게 축소 (기본값) */
+}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding:60px 0 32px;border-bottom:1px solid var(--border);}
 .footer-brand .logo{display:flex;align-items:center;gap:6px;font-size:1.3rem;font-weight:800;color:var(--dark-blue);margin-bottom:12px;}
 .footer-brand p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
@@ -351,7 +356,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 (기본 비활성화 - 데스크톱용) */
+/* 모바일 하단 플로팅 네비 바 (웹 전용 기본 숨김) */
 .mobile-quick-bar { display: none; }
 
 /* 📱 MOBILE & TABLET RESPONSIVE DEEP REBUILD */
@@ -361,7 +366,8 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
-  footer { padding: 0 20px; padding-bottom: 80px; } /* 하단바 두께만큼 푸터 여백 추가 */
+  /* 🛠️ 모바일 환경에서만 플로팅 바 두께(62px)에 맞추어 주소 아래 밀림 방지 패딩 추가 */
+  footer { padding: 0 20px; padding-bottom: 76px; } 
   
   #page-home .hero { 
     padding:60px 20px 80px; 
@@ -432,7 +438,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .map-link { text-align: center; }
   .footer-bottom { flex-direction: column; gap: 6px; text-align: left; align-items: flex-start; }
 
-  /* 🛠️ 모바일 플로팅 퀵바 (5칸 체제 개편) */
+  /* 모바일 플로팅 퀵바 (5칸 체제) */
   .mobile-quick-bar {
     position: fixed; bottom: 0; left: 0; right: 0; height: 62px;
     background: rgba(255, 255, 255, 0.96);
@@ -459,25 +465,24 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   /* 5번째 빈 보이지 않는 칸 설정 (챗봇 배치용) */
   .quick-space-holder {
     flex: 1;
-    pointer-events: none; /* 클릭 이벤트가 하단바를 뚫고 뒤의 요소나 챗봇에 가도록 처리 */
+    pointer-events: none;
     background: transparent;
   }
 
-  /* 🛠️ 하단바 5번째 칸 영역 정중앙에 플로팅 챗봇 버튼을 강제 고정 및 스타일 싱크 */
+  /* 하단바 5번째 칸 영역 정중앙에 플로팅 챗봇 버튼을 강제 고정 */
   iframe[id^="deepsecu-chatbot"], 
   div[class*="chatbot"], 
   #deepsecu-chat-widget,
   .deepsecu-launcher {
     bottom: 0px !important;
     right: 0px !important;
-    /* 모바일 5분할 격자 중 5번째 칸의 가로 너비(20vw)에 맞추어 중앙 정렬 */
     left: 80vw !important; 
     width: 20vw !important;
     height: 62px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    z-index: 1010 !important; /* 하단바 배경(1000)보다 살짝 높게 설정 */
+    z-index: 1010 !important;
   }
 }
 </style>
@@ -535,7 +540,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </nav>
 
-<!-- 🛠️ 모바일 5칸 네비게이션 바 개편 (4개 메뉴 버튼 + 1개 우측 빈 공간 슬롯) -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
@@ -549,7 +553,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   <a href="#" class="quick-item highlight" id="m-btn-contact" onclick="showPage('contact'); return false;">
     <span class="ico">✉️</span><span>자문신청</span>
   </a>
-  <!-- 5번째 칸: 우측 레이아웃 확보용 투명 슬롯 (이 위에 스크립트 기반 챗봇 아이콘이 위치함) -->
   <div class="quick-space-holder"></div>
 </div>
 
@@ -894,7 +897,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
           </div>
           <div class="form-row">
             <div class="fg"><label>직통 연락처 *</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
-            <div class="fg"><label>공식 이메일 *</label><input type="email" name="이메일" placeholder="example@agency.go.kr" required></div>
+            <div class="fg"><label>공식 이메일 *</label><input type="email" name="이email" placeholder="example@agency.go.kr" required></div>
           </div>
           <div class="fg">
             <label>요청 자문 분야 *</label>
