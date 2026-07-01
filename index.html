@@ -453,12 +453,12 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .map-link { text-align: center; }
   .footer-bottom { flex-direction: column; gap: 6px; text-align: left; align-items: flex-start; }
 
-  /* 🛠️ [추가] 모바일에서 외부 AI 챗봇 아이콘이 하단 플로팅 퀵바를 가리지 않도록 위치 강제 제어 */
-  iframe[id^="deepsecu-chatbot"], 
-  div[class*="chatbot"], 
-  #deepsecu-chat-widget,
-  .deepsecu-launcher {
-    bottom: 76px !important; /* 하단바 높이(60px) + 여유 여백(16px) 적용 */
+  /* 🛠️ [강화] 모든 형태의 외부 위젯 고정 레이아웃을 전역 검색하여 위치 상향 강제 조절 */
+  iframe, div, button, a {
+    &[id*="chat" i], &[id*="widget" i], &[id*="launcher" i],
+    &[class*="chat" i], &[class*="widget" i], &[class*="launcher" i] {
+      bottom: 76px !important;
+    }
   }
 }
 </style>
@@ -1019,6 +1019,7 @@ function filterPf(btn,cat){
 }
 </script>
 
+<!-- 🛠️ [수정] 모바일 화면에서 위젯 자체의 bottom 속성 위치 오프셋 바인딩 강제 유도 -->
 <script
   src="https://chat.deepsecu.co.kr/widget.js"
   data-chatbot-id="c6d234cb-1e27-465b-9f2d-5c15f507152d"
@@ -1026,6 +1027,7 @@ function filterPf(btn,cat){
   data-open-on-load="false"
   data-launcher-icon="custom"
   data-launcher-icon-url="https://chat.deepsecu.co.kr/widget-icons/generated/8.png"
+  data-mobile-bottom-offset="76"
 ></script>
   
 </body>
