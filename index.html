@@ -39,7 +39,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 0px; /* 🛠️ 웹 화면 하단 불필요한 기본 여백 제거 */
+  padding-bottom: 0px; 
 }
 
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
@@ -157,12 +157,10 @@ nav{
   background-repeat: no-repeat;
   background-color: #060b19;
 }
-/* 🛠️ 가독성 확보를 위해 사진 노출도를 살짝 낮춘 오버레이 */
 #page-home .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  /* 🛠️ 기존의 0.92 ~ 0.55 수준으로 불투명도 조정 */
   background: linear-gradient(to right, rgba(6, 11, 25, 0.92) 0%, rgba(6, 11, 25, 0.78) 40%, rgba(6, 11, 25, 0.55) 100%);
   z-index: 1;
 }
@@ -210,6 +208,7 @@ nav{
   min-height:380px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+.svc-card.bg-00 { background-image: url('chatbot.jpg'); } /* 🛠️ 챗봇 이미지 맵핑 */
 .svc-card.bg-01 { background-image: url('seminar.jpg'); }
 .svc-card.bg-02 { background-image: url('public_data.jpg'); }
 .svc-card.bg-03 { background-image: url('IT_Infrastructure.jpg'); }
@@ -362,7 +361,7 @@ footer{
   background:var(--bg-gray);
   border-top:1px solid var(--border);
   padding:0 40px;
-  padding-bottom: 24px; /* 🛠️ 웹 화면 주소 아래 여백을 깔끔하게 축소 (기본값) */
+  padding-bottom: 24px; 
 }
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding:60px 0 32px;border-bottom:1px solid var(--border);}
 .footer-brand .logo{display:flex;align-items:center;gap:6px;font-size:1.3rem;font-weight:800;color:var(--dark-blue);margin-bottom:12px;}
@@ -372,7 +371,7 @@ footer{
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 (웹 전용 기본 숨김) */
+/* 모바일 하단 플로팅 네비 바 */
 .mobile-quick-bar { display: none; }
 
 /* 📱 MOBILE & TABLET RESPONSIVE DEEP REBUILD */
@@ -382,7 +381,6 @@ footer{
   .sec, .page-banner { padding:56px 20px; }
   .page { padding-top:60px; }
   
-  /* 🛠️ 모바일 환경에서만 플로팅 바 두께(62px)에 맞추어 주소 아래 밀림 방지 패딩 추가 */
   footer { padding: 0 20px; padding-bottom: 76px; } 
   
   #page-home .hero { 
@@ -391,7 +389,7 @@ footer{
     text-align: center;
   }
   #page-home .hero::before {
-    background: rgba(6, 11, 25, 0.85); /* 모바일 중앙 정렬 글씨를 고려해 오버레이 조절 */
+    background: rgba(6, 11, 25, 0.85); 
   }
   .hero-content { margin:0 auto; }
   .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; }
@@ -400,17 +398,18 @@ footer{
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
   .hero-stats { display: none; } 
   
-  /* 모바일 비즈니스 탭 2열 격자 구조 */
+  /* 모바일 비즈니스 탭 - 7개 항목을 스크롤 유연하게 대처하기 위해 격자형에서 유동형으로 수정 */
   .biz-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     border-bottom: none;
     margin-bottom: 32px;
   }
   .biz-tab {
+    flex: 1 1 calc(50% - 6px);
     padding: 12px 10px;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     text-align: center;
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -428,7 +427,6 @@ footer{
     border-color: var(--accent);
   }
 
-  /* 모바일 반응형 서비스 그리드 */
   .svc-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
   .svc-card { padding: 36px 24px 32px; min-height: 320px; border-radius: 12px; }
   .svc-num { display: block; margin-bottom: 12px; } 
@@ -456,7 +454,7 @@ footer{
   .map-link { text-align: center; }
   .footer-bottom { flex-direction: column; gap: 6px; text-align: left; align-items: flex-start; }
 
-  /* 모바일 플로팅 퀵바 (5칸 체제) */
+  /* 모바일 플로팅 퀵바 */
   .mobile-quick-bar {
     position: fixed; bottom: 0; left: 0; right: 0; height: 62px;
     background: rgba(255, 255, 255, 0.96);
@@ -480,14 +478,12 @@ footer{
     background: #d97706; 
   }
   
-  /* 5번째 빈 보이지 않는 칸 설정 (챗봇 배치용) */
   .quick-space-holder {
     flex: 1;
     pointer-events: none;
     background: transparent;
   }
 
-  /* 하단바 5번째 칸 영역 정중앙에 플로팅 챗봇 버튼을 강제 고정 */
   iframe[id^="deepsecu-chatbot"], 
   div[class*="chatbot"], 
   #deepsecu-chat-widget,
@@ -529,12 +525,14 @@ footer{
     <li>
       <a href="#" onclick="showPage('business');return false;">사업영역</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
-        <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
-        <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
-        <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
-        <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
-        <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
+        <!-- 🛠️ 신규 드롭다운 메뉴 추가 -->
+        <a href="#" onclick="showPage('business',0);return false;">AI 행정·보안 지능형 챗봇 구축 자문</a>
+        <a href="#" onclick="showPage('business',1);return false;">통합 구축 자문 · PMO</a>
+        <a href="#" onclick="showPage('business',2);return false;">공공데이터 자문</a>
+        <a href="#" onclick="showPage('business',3);return false;">공공기관 전산 자문</a>
+        <a href="#" onclick="showPage('business',4);return false;">정보보안 컨설팅</a>
+        <a href="#" onclick="showPage('business',5);return false;">개인정보보호 컨설팅</a>
+        <a href="#" onclick="showPage('business',6);return false;">교육·훈련 및 세미나</a>
       </div>
     </li>
     <li>
@@ -601,47 +599,55 @@ footer{
       </div>
       
       <div class="svc-grid">
-        <div class="card svc-card bg-01">
+        <!-- 🛠️ 1번째 서비스 홈 카드 추가 (AI 챗봇 자문) -->
+        <div class="card svc-card bg-00">
           <div class="svc-num">01</div>
+          <h3 class="svc-title">지능형 AI 챗봇 구축 자문</h3>
+          <p class="svc-desc">공공 대민 서비스 최적화 및 내부 전산 행정 효율화를 위한 안전하고 고도화된 지능형 AI 챗봇 빌더 도입을 컨설팅합니다.</p>
+          <div class="svc-tags"><span class="tag">지능형 행정</span><span class="tag">AI 거버넌스</span></div>
+          <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
+        </div>
+        <div class="card svc-card bg-01">
+          <div class="svc-num">02</div>
           <h3 class="svc-title">통합 구축 자문 · PMO</h3>
           <p class="svc-desc">공공 프로젝트 및 시스템 통합 사업의 성공을 위한 고품질 기술 아키텍처와 PMO 관리를 지원합니다.</p>
           <div class="svc-tags"><span class="tag">통합 구축</span><span class="tag">PMO 역할</span></div>
-          <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',1)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-02">
-          <div class="svc-num">02</div>
+          <div class="svc-num">03</div>
           <h3 class="svc-title">공공데이터 자문</h3>
           <p class="svc-desc">행정·공공기관이 보유한 데이터의 민간 개방 표준 수립 및 데이터 품질 관리 체계를 완벽하게 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 개방</span><span class="tag">품질관리</span></div>
-          <button class="svc-more" onclick="showPage('business',1)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-03">
-          <div class="svc-num">03</div>
+          <div class="svc-num">04</div>
           <h3 class="svc-title">공공기관 전산 자문</h3>
           <p class="svc-desc">일선 공공기관 전산실 인프라 고도화, 전산 장비 사양 검토, 정보화 계획 수립을 밀착 가이드합니다.</p>
           <div class="svc-tags"><span class="tag">전산 인프라</span><span class="tag">장비 규격 검토</span></div>
-          <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',3)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-04">
-          <div class="svc-num">04</div>
+          <div class="svc-num">05</div>
           <h3 class="svc-title">정보보안 컨설팅</h3>
           <p class="svc-desc">IT 인프라 전반의 위협요소를 철저히 진단하고, 공공 지침에 부합하는 보안 프레임워크를 설계합니다.</p>
           <div class="svc-tags"><span class="tag">취약점 분석</span><span class="tag">인프라 진단</span></div>
-          <button class="svc-more" onclick="showPage('business',3)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',4)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-05">
-          <div class="svc-num">05</div>
+          <div class="svc-num">06</div>
           <h3 class="svc-title">개인정보보호 컨설팅</h3>
           <p class="svc-desc">개인정보보호법 컴플라이언스 준수 체계 수립 및 공공기관 실무 중심의 정밀 보호수준 평가 대응을 지원합니다.</p>
           <div class="svc-tags"><span class="tag">보호수준 평가</span><span class="tag">내부관리계획</span></div>
-          <button class="svc-more" onclick="showPage('business',4)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',5)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-06">
-          <div class="svc-num">06</div>
+          <div class="svc-num">07</div>
           <h3 class="svc-title">교육·훈련 및 세미나</h3>
           <p class="svc-desc">공공단체를 위한 맞춤형 악성메일 모의훈련 시스템 대행 및 수료증 발급형 실무 세미나를 정기 운영합니다.</p>
           <div class="svc-tags"><span class="tag">모의 훈련</span><span class="tag">수료증 발급</span></div>
-          <button class="svc-more" onclick="showPage('business',5)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',6)">자세히 보기 →</button>
         </div>
       </div>
     </div>
@@ -724,21 +730,38 @@ footer{
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Business</span></div>
     <h1>사업 영역</h1>
-    <p>딥시큐(DeepSecu)가 제공하는 6대 핵심 전문 자문 및 컨설팅 포트폴리오입니다.</p>
+    <p>딥시큐(DeepSecu)가 제공하는 7대 핵심 전문 자문 및 컨설팅 포트폴리오입니다.</p>
   </div>
 
   <section class="sec">
     <div class="inner">
       <div class="biz-tabs" id="bizTabs">
-        <button class="biz-tab active" onclick="switchBizTab(0)">통합 구축 자문 · PMO</button>
-        <button class="biz-tab" onclick="switchBizTab(1)">공공데이터 자문</button>
-        <button class="biz-tab" onclick="switchBizTab(2)">공공기관 전산 자문</button>
-        <button class="biz-tab" onclick="switchBizTab(3)">정보보안 컨설팅</button>
-        <button class="biz-tab" onclick="switchBizTab(4)">개인정보보호 컨설팅</button>
-        <button class="biz-tab" onclick="switchBizTab(5)">교육·훈련 및 세미나</button>
+        <!-- 🛠️ 상단 탭 목록에 신규 항목 추가 및 인덱스 조정 -->
+        <button class="biz-tab active" onclick="switchBizTab(0)">AI 지능형 챗봇 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(1)">통합 구축 자문 · PMO</button>
+        <button class="biz-tab" onclick="switchBizTab(2)">공공데이터 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(3)">공공기관 전산 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(4)">정보보안 컨설팅</button>
+        <button class="biz-tab" onclick="switchBizTab(5)">개인정보보호 컨설팅</button>
+        <button class="biz-tab" onclick="switchBizTab(6)">교육·훈련 및 세미나</button>
       </div>
 
+      <!-- 🛠️ 0번째 신규 비즈니스 상세 패널 추가 -->
       <div class="biz-panel active" id="bp0">
+        <div class="biz-detail">
+          <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot Builder"></div>
+          <div class="biz-info">
+            <h2>대민 혁신 및 행정 효율을 위한 AI 지능형 챗봇 구축</h2>
+            <p>공공기관 웹사이트 내 24시간 끊김 없는 대민 가이드라인 스크리닝과 유연한 지능형 데이터 처리를 지원하는 전용 챗봇 위젯 인프라 구축 타당성 자문을 대행합니다.</p>
+            <ul class="biz-list">
+              <li>공공 컴플라이언스를 완벽 충족하는 독립형 AI 챗봇 빌더 가이드 제공</li>
+              <li>데이터 세트 학습 범위 조율 및 프라이버시 침해 요인 스크리닝</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="biz-panel" id="bp1">
         <div class="biz-detail">
           <div class="biz-visual"><img src="seminar.jpg" alt="PMO"></div>
           <div class="biz-info">
@@ -752,7 +775,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp1">
+      <div class="biz-panel" id="bp2">
         <div class="biz-detail">
           <div class="biz-visual"><img src="public_data.jpg" alt="Data"></div>
           <div class="biz-info">
@@ -766,7 +789,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp2">
+      <div class="biz-panel" id="bp3">
         <div class="biz-detail">
           <div class="biz-visual"><img src="IT_Infrastructure.jpg" alt="IT Infrastructure"></div>
           <div class="biz-info">
@@ -780,7 +803,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp3">
+      <div class="biz-panel" id="bp4">
         <div class="biz-detail">
           <div class="biz-visual"><img src="InfoSec.jpg" alt="Security"></div>
           <div class="biz-info">
@@ -794,7 +817,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp4">
+      <div class="biz-panel" id="bp5">
         <div class="biz-detail">
           <div class="biz-visual"><img src="privacy.jpg" alt="Privacy"></div>
           <div class="biz-info">
@@ -808,7 +831,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp5">
+      <div class="biz-panel" id="bp6">
         <div class="biz-detail">
           <div class="biz-visual"><img src="seminar.jpg" alt="Seminar"></div>
           <div class="biz-info">
@@ -921,6 +944,8 @@ footer{
             <label>요청 자문 분야 *</label>
             <select name="문의서비스" required>
               <option value="">서비스를 선택해주세요</option>
+              <!-- 🛠️ 셀렉트 박스 최상단에 항목 배정 -->
+              <option>AI 행정·보안 지능형 챗봇 구축 자문</option>
               <option>통합 인프라 구축 자문 및 PMO</option>
               <option>공공데이터 개방 및 품질 자문</option>
               <option>공공기관 전산 장비 및 기술 규격 자문</option>
@@ -973,12 +998,14 @@ footer{
     </div>
     <div class="footer-col">
       <h5>Business</h5>
-      <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
-      <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
-      <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
-      <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
-      <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
-      <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
+      <!-- 🛠️ 하단 꼬리말 내부 카테고리 업데이트 -->
+      <a href="#" onclick="showPage('business',0);return false;">AI 지능형 챗봇 자문</a>
+      <a href="#" onclick="showPage('business',1);return false;">통합 구축 자문 · PMO</a>
+      <a href="#" onclick="showPage('business',2);return false;">공공데이터 자문</a>
+      <a href="#" onclick="showPage('business',3);return false;">공공기관 전산 자문</a>
+      <a href="#" onclick="showPage('business',4);return false;">정보보안 컨설팅</a>
+      <a href="#" onclick="showPage('business',5);return false;">개인정보보호 컨설팅</a>
+      <a href="#" onclick="showPage('business',6);return false;">교육·훈련 및 세미나</a>
     </div>
     <div class="footer-col">
       <h5>Contact</h5>
@@ -1033,6 +1060,7 @@ function showPage(id, sub){
 }
 
 /* ── 탭 전환 함수군 ── */
+/* 🛠️ 전체 비즈니스 인덱스가 7개로 증가함에 따라 패널 인덱스 대응 유연화 */
 function switchBizTab(idx){
   const tabs=document.querySelectorAll('#bizTabs .biz-tab');
   const panels=document.querySelectorAll('[id^="bp"]');
