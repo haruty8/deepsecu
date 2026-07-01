@@ -351,7 +351,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 (4버튼 체제로 슬림화) */
+/* 모바일 하단 플로팅 네비 바 (4버튼 체제) */
 .mobile-quick-bar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -366,7 +366,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .quick-item span.ico { font-size: 1.2rem; }
 .quick-item.active { color: var(--accent); }
 
-/* 🟠 [수정] 자문신청 위치 변경 및 스타일 고도화 (AI 챗봇과 완벽 분리) */
 .quick-item.highlight { 
   background: #f59e0b; 
   color: #ffffff; 
@@ -453,6 +452,14 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   .map-info { padding: 16px; flex-direction: column; align-items: stretch; gap: 12px; }
   .map-link { text-align: center; }
   .footer-bottom { flex-direction: column; gap: 6px; text-align: left; align-items: flex-start; }
+
+  /* 🛠️ [추가] 모바일에서 외부 AI 챗봇 아이콘이 하단 플로팅 퀵바를 가리지 않도록 위치 강제 제어 */
+  iframe[id^="deepsecu-chatbot"], 
+  div[class*="chatbot"], 
+  #deepsecu-chat-widget,
+  .deepsecu-launcher {
+    bottom: 76px !important; /* 하단바 높이(60px) + 여유 여백(16px) 적용 */
+  }
 }
 </style>
 </head>
@@ -509,7 +516,6 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </nav>
 
-<!-- 📱 [수정] 자문신청 위치를 왼쪽으로 이동 및 전화연결 제거 (총 4버튼 체제) -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
