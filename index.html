@@ -351,7 +351,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .footer-col a:hover{color:var(--accent);}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:0.82rem;color:var(--text-light);}
 
-/* 모바일 하단 플로팅 네비 바 */
+/* 모바일 하단 플로팅 네비 바 (4버튼 체제로 슬림화) */
 .mobile-quick-bar {
   position: fixed; bottom: 0; left: 0; right: 0; height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -366,14 +366,14 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
 .quick-item span.ico { font-size: 1.2rem; }
 .quick-item.active { color: var(--accent); }
 
-/* 🟠 [수정] 자문신청 버튼 색상 변경 (AI 챗봇과 중첩 방지 및 주목도 향상) */
+/* 🟠 [수정] 자문신청 위치 변경 및 스타일 고도화 (AI 챗봇과 완벽 분리) */
 .quick-item.highlight { 
-  background: #f59e0b; /* 따뜻하고 세련된 오렌지 앰버 계열 */
+  background: #f59e0b; 
   color: #ffffff; 
   transition: background 0.2s;
 }
 .quick-item.highlight:hover {
-  background: #d97706; /* 조금 더 짙은 오렌지 브라운으로 호버 효과 */
+  background: #d97706; 
 }
 
 /* 📱 MOBILE & TABLET RESPONSIVE DEEP REBUILD */
@@ -509,6 +509,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   </div>
 </nav>
 
+<!-- 📱 [수정] 자문신청 위치를 왼쪽으로 이동 및 전화연결 제거 (총 4버튼 체제) -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
@@ -519,10 +520,7 @@ footer{background:var(--bg-gray);border-top:1px solid var(--border);padding:0 40
   <a href="#" class="quick-item" id="m-btn-perf" onclick="showPage('performance'); return false;">
     <span class="ico">📈</span><span>수행실적</span>
   </a>
-  <a href="tel:02-6285-6210" class="quick-item">
-    <span class="ico">📞</span><span>전화연결</span>
-  </a>
-  <a href="#" class="quick-item highlight" onclick="showPage('contact'); return false;">
+  <a href="#" class="quick-item highlight" id="m-btn-contact" onclick="showPage('contact'); return false;">
     <span class="ico">✉️</span><span>자문신청</span>
   </a>
 </div>
@@ -982,6 +980,7 @@ function showPage(id, sub){
   if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
   if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
   if(id === 'performance') document.getElementById('m-btn-perf')?.classList.add('active');
+  if(id === 'contact') document.getElementById('m-btn-contact')?.classList.add('active');
 }
 
 /* ── 탭 전환 함수군 ── */
