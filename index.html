@@ -292,21 +292,29 @@ nav{
 
 .biz-detail{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;}
 
-/* 🛠️ 이미지 영역 정렬 및 비율 깨짐 방지 수정한 부분 */
+/* 🛠️ 이미지 프레임 및 개별 정렬 최적화 수정한 부분 */
 .biz-visual{
   background:var(--bg-gray);
   border:1px solid var(--border);
   border-radius:12px;
   overflow:hidden;
-  height:320px;            /* 고정 높이 유지로 모든 탭의 카드 크기 통일 */
+  height:320px;            /* 고정 높이를 주어 레이아웃 통일 */
   display:flex;
   align-items:center;
   justify-content:center;
 }
+/* 일반 가로형 실무 사진들은 공백 없이 꽉 채움 */
 .biz-visual img{
-  width: auto;      /* 가로는 비율에 맞춰 자동으로 계산 */
-  height: 100%;     /* 세로 높이를 320px 박스에 100% 꽉 맞춤 */
-  object-fit: contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+/* 챗봇 세로형 목업 이미지만 글자/UI가 안 잘리도록 세로 높이에 맞춰 비율 축소 */
+.biz-visual img.v-contain{
+  width:auto;
+  height:100%;
+  object-fit:contain;
 }
 
 .biz-info h2{font-size:1.8rem;font-weight:800;color:var(--text-main);margin-bottom:16px;letter-spacing:-0.03em;}
@@ -460,9 +468,8 @@ footer{
   .perf-stat { padding: 20px; }
   .perf-stat .big { font-size: 2.2rem; }
   
-  /* 🛠️ 모바일 뷰어 전용 반응형 레이아웃 대응 수정한 부분 */
   .biz-visual { 
-    height: 240px;          /* 높이 일괄 제한 풀이 */
+    height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -765,7 +772,8 @@ footer{
 
       <div class="biz-panel active" id="bp0">
         <div class="biz-detail">
-          <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot SaaS"></div>
+          <!-- 🚀 챗봇 이미지에만 별도로 class="v-contain" 클래스 부여 -->
+          <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot SaaS" class="v-contain"></div>
           <div class="biz-info">
             <h2>합리적인 과금 방식의 공공 맞춤형 AI 지능형 챗봇 공급</h2>
             <p>초기 대규모 개발 가이드 설계 부담 없이, 기관 웹 사이트에 간단한 스크립트 플러그인만으로 연동되는 딥시큐 자체 개발 인텔리전트 챗봇 위젯 솔루션 서비스입니다.</p>
