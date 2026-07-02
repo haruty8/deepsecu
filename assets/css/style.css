@@ -137,7 +137,7 @@ nav{
   display:flex;align-items:center;
   padding:80px 40px;
   
-  background-image: url('privacy.jpg');
+  background-image: url('assets/images/privacy.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -194,13 +194,13 @@ nav{
   min-height:380px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.svc-card.bg-00 { background-image: url('chatbot.jpg'); } 
-.svc-card.bg-01 { background-image: url('seminar.jpg'); }
-.svc-card.bg-02 { background-image: url('public_data.jpg'); }
-.svc-card.bg-03 { background-image: url('IT_Infrastructure.jpg'); }
-.svc-card.bg-04 { background-image: url('InfoSec.jpg'); }
-.svc-card.bg-05 { background-image: url('privacy.jpg'); }
-.svc-card.bg-06 { background-image: url('seminar.jpg'); }
+.svc-card.bg-00 { background-image: url('assets/images/chatbot.jpg'); } 
+.svc-card.bg-01 { background-image: url('assets/images/seminar.jpg'); }
+.svc-card.bg-02 { background-image: url('assets/images/public_data.jpg'); }
+.svc-card.bg-03 { background-image: url('assets/images/IT_Infrastructure.jpg'); }
+.svc-card.bg-04 { background-image: url('assets/images/InfoSec.jpg'); }
+.svc-card.bg-05 { background-image: url('assets/images/privacy.jpg'); }
+.svc-card.bg-06 { background-image: url('assets/images/seminar.jpg'); }
 
 .svc-card::before {
   content: '';
