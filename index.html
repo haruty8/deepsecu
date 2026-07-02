@@ -310,7 +310,7 @@ nav{
 
 .pf-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px;}
 .pf-btn{padding:8px 18px;border-radius:30px;border:1px solid var(--border);background:#ffffff;color:var(--text-muted);font-size:0.9rem;cursor:pointer;transition:all .2s;font-weight:600;}
-.pf-btn.active,.pf-btn:hover{background:var(--dark-blue);border-color:var(--dark-blue);color:#ffffff;}
+.pf-btn.active,.pf-btn:hover{background:var(--dark-blue);border-color(--dark-blue);color:#ffffff;}
 
 .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .pf-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:24px;}
@@ -523,21 +523,20 @@ footer{
       </div>
     </li>
     <li>
-      <a href="#" onclick="showPage('company');return false;">제품소개</a>
+      <a href="#" onclick="showPage('product');return false;">제품소개</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('company','about');return false;">AI 챗봇</a>
+        <a href="#" onclick="showPage('product','chatbot');return false;">AI 챗봇</a>
       </div>
     </li>
     <li>
       <a href="#" onclick="showPage('business');return false;">사업영역</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('business',0);return false;">지능형 AI 챗봇 서비스 (SaaS)</a>
-        <a href="#" onclick="showPage('business',1);return false;">통합 구축 자문 · PMO</a>
-        <a href="#" onclick="showPage('business',2);return false;">공공데이터 자문</a>
-        <a href="#" onclick="showPage('business',3);return false;">공공기관 전산 자문</a>
-        <a href="#" onclick="showPage('business',4);return false;">정보보안 컨설팅</a>
-        <a href="#" onclick="showPage('business',5);return false;">개인정보보호 컨설팅</a>
-        <a href="#" onclick="showPage('business',6);return false;">교육·훈련 및 세미나</a>
+        <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
+        <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
+        <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
+        <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
+        <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
+        <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
       </div>
     </li>
     <li>
@@ -609,49 +608,49 @@ footer{
           <h3 class="svc-title">지능형 AI 챗봇 서비스 (SaaS)</h3>
           <p class="svc-desc">초기 유도 비용 부담 없이 월/년 단위 구독 방식으로 공공 채널에 플러그인하여 즉시 연동되는 고성능 대민 가이드용 AI 챗봇입니다.</p>
           <div class="svc-tags"><span class="tag">구독형 SaaS</span><span class="tag">실시간 웹위젯</span></div>
-          <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('product','chatbot')">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-01">
           <div class="svc-num">02</div>
           <h3 class="svc-title">통합 구축 자문 · PMO</h3>
           <p class="svc-desc">공공 프로젝트 및 시스템 통합 사업의 성공을 위한 고품질 기술 아키텍처와 PMO 관리를 지원합니다.</p>
           <div class="svc-tags"><span class="tag">통합 구축</span><span class="tag">PMO 역할</span></div>
-          <button class="svc-more" onclick="showPage('business',1)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-02">
           <div class="svc-num">03</div>
           <h3 class="svc-title">공공데이터 자문</h3>
           <p class="svc-desc">행정·공공기관이 보유한 데이터의 민간 개방 표준 수립 및 데이터 품질 관리 체계를 완벽하게 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 개방</span><span class="tag">품질관리</span></div>
-          <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',1)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-03">
           <div class="svc-num">04</div>
           <h3 class="svc-title">공공기관 전산 자문</h3>
           <p class="svc-desc">일선 공공기관 전산실 인프라 고도화, 전산 장비 사양 검토, 정보화 계획 수립을 밀착 가이드합니다.</p>
           <div class="svc-tags"><span class="tag">전산 인프라</span><span class="tag">장비 규격 검토</span></div>
-          <button class="svc-more" onclick="showPage('business',3)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-04">
           <div class="svc-num">05</div>
           <h3 class="svc-title">정보보안 컨설팅</h3>
           <p class="svc-desc">IT 인프라 전반의 위협요소를 철저히 진단하고, 공공 지침에 부합하는 보안 프레임워크를 설계합니다.</p>
           <div class="svc-tags"><span class="tag">취약점 분석</span><span class="tag">인프라 진단</span></div>
-          <button class="svc-more" onclick="showPage('business',4)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',3)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-05">
           <div class="svc-num">06</div>
           <h3 class="svc-title">개인정보보호 컨설팅</h3>
           <p class="svc-desc">개인정보보호법 컴플라이언스 준수 체계 수립 및 공공기관 실무 중심의 정밀 보호수준 평가 대응을 지원합니다.</p>
           <div class="svc-tags"><span class="tag">보호수준 평가</span><span class="tag">내부관리계획</span></div>
-          <button class="svc-more" onclick="showPage('business',5)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',4)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-06">
           <div class="svc-num">07</div>
           <h3 class="svc-title">교육·훈련 및 세미나</h3>
           <p class="svc-desc">공공단체를 위한 맞춤형 악성메일 모의훈련 시스템 대행 및 수료증 발급형 실무 세미나를 정기 운영합니다.</p>
           <div class="svc-tags"><span class="tag">모의 훈련</span><span class="tag">수료증 발급</span></div>
-          <button class="svc-more" onclick="showPage('business',6)">자세히 보기 →</button>
+          <button class="svc-more" onclick="showPage('business',5)">자세히 보기 →</button>
         </div>
       </div>
     </div>
@@ -730,26 +729,20 @@ footer{
   </div>
 </div>
 
-<div id="page-business" class="page">
+<div id="page-product" class="page">
   <div class="page-banner">
-    <div class="breadcrumb">Home > <span>Business</span></div>
-    <h1>사업 영역</h1>
-    <p>딥시큐(DeepSecu)가 공급하는 핵심 원스톱 서비스 및 프리미엄 컨설팅 포트폴리오입니다.</p>
+    <div class="breadcrumb">Home > <span>Product</span></div>
+    <h1>제품 소개</h1>
+    <p>딥시큐(DeepSecu)가 자체 개발하고 공급하는 인텔리전트 소프트웨어 제품 라인업입니다.</p>
   </div>
 
   <section class="sec">
     <div class="inner">
-      <div class="biz-tabs" id="bizTabs">
-        <button class="biz-tab active" onclick="switchBizTab(0)">지능형 AI 챗봇 (SaaS)</button>
-        <button class="biz-tab" onclick="switchBizTab(1)">통합 구축 자문 · PMO</button>
-        <button class="biz-tab" onclick="switchBizTab(2)">공공데이터 자문</button>
-        <button class="biz-tab" onclick="switchBizTab(3)">공공기관 전산 자문</button>
-        <button class="biz-tab" onclick="switchBizTab(4)">정보보안 컨설팅</button>
-        <button class="biz-tab" onclick="switchBizTab(5)">개인정보보호 컨설팅</button>
-        <button class="biz-tab" onclick="switchBizTab(6)">교육·훈련 및 세미나</button>
+      <div class="biz-tabs">
+        <button class="biz-tab active">지능형 AI 챗봇 (SaaS)</button>
       </div>
 
-      <div class="biz-panel active" id="bp0">
+      <div class="biz-panel active">
         <div class="biz-detail">
           <div class="biz-visual"><img src="chatbot.jpg" alt="AI Chatbot SaaS"></div>
           <div class="biz-info">
@@ -762,8 +755,29 @@ footer{
           </div>
         </div>
       </div>
+    </div>
+  </section>
+</div>
 
-      <div class="biz-panel" id="bp1">
+<div id="page-business" class="page">
+  <div class="page-banner">
+    <div class="breadcrumb">Home > <span>Business</span></div>
+    <h1>사업 영역</h1>
+    <p>딥시큐(DeepSecu)가 공급하는 핵심 원스톱 서비스 및 프리미엄 컨설팅 포트폴리오입니다.</p>
+  </div>
+
+  <section class="sec">
+    <div class="inner">
+      <div class="biz-tabs" id="bizTabs">
+        <button class="biz-tab active" onclick="switchBizTab(0)">통합 구축 자문 · PMO</button>
+        <button class="biz-tab" onclick="switchBizTab(1)">공공데이터 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(2)">공공기관 전산 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(3)">정보보안 컨설팅</button>
+        <button class="biz-tab" onclick="switchBizTab(4)">개인정보보호 컨설팅</button>
+        <button class="biz-tab" onclick="switchBizTab(5)">교육·훈련 및 세미나</button>
+      </div>
+
+      <div class="biz-panel active" id="bp0">
         <div class="biz-detail">
           <div class="biz-visual"><img src="seminar.jpg" alt="PMO"></div>
           <div class="biz-info">
@@ -777,7 +791,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp2">
+      <div class="biz-panel" id="bp1">
         <div class="biz-detail">
           <div class="biz-visual"><img src="public_data.jpg" alt="Data"></div>
           <div class="biz-info">
@@ -791,7 +805,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp3">
+      <div class="biz-panel" id="bp2">
         <div class="biz-detail">
           <div class="biz-visual"><img src="IT_Infrastructure.jpg" alt="IT Infrastructure"></div>
           <div class="biz-info">
@@ -805,7 +819,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp4">
+      <div class="biz-panel" id="bp3">
         <div class="biz-detail">
           <div class="biz-visual"><img src="InfoSec.jpg" alt="Security"></div>
           <div class="biz-info">
@@ -819,7 +833,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp5">
+      <div class="biz-panel" id="bp4">
         <div class="biz-detail">
           <div class="biz-visual"><img src="privacy.jpg" alt="Privacy"></div>
           <div class="biz-info">
@@ -833,7 +847,7 @@ footer{
         </div>
       </div>
 
-      <div class="biz-panel" id="bp6">
+      <div class="biz-panel" id="bp5">
         <div class="biz-detail">
           <div class="biz-visual"><img src="seminar.jpg" alt="Seminar"></div>
           <div class="biz-info">
@@ -940,7 +954,7 @@ footer{
           </div>
           <div class="form-row">
             <div class="fg"><label>직통 연락처 *</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
-            <div class="fg"><label>공식 이메일 *</label><input type="email" name="이email" placeholder="example@agency.go.kr" required></div>
+            <div class="fg"><label>공식 이메일 *</label><input type="email" name="이메일" placeholder="example@agency.go.kr" required></div>
           </div>
           <div class="fg">
             <label>요청 자문 분야 *</label>
@@ -998,14 +1012,17 @@ footer{
       <a href="#" onclick="showPage('company','history');return false;">걸어온 길</a>
     </div>
     <div class="footer-col">
+      <h5>Product</h5>
+      <a href="#" onclick="showPage('product','chatbot');return false;">지능형 AI 챗봇 (SaaS)</a>
+    </div>
+    <div class="footer-col">
       <h5>Business</h5>
-      <a href="#" onclick="showPage('business',0);return false;">지능형 AI 챗봇 (SaaS)</a>
-      <a href="#" onclick="showPage('business',1);return false;">통합 구축 자문 · PMO</a>
-      <a href="#" onclick="showPage('business',2);return false;">공공데이터 자문</a>
-      <a href="#" onclick="showPage('business',3);return false;">공공기관 전산 자문</a>
-      <a href="#" onclick="showPage('business',4);return false;">정보보안 컨설팅</a>
-      <a href="#" onclick="showPage('business',5);return false;">개인정보보호 컨설팅</a>
-      <a href="#" onclick="showPage('business',6);return false;">교육·훈련 및 세미나</a>
+      <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
+      <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
+      <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
+      <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
+      <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
+      <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
     </div>
     <div class="footer-col">
       <h5>Contact</h5>
@@ -1048,7 +1065,7 @@ function showPage(id, sub){
   
   // GNB 액티브 클래스 제어
   document.querySelectorAll('.gnb > li > a').forEach(a=>a.classList.remove('active'));
-  const map={company:'회사소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
+  const map={company:'회사소개',product:'제품소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
   if(map[id]) document.querySelectorAll('.gnb > li > a').forEach(a=>{if(a.textContent.trim()===map[id])a.classList.add('active');});
   
   // 모바일 플로팅 퀵바 액티브 동기화
@@ -1062,7 +1079,7 @@ function showPage(id, sub){
 /* ── 탭 전환 함수군 ── */
 function switchBizTab(idx){
   const tabs=document.querySelectorAll('#bizTabs .biz-tab');
-  const panels=document.querySelectorAll('[id^="bp"]');
+  const panels=document.querySelectorAll('#page-business [id^="bp"]');
   tabs.forEach((t,i)=>{t.classList.toggle('active',i===idx);});
   panels.forEach((p,i)=>{p.classList.toggle('active',i===idx);});
 }
