@@ -417,6 +417,7 @@ footer{
   .svc-num { display: block; margin-bottom: 12px; } 
   .svc-title { font-size: 1.25rem; margin-bottom: 8px; font-weight: 800; }
   .svc-desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+  .svc-card .tag { background:rgba(255,255,255,0.15); color:#ffffff; font-size:0.78rem; padding:4px 10px; border-radius:4px; font-weight:600; border:1px solid rgba(255,255,255,0.25); backdrop-filter: blur(2px); }
   .svc-more { font-size: 0.85rem; width: 100%; padding: 12px; border-radius: 30px; }
 
   .num-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
@@ -483,4 +484,14 @@ footer{
     justify-content: center !important;
     z-index: 1010 !important;
   }
+}
+
+/* ==========================================================================
+   [안전 조치] 사업영역과 완벽히 분리하여 제품소개 챗봇 이미지 크기만 단독 조절
+   ========================================================================== */
+.biz-detail .biz-visual img.chatbot-img {
+  max-width: 480px !important;  /* 🌟 원하는 이미지 크기로 언제든 변경 가능 (400px~500px 추천) */
+  width: 100% !important;       /* 가로 폭 반응형 강제 바인딩 */
+  height: auto !important;      /* 비율 왜곡 방지 */
+  margin: 0 auto;               /* 레이아웃 박스 내 정중앙 정렬 */
 }
