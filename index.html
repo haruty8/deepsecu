@@ -310,7 +310,7 @@ nav{
 
 .pf-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px;}
 .pf-btn{padding:8px 18px;border-radius:30px;border:1px solid var(--border);background:#ffffff;color:var(--text-muted);font-size:0.9rem;cursor:pointer;transition:all .2s;font-weight:600;}
-.pf-btn.active,.pf-btn:hover{background:var(--dark-blue);border-color(--dark-blue);color:#ffffff;}
+.pf-btn.active,.pf-btn:hover{background:var(--dark-blue);border-color:var(--dark-blue);color:#ffffff;}
 
 .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .pf-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:24px;}
@@ -364,7 +364,8 @@ footer{
   padding:0 40px;
   padding-bottom: 24px; 
 }
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding:60px 0 32px;border-bottom:1px solid var(--border);}
+/* 🛠️ [PC 수리] 그리드를 5열로 확장하여 Contact가 우측 상단으로 나란히 정렬되도록 간격 조정 */
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:30px;padding:60px 0 32px;border-bottom:1px solid var(--border);}
 .footer-brand .logo{display:flex;align-items:center;gap:6px;font-size:1.3rem;font-weight:800;color:var(--dark-blue);margin-bottom:12px;}
 .footer-brand p{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
 .footer-col h5{font-size:0.9rem;font-weight:700;color:var(--text-main);margin-bottom:14px;}
@@ -439,6 +440,7 @@ footer{
   .num-big { font-size: 2.2rem; }
   .num-label { font-size: 0.8rem; }
 
+  /* 🛠️ [모바일 수리] 모바일 푸터 정렬 순서 보정 (그리드 순차 배열 유도) */
   .about-grid, .biz-detail, .contact-grid, .footer-top { grid-template-columns:1fr; gap:32px; }
   .about-feat-grid { grid-template-columns:1fr; gap:12px; }
   .pf-grid { grid-template-columns:1fr; gap:12px; }
@@ -525,7 +527,7 @@ footer{
     <li>
       <a href="#" onclick="showPage('product');return false;">제품소개</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('product','chatbot');return false;">지능형 AI 챗봇 (SaaS)</a>
+        <a href="#" onclick="showPage('product','chatbot');return false;">AI 챗봇</a>
       </div>
     </li>
     <li>
@@ -560,15 +562,16 @@ footer{
   </div>
 </nav>
 
+<!-- 🛠️ [퀵바 수리] 하단 퀵바 메뉴 수정: 홈, 제품소개, 사업영역, 자문신청 -->
 <div class="mobile-quick-bar">
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
   </a>
+  <a href="#" class="quick-item" id="m-btn-prod" onclick="showPage('product'); return false;">
+    <span class="ico">💻</span><span>제품소개</span>
+  </a>
   <a href="#" class="quick-item" id="m-btn-biz" onclick="showPage('business'); return false;">
     <span class="ico">💼</span><span>사업영역</span>
-  </a>
-  <a href="#" class="quick-item" id="m-btn-perf" onclick="showPage('performance'); return false;">
-    <span class="ico">📈</span><span>수행실적</span>
   </a>
   <a href="#" class="quick-item highlight" id="m-btn-contact" onclick="showPage('contact'); return false;">
     <span class="ico">✉️</span><span>자문신청</span>
@@ -1000,6 +1003,7 @@ footer{
   </section>
 </div>
 
+<!-- 📋 FOOTER AREA -->
 <footer>
   <div class="footer-top inner">
     <div class="footer-brand">
@@ -1024,6 +1028,7 @@ footer{
       <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
       <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
     </div>
+    <!-- 🛠️ [PC/모바일 수리] 아래 떨어져 있던 Contact를 단독 컬럼(5열)으로 올려 PC와 모바일 순서 완전 동기화 -->
     <div class="footer-col">
       <h5>Contact</h5>
       <a href="tel:02-6285-6210">02-6285-6210</a>
@@ -1068,11 +1073,11 @@ function showPage(id, sub){
   const map={company:'회사소개',product:'제품소개',business:'사업영역',performance:'수행실적',contact:'문의하기'};
   if(map[id]) document.querySelectorAll('.gnb > li > a').forEach(a=>{if(a.textContent.trim()===map[id])a.classList.add('active');});
   
-  // 모바일 플로팅 퀵바 액티브 동기화
+  // 모바일 플로팅 퀵바 액티브 동기화 (제품소개 매핑 최적화 수리 완료)
   document.querySelectorAll('.quick-item').forEach(item=>item.classList.remove('active'));
   if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
+  if(id === 'product') document.getElementById('m-btn-prod')?.classList.add('active');
   if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
-  if(id === 'performance') document.getElementById('m-btn-perf')?.classList.add('active');
   if(id === 'contact') document.getElementById('m-btn-contact')?.classList.add('active');
 }
 
