@@ -144,12 +144,12 @@ nav{
   background-color: #060b19;
 }
 
-/* 🛠️ [수정] 밝은 배경 위 글씨 시인성 확보를 위해 오버레이 어두운 톤을 대폭 보강했습니다. (0.2 -> 0.45) */
+/* 🛠️ [수정완료] 이미지 본연의 밝기를 살리기 위해 오버레이 투명도를 대폭 낮추었습니다. (0.55~0.15 -> 0.25~0.05) */
 #page-home .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(6, 11, 25, 0.55) 0%, rgba(6, 11, 25, 0.4) 40%, rgba(6, 11, 25, 0.15) 100%);
+  background: linear-gradient(to right, rgba(6, 11, 25, 0.25) 0%, rgba(6, 11, 25, 0.15) 40%, rgba(6, 11, 25, 0.05) 100%);
   z-index: 1;
 }
 .hero-grid{
@@ -403,8 +403,9 @@ footer{
     text-align: center;
   }
   
+  /* 🛠️ [수정완료] 모바일 환경에서도 오버레이 투명도를 낮추어 본래 이미지가 화사하게 드러나도록 연동 수정했습니다. */
   #page-home .hero::before {
-    background: rgba(6, 11, 25, 0.45); 
+    background: linear-gradient(to bottom, rgba(6, 11, 25, 0.3) 0%, rgba(6, 11, 25, 0.15) 100%); 
   }
   .hero-content { margin:0 auto; padding-left: 0; }
   .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; }
