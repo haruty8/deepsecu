@@ -144,12 +144,12 @@ nav{
   background-color: #060b19;
 }
 
-/* 🛠️ [수정] 글자 가독성을 위해 어두운 그라데이션 오버레이 강도를 대폭 올렸습니다 (0.2 -> 0.55) */
+/* 🔄 [원복] 사진 본연의 밝은 톤을 살리기 위해 그라데이션 오버레이 강도를 다시 원래대로 대폭 낮췄습니다 */
 #page-home .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(6, 11, 25, 0.6) 0%, rgba(6, 11, 25, 0.5) 40%, rgba(6, 11, 25, 0.2) 100%);
+  background: linear-gradient(to right, rgba(6, 11, 25, 0.2) 0%, rgba(6, 11, 25, 0.15) 40%, rgba(6, 11, 25, 0.0) 100%);
   z-index: 1;
 }
 .hero-grid{
@@ -160,21 +160,36 @@ nav{
   -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
   z-index: 2;
 }
-.hero-content{position:relative;max-width:800px;z-index:3;}
 
-/* 🛠️ [수정] 배지 가독성을 위한 검은 배경 투명도와 보더라인 상향 조정 */
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0, 0, 0, 0.4);border:1px solid rgba(255,255,255,.25);padding:6px 16px;border-radius:30px;font-size:0.8rem;color:#e2e8f0;letter-spacing:0.5px;margin-bottom:24px;font-weight:600;}
+/* 🛠️ [수정] 밝은 사진 위에서도 텍스트 박스 전체가 돋보이도록 은은한 유리막 필터와 패딩을 추가했습니다 */
+.hero-content{
+  position:relative;
+  max-width:840px;
+  z-index:3;
+  padding:30px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
 
-/* 🛠️ [수정] 타이틀 글자 자체에 그림자를 주어 흰색 글자가 선명하게 튀어나오도록 했습니다 */
-.hero-title{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:800;line-height:1.25;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;text-shadow: 0 2px 10px rgba(0,0,0,0.6);}
-.hero-title .hl{color:var(--bright);background:linear-gradient(to right, #7387f5, #4f93ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+/* 🛠️ [수정] 배지가 밝은 배경 위에서도 눈에 띄도록 폰트 컬러를 딥블루로 변경 */
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255, 255, 255, 0.6);border:1px solid rgba(15, 23, 42, 0.15);padding:6px 16px;border-radius:30px;font-size:0.8rem;color:var(--dark-blue);letter-spacing:0.5px;margin-bottom:24px;font-weight:700;}
 
-/* 🛠️ [수정] 본문 서브 타이틀 가독성을 위해 텍스트 섀도우를 조금 더 진하게 보정했습니다 */
-.hero-sub{font-size:1.2rem;color:#ffffff;line-height:1.7;margin-bottom:40px;font-weight:500;text-shadow: 0 2px 8px rgba(0,0,0,0.75);}
+/* 🛠️ [수정] 메인 타이틀에 깊은 그림자를 더하고, 강조색(.hl)을 가독성이 훨씬 높은 딥블루 톤으로 변경했습니다 */
+.hero-title{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:800;line-height:1.25;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;text-shadow: 0 4px 15px rgba(0,0,0,0.45);}
+.hero-title .hl{color:var(--dark-blue); background:none; -webkit-background-clip:initial; -webkit-text-fill-color:initial; font-weight:900;}
+
+/* 🛠️ [수정] 본문 서브 설명글은 어두운 톤의 텍스트 컬러로 변경하여 모니터 화면(흰색) 위에서도 뚜렷하게 보이게 했습니다 */
+.hero-sub{font-size:1.2rem;color:var(--dark-blue);line-height:1.7;margin-bottom:40px;font-weight:600;}
 .hero-btns{display:flex;gap:12px;}
 .hero-btns .btn-p {background: var(--bright);}
-.hero-btns .btn-o {background: rgba(0,0,0,0.3); color: #fff; border-color: rgba(255,255,255,.4); text-shadow: 0 1px 2px rgba(0,0,0,0.5);}
-.hero-btns .btn-o:hover {background: rgba(255,255,255,.15);}
+
+/* 🛠️ [수정] 테두리 버튼이 밝은 배경과 겹쳐 보이지 않던 문제를 어두운 보더와 텍스트 컬러 적용으로 개선 */
+.hero-btns .btn-o {background: rgba(255, 255, 255, 0.5); color: var(--dark-blue); border-color: var(--dark-blue); font-weight:700;}
+.hero-btns .btn-o:hover {background: rgba(255, 255, 255, 0.8);}
 
 .hero-stats{
   position:absolute;right:40px;bottom:40px;
@@ -378,21 +393,30 @@ footer{
   footer { padding: 0 20px; padding-bottom: 76px; } 
   
   #page-home .hero { 
-    padding:60px 20px 80px; 
+    padding:40px 20px 60px; 
     min-height:auto;
     text-align: center;
   }
   
-  /* 🛠️ [수정] 모바일 환경에서도 글씨가 완전히 선명하게 보이도록 오버레이 강도를 높였습니다 (0.45 -> 0.65) */
+  /* 🔄 [원복] 모바일에서도 오버레이를 원래의 밝은 강도로 조정 */
   #page-home .hero::before {
-    background: rgba(6, 11, 25, 0.65); 
+    background: rgba(6, 11, 25, 0.25); 
   }
-  .hero-content { margin:0 auto; }
-  .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; }
   
-  /* 🛠️ [수정] 모바일 텍스트 가독성을 위해 text-shadow 속성 부여 */
-  .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
-  .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #ffffff; word-break:keep-all; text-shadow: 0 2px 6px rgba(0,0,0,0.8); }
+  /* 🛠️ [수정] 모바일 텍스트 박스 유리막 효과 바인딩 */
+  .hero-content { 
+    margin:0 auto; 
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+  }
+  .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; background: rgba(255, 255, 255, 0.75); }
+  
+  /* 🛠️ [수정] 모바일 텍스트 색상 및 섀도우 최적화 */
+  .hero-title { font-size:1.75rem; line-height:1.3; margin-bottom:16px; color: #ffffff; word-break:keep-all; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
+  .hero-sub { font-size:0.95rem; line-height:1.6; margin-bottom:24px; color: var(--dark-blue); font-weight:700; word-break:keep-all; text-shadow: none; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
   .hero-stats { display: none; } 
   
