@@ -144,7 +144,7 @@ nav{
   background-color: #060b19;
 }
 
-/* 🌟 선호하시는 원본 사진 톤을 완벽하게 유지하기 위해 오버레이는 투명하게 고정합니다 */
+/* 🌟 배경 사진 톤은 원래대로 완전히 밝게 고정합니다 */
 #page-home .hero::before {
   content: '';
   position: absolute;
@@ -152,40 +152,33 @@ nav{
   background: linear-gradient(to right, rgba(6, 11, 25, 0.2) 0%, rgba(6, 11, 25, 0.1) 40%, rgba(6, 11, 25, 0.0) 100%);
   z-index: 1;
 }
+
+/* 🛠️ [수정] 격자 패턴의 불투명도를 살짝 높이고 어두운 톤을 섞어 글씨 뒤쪽 배경의 산만함을 정돈합니다 */
 .hero-grid{
   position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+  background-image:linear-gradient(rgba(15, 23, 42, 0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15, 23, 42, 0.05) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image: radial-gradient(circle at 30% 50%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at 30% 50%, black 40%, transparent 85%);
   z-index: 2;
 }
 .hero-content{position:relative;max-width:800px;z-index:3;}
 
-/* 🛠️ 배지 텍스트가 밝은 벽면에 묻히지 않도록 선명한 어두운 투명 백그라운드 적용 */
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0, 0, 0, 0.55);border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:30px;font-size:0.8rem;color:#ffffff;letter-spacing:0.5px;margin-bottom:24px;font-weight:600;}
+/* 🛠️ [수정] 배지 배경을 어두운 네이비 투명으로 변경하여 밝은 벽면과의 대비로 시선을 끕니다 */
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10, 17, 40, 0.75);border:1px solid rgba(10, 17, 40, 0.2);padding:6px 16px;border-radius:30px;font-size:0.8rem;color:#ffffff;letter-spacing:0.5px;margin-bottom:24px;font-weight:700;}
 
-/* 🛠️ [핵심 수정] 타이틀 텍스트와 파란색 강조 폰트 뒤에 다중 레이어 그림자(검은 안개 효과)를 적용해 글씨 가독성을 원천 확보했습니다 */
-.hero-title{
-  font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:800;line-height:1.25;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.7), 0 10px 20px rgba(0,0,0,0.6);
-}
-.hero-title .hl{
-  color:var(--bright);background:linear-gradient(to right, #7275f5, #3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.9)); /* 그라데이션 글씨용 특수 그림자 */
-}
+/* 🛠️ [수정] 그림자를 완전히 제거하고, 그라데이션 강도를 높여 밝은 화면에서도 글자 획이 선명하게 맺히도록 유도했습니다 */
+.hero-title{font-size:clamp(2.2rem, 4.5vw, 3.6rem);font-weight:800;line-height:1.25;color:#ffffff;letter-spacing:-0.04em;margin-bottom:24px;text-shadow:none;}
+.hero-title .hl{color:var(--bright);background:linear-gradient(to right, #4f46e5, #1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 
-/* 🛠️ 하단 본문 설명글도 모니터 화면 위에서 뚜렷하게 떨어지도록 그림자 밀도를 높였습니다 */
-.hero-sub{
-  font-size:1.2rem;color:#ffffff;line-height:1.7;margin-bottom:40px;font-weight:600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 4px 10px rgba(0,0,0,0.8);
-}
+/* 🛠️ [수정] 그림자를 지우는 대신 본문 텍스트 색상을 완벽한 흰색(#ffffff)으로 올려 명도 차이를 굳혔습니다 */
+.hero-sub{font-size:1.2rem;color:#ffffff;line-height:1.7;margin-bottom:40px;font-weight:600;text-shadow:none;}
 .hero-btns{display:flex;gap:12px;}
-.hero-btns .btn-p {background: var(--bright);}
+.hero-btns .btn-p {background: var(--bright); font-weight: 700;}
 
-/* 🛠️ 우측 테두리 버튼이 하얗게 날아가지 않도록 어두운 배경색을 살짝 깔아 가독성을 살렸습니다 */
-.hero-btns .btn-o {background: rgba(0, 0, 0, 0.4); color: #fff; border-color: rgba(255,255,255,.4); text-shadow: 0 1px 3px rgba(0,0,0,0.8); box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
-.hero-btns .btn-o:hover {background: rgba(0, 0, 0, 0.6);}
+/* 🛠️ [수정] 흰색 투명 버튼이 배경 모니터와 겹쳐 안 보이던 문제를 어두운 반투명 색상 채우기로 깔끔하게 매끄럽게 처리했습니다 */
+.hero-btns .btn-o {background: rgba(10, 17, 40, 0.65); color: #ffffff; border-color: transparent; font-weight: 700; text-shadow:none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
+.hero-btns .btn-o:hover {background: rgba(10, 17, 40, 0.85);}
 
 .hero-stats{
   position:absolute;right:40px;bottom:40px;
@@ -394,16 +387,14 @@ footer{
     text-align: center;
   }
   
-  /* 🔄 모바일 원본 오버레이 톤 원복 */
   #page-home .hero::before {
     background: rgba(6, 11, 25, 0.25); 
   }
   .hero-content { margin:0 auto; }
-  .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; }
+  .hero-badge { font-size:0.75rem; padding:4px 12px; margin-bottom:16px; background: rgba(10, 17, 40, 0.75); }
   
-  /* 🛠️ 모바일 환경 가독성을 위한 다중 그림자 처리 */
-  .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.8); }
-  .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #ffffff; word-break:keep-all; text-shadow: 0 2px 6px rgba(0,0,0,0.9); }
+  .hero-title { font-size:1.85rem; line-height:1.3; margin-bottom:16px; word-break:keep-all; text-shadow: none; }
+  .hero-sub { font-size:0.98rem; line-height:1.6; margin-bottom:28px; color: #ffffff; word-break:keep-all; text-shadow: none; }
   .hero-btns { flex-direction: column; gap:10px; max-width:320px; margin:0 auto; }
   .hero-stats { display: none; } 
   
@@ -513,8 +504,8 @@ footer{
    [안전 조치] 사업영역과 완벽히 분리하여 제품소개 챗봇 이미지 크기만 단독 조절
    ========================================================================== */
 .biz-detail .biz-visual img.chatbot-img {
-  max-width: 480px !important;  /* 🌟 원하는 이미지 크기로 언제든 변경 가능 (400px~500px 추천) */
-  width: 100% !important;       /* 가로 폭 반응형 강제 바인딩 */
-  height: auto !important;      /* 비율 왜곡 방지 */
-  margin: 0 auto;               /* 레이아웃 박스 내 정중앙 정렬 */
+  max-width: 480px !important;  
+  width: 100% !important;       
+  height: auto !important;      
+  margin: 0 auto;               
 }
