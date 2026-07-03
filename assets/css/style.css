@@ -223,7 +223,7 @@ nav{
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .svc-card.bg-00 { background-image: url('../images/chatbot.jpg'); } 
-.svc-card.bg-01 { background-image: url('../images/seminar.jpg'); }
+.svc-card.bg-01 { background-image: url('../images/it_consulting.jpg'); }
 .svc-card.bg-02 { background-image: url('../images/public_data.jpg'); }
 .svc-card.bg-03 { background-image: url('../images/IT_Infrastructure.jpg'); }
 .svc-card.bg-04 { background-image: url('../images/InfoSec.jpg'); }
