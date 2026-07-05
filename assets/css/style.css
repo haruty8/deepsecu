@@ -306,8 +306,8 @@ nav{
   border:1px solid var(--border);
   border-radius:12px;overflow:hidden;height:320px;
 }
-/* 🛠️ [수정 완료] 비율을 유지하며 가로세로 빈틈없이 채우기 위해 object-fit을 cover로 변경 */
-.biz-visual img{width:100%;height:100%;object-fit:cover;}
+/* 🛠️ 모든 일반 이미지들은 무조건 부모 박스(320px)에 맞게 완벽하게 꽉 차도록 기본 선언 */
+.biz-visual img{width:100% !important;height:100% !important;object-fit:cover !important;}
 
 .biz-info h2{font-size:1.8rem;font-weight:800;color:var(--text-main);margin-bottom:16px;letter-spacing:-0.03em;}
 .biz-info p{color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:24px;}
@@ -463,9 +463,8 @@ footer{
   .perf-stat { padding: 20px; }
   .perf-stat .big { font-size: 2.2rem; }
   
-  /* 🛠️ [수정 완료] 모바일 환경에서도 가로세로 빈틈없이 채우도록 object-fit을 cover로 변경 */
   .biz-visual { height: 200px; background: #ffffff; }
-  .biz-visual img { object-fit: cover; }
+  .biz-visual img { object-fit: cover !important; }
   
   .contact-form { padding: 24px 16px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
@@ -520,11 +519,12 @@ footer{
 }
 
 /* ==========================================================================
-   [안전 조치] 제품소개 챗봇 이미지 크기 유지 (수정 완료)
+   [완벽 해결] 제품소개 챗봇 이미지 크기 유지 예외 처리
    ========================================================================== */
-/* 🛠️ .chatbot-img 클래스가 다른 일반 소개 이미지에 잘못 오작동하지 않도록 
-   실제 챗봇 전용 이미지일 때만 크기를 제한하도록 수정했습니다. */
-.biz-detail .biz-visual img.chatbot-img:not([src*="privacy"]):not([src*="public_data"]) {
+/* 🛠️ 중요: 기존 방식처럼 파일명이나 클래스만으로 거르는 대신, 
+   '제품소개 패널(#panel-products)' 내부의 챗봇 이미지에만 제한이 걸리도록 경로를 차단했습니다.
+   이로 인해 '사업영역' 페이지의 개인정보보호 컨설팅 이미지는 무조건 100% 꽉 채워지게 됩니다. */
+#panel-products .biz-visual img.chatbot-img {
   max-width: 480px !important;  
   width: 100% !important;        
   height: auto !important;      
