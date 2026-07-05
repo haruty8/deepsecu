@@ -306,8 +306,8 @@ nav{
   border:1px solid var(--border);
   border-radius:12px;overflow:hidden;height:320px;
 }
-/* 🛠️ 모든 일반 이미지들은 무조건 부모 박스(320px)에 맞게 완벽하게 꽉 차도록 기본 선언 */
-.biz-visual img{width:100% !important;height:100% !important;object-fit:cover !important;}
+/* 🛠️ 비율을 유지하며 가로세로 빈틈없이 채우기 위해 object-fit을 cover로 지정 */
+.biz-visual img{width:100%;height:100%;object-fit:cover;}
 
 .biz-info h2{font-size:1.8rem;font-weight:800;color:var(--text-main);margin-bottom:16px;letter-spacing:-0.03em;}
 .biz-info p{color:var(--text-light);font-size:1rem;line-height:1.7;margin-bottom:24px;}
@@ -464,7 +464,7 @@ footer{
   .perf-stat .big { font-size: 2.2rem; }
   
   .biz-visual { height: 200px; background: #ffffff; }
-  .biz-visual img { object-fit: cover !important; }
+  .biz-visual img { object-fit: cover; }
   
   .contact-form { padding: 24px 16px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
@@ -519,15 +519,33 @@ footer{
 }
 
 /* ==========================================================================
-   [완벽 해결] 제품소개 챗봇 이미지 크기 유지 예외 처리
+   [안전 조치] 제품소개 챗봇 이미지 크기 유지
+   - 이 규칙은 제품소개 페이지(#page-product)의 chatbot-img에만 적용되도록
+     범위를 명확히 좁혔습니다. (기존의 src 문자열 예외 방식은 제거)
    ========================================================================== */
-/* 🛠️ 중요: 기존 방식처럼 파일명이나 클래스만으로 거르는 대신, 
-   '제품소개 패널(#panel-products)' 내부의 챗봇 이미지에만 제한이 걸리도록 경로를 차단했습니다.
-   이로 인해 '사업영역' 페이지의 개인정보보호 컨설팅 이미지는 무조건 100% 꽉 채워지게 됩니다. */
-#panel-products .biz-visual img.chatbot-img {
-  max-width: 480px !important;  
-  width: 100% !important;        
-  height: auto !important;      
-  margin: 0 auto;               
+#page-product .biz-detail .biz-visual img.chatbot-img {
+  max-width: 480px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
   object-fit: contain !important;
+}
+
+/* ==========================================================================
+   ✅ 개인정보보호 컨설팅(privacy.jpg) 이미지 강제 고정
+   - 사업영역 페이지의 다른 이미지들과 동일하게 박스를 가로/세로 빈틈없이
+     채우도록, ID 선택자로 최우선 순위를 부여해 어떤 클래스가 붙어도
+     흔들리지 않게 고정했습니다.
+   ========================================================================== */
+#bp4 .biz-visual img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+}
+
+@media(max-width:960px){
+  #bp4 .biz-visual img {
+    height: 200px !important;
+  }
 }
