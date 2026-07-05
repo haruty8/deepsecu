@@ -19,7 +19,7 @@
         .keep-all { word-break: keep-all; }
         .biz-sub-title { font-size: 1.4rem; font-weight: 800; color: #1e6fcf; margin: 40px 0 15px; display: flex; align-items: center; gap: 8px; word-break: keep-all; }
         
-        /* 3열 및 2열 격자 레이아웃 정돈 */
+        /* 격자 레이아웃 정돈 */
         .grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 25px 0; }
         .grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 25px 0; }
         
@@ -27,7 +27,11 @@
         .info-status-box { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
         .info-status-box:hover { transform: translateY(-3px); }
         .info-status-title { font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; word-break: keep-all; }
-        
+        .info-status-list { list-style: none; padding: 0; margin: 0; }
+        .info-status-list li { font-size: 0.95rem; color: var(--text-muted); padding: 6px 0 6px 15px; position: relative; border-bottom: 1px dashed #f0f0f0; }
+        .info-status-list li:last-child { border-bottom: none; }
+        .info-status-list li::before { content: "•"; color: #1e6fcf; position: absolute; left: 0; font-weight: bold; }
+
         /* 테이블형 고품격 리스트 */
         .biz-list-modern { list-style: none; padding: 0; margin: 0; width: 100%; }
         .biz-list-modern li { display: flex; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #f0f2f5; line-height: 1.6; }
@@ -247,23 +251,29 @@
 
   <div id="ctab-about" class="biz-panel active">
     <section class="sec">
-      <div class="inner about-grid">
-        <div style="text-align: center;">
-          <svg viewBox="0 0 400 400" fill="none" style="max-width:280px; width:100%;">
-            <circle cx="200" cy="200" r="180" fill="#f1f5f9"/>
-            <path d="M200 60L80 120V240C80 310 140 360 200 380C260 360 320 310 320 240V120L200 60Z" fill="#1e6fcf" opacity="0.1"/>
-            <path d="M150 200l35 35 70-70" stroke="#1e6fcf" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="keep-all">
-          <p class="sec-label">About DeepSecu</p>
-          <h2 class="sec-title">전산 인프라 기획부터 보안까지<br>원스톱 거버넌스를 정립합니다</h2>
-          <p class="sec-desc" style="margin-bottom:20px;">딥시큐(DeepSecu)는 복잡한 공공 컴플라이언스와 정보시스템 아키텍처를 유기적으로 분석하여 발주기관의 권익을 보호하고 성공적인 사업 완수를 이끄는 기술 자문 파트너입니다.</p>
-          <p class="sec-desc">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다.</p>
-          
-          <div class="about-feat-grid">
-            <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">PMO & 대가 검증</div><div class="feat-desc">기능점수(FP) 검증을 통한 투명한 정보화 사업 산출내역 검토</div></div>
-            <div class="feat-card"><div class="feat-icon">💡</div><div class="feat-title">통합 컴플라이언스</div><div class="feat-desc">ISMS-P 및 공공 수준평가 기반 346개 항목 정밀 진단</div></div>
+      <div class="inner keep-all">
+        <p class="sec-label">About DeepSecu</p>
+        <h2 class="sec-title">전산 인프라 기획부터 보안까지<br>원스톱 거버넌스를 정립합니다</h2>
+        <p class="sec-desc" style="margin-bottom:20px; font-size: 1.1rem; line-height: 1.8;">딥시큐(DeepSecu)는 복잡한 공공 컴플라이언스와 정보시스템 아키텍처를 유기적으로 분석하여 발주기관의 권익을 보호하고 성공적인 사업 완수를 이끄는 기술 자문 파트너입니다.</p>
+        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협과 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
+        
+        <h3 class="biz-sub-title">🎯 딥시큐의 4대 자문 핵심 가치</h3>
+        <div class="grid-2-col" style="margin-top: 15px;">
+          <div class="info-status-box" style="border-left: 4px solid #1e6fcf;">
+            <div class="info-status-title">🔍 철저한 독립성 확보</div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">특정 제조사나 솔루션 공급사에 종속되지 않는 독립적 지위에서, 오직 발주기관의 예산 효율성과 기술적 타당성만을 검증합니다.</p>
+          </div>
+          <div class="info-status-box" style="border-left: 4px solid #1e6fcf;">
+            <div class="info-status-title">📊 정밀한 대가산정 검증</div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">소프트웨어 기능점수(FP) 가이드라인을 기반으로 공급 원가와 이익률 구조를 현미경 검증하여 불필요한 예산 낭비를 방지합니다.</p>
+          </div>
+          <div class="info-status-box" style="border-left: 4px solid #1e6fcf;">
+            <div class="info-status-title">📋 실무형 컴플라이언스</div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">서류상의 계획을 넘어 실제 정부 평가(보호수준 평가, 공공데이터 평가)에서 증적자료로 인정받을 수 있는 실무 중심 행정 서식을 정립합니다.</p>
+          </div>
+          <div class="info-status-box" style="border-left: 4px solid #1e6fcf;">
+            <div class="info-status-title">⚡ 선제적 리스크 통제</div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">구축 사업 전 과정의 일정·품질 마일스톤을 밀착 모니터링하여, 개발 지연 및 보안 취약점 리스크를 선제적으로 식별하고 차단합니다.</p>
           </div>
         </div>
       </div>
@@ -276,8 +286,8 @@
         <p class="sec-label">History</p>
         <h2 class="sec-title">걸어온 길</h2>
         <div class="timeline" style="word-break: keep-all;">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>국립기관 및 대형 공공 자문 고도화</h4><p>[국립문화예술단체] 통합 홈페이지 및 미디어 플랫폼 개편 총 공급가액 2억 원 규모의 대형 정보시스템 리뉴얼 사업. 기능점수(FP) 검증(약 1억 5,600만 원 규모) 및 독립적 기술 아키텍처 수립 현황(AS-IS) 정밀 자문 총괄.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>정부 평가대상 기관 긴급 거버넌스 구축</h4><p>[정부유관진흥원] 2026년 공공기관 평가대상(개인정보 보호수준 평가, 공공데이터 제공 운영실태 평가) 신규 지정에 따른 긴급 관리 현황 실태 진단. 전산 전담 인력 체계 마련 가이드라인 및 개인정보파일 전수조사 행정 서식 정비 자문.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>국립기관 및 대형 공공 자문 고도화</h4><p>[국립문화예술단체] 대규모 통합 홈페이지 및 미디어 플랫폼 개편 사업 정보시스템 마스터플랜(ISMP) 및 현황(AS-IS) 정밀 자문 총괄. 기능점수(FP) 방식 기반 소프트웨어 개발비 및 직접경비 적정성 교차 검증 검토.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>정부 평가대상 기관 긴급 거버넌스 구축</h4><p>[정부유관진흥원] 공공기관 평가대상(개인정보 보호수준 평가, 공공데이터 제공 운영실태 평가) 신규 지정에 따른 긴급 거버넌스 진단. 내부 전산 전담 인력 공석에 따른 책임관 지정 가이드 및 전사 개인정보파일 전수조사 행정 서식 정비 자문.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>공공기관 인프라 및 보안수준 진단 고도화</h4><p>[서울 다수 자치구 시설관리공단] 전산실 핵심 하드웨어 장비 실태 조사, 용량 분석(Capacity Planning) 기반 규격 표준 가이드 수립 및 개인정보 보호수준 평가 대응 특화 컨설팅 집중 수행.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>정보보안 및 개인정보보호 거버넌스 확립</h4><p>[문화예술진흥재단 및 유관단체] 전사 정보보안 관리체계(ISMS 기반) 정밀 점검, 법정 필수 내부관리계획 고도화 및 개인정보 처리방침 가시성 개선 리스크 스크리닝 용역 수행.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>딥시큐 창립</h4><p>정보통신 인프라 설계 자문, PMO, 공공데이터 정책 및 보안 거버넌스 특화 기업 정식 창립.</p></div></div>
@@ -665,7 +675,7 @@
             </p>
           </div>
           <div class="info-status-box" style="border-left: 4px solid var(--teal);">
-            <div class="info-status-title">🔍 개인정보 검색 솔루션</div>
+            <div class="info-status-title">🔍 개인정보 검색 솔루션 (PCFILTER)</div>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65;" class="keep-all">
               각 부서 임직원 단말기에 방치된 채 방치되어 있는 엑셀, 한글 파일 내 응답자 개인정보 및 민감 데이터 유무를 실시간 스캔하여 격리, 암호화, 완전 파기를 유도합니다.
             </p>
