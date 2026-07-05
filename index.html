@@ -59,6 +59,47 @@
         .timeline-time { font-size: 0.95rem; font-weight: 800; color: #1e6fcf; margin-bottom: 6px; letter-spacing: 0.5px; }
         .timeline-heading { font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; word-break: keep-all; }
         .timeline-body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; word-break: keep-all; }
+
+        /* ==========================================================================
+           [NEW] 숫자로 증명하는 신뢰 + 고객사 연계 프리미엄 UX 컴포넌트 스타일
+           ========================================================================== */
+        .trust-premium-section { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); padding: 100px 0; }
+        .trust-layout { display: grid; grid-template-columns: 1.1fr 1.3fr; gap: 60px; align-items: start; }
+        
+        /* 좌측 수치 대시보드 */
+        .trust-stats-dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .stat-premium-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px 24px; box-shadow: 0 4px 20px rgba(30, 111, 207, 0.02); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .stat-premium-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(30, 111, 207, 0.06); border-color: #1e6fcf; }
+        .stat-premium-card.highlight-card { background: linear-gradient(135deg, #1e6fcf 0%, #0f4c92 100%); border: none; }
+        .stat-premium-card.highlight-card .stat-p-label, .stat-premium-card.highlight-card .stat-p-num { color: #ffffff; }
+        .stat-p-label { font-size: 0.95rem; font-weight: 700; color: #64748b; margin-bottom: 12px; }
+        .stat-p-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 3rem; font-weight: 800; color: #1e6fcf; line-height: 1; letter-spacing: -1px; }
+        .stat-p-num em { font-size: 1.5rem; font-style: normal; margin-left: 2px; font-weight: 700; }
+        
+        /* 우측 인터랙티브 고객사 맵/그리드 */
+        .trust-clients-showcase { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.02); }
+        .showcase-title { font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; }
+        .showcase-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 30px; }
+        .client-logo-interactive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        
+        /* 개별 인터랙티브 로고 아이템 */
+        .c-logo-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 15px; text-align: center; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative; overflow: hidden; }
+        .c-logo-item .c-icon { font-size: 1.8rem; transition: transform 0.3s ease; }
+        .c-logo-item .c-name { font-size: 0.9rem; font-weight: 700; color: #334155; }
+        .c-logo-item .c-dept { font-size: 0.75rem; color: #64748b; font-weight: 500; }
+        
+        /* 마우스 호버 및 액티브 타겟 연동 연출 */
+        .c-logo-item:hover { background: #ffffff; border-color: #1e6fcf; transform: scale(1.03); box-shadow: 0 8px 20px rgba(30, 111, 207, 0.08); }
+        .c-logo-item:hover .c-icon { transform: scale(1.15); }
+        
+        /* 반응형 대응 */
+        @media (max-width: 1024px) {
+            .trust-layout { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 640px) {
+            .trust-stats-dashboard { grid-template-columns: 1fr; }
+            .client-logo-interactive-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -216,20 +257,75 @@
     </div>
   </section>
 
-  <section class="sec">
+  <section class="trust-premium-section">
     <div class="inner">
-      <div style="text-align:center; margin-bottom:40px;">
-        <p class="sec-label">DeepSecu Track Record</p>
-        <h2 class="sec-title">숫자로 증명하는 신뢰</h2>
+      <div style="text-align:center; margin-bottom:55px;">
+        <p class="sec-label">DeepSecu Track Record & Clients</p>
+        <h2 class="sec-title">숫자로 증명하는 신뢰와 수행 실적</h2>
+        <p class="sec-desc" style="margin: 10px auto 0; max-width: 620px;">검증된 데이터와 대한민국 대표 공공기관·유관단체들이 딥시큐의 독보적인 자문 역량을 신뢰하고 있습니다.</p>
       </div>
-      <div class="num-grid">
-        <div class="num-item"><div class="num-big">50+</div><div class="num-label">공공기관 종합 자문 건수</div></div>
-        <div class="num-item"><div class="num-big">100%</div><div class="num-label">프로젝트 최종 완료율</div></div>
-        <div class="num-item"><div class="num-big">99%</div><div class="num-label">파트너십 만족도 유지</div></div>
-        <div class="num-item"><div class="num-big">346</div><div class="num-label">통합 진단 지표 표준 항목</div></div>
+
+      <div class="trust-layout">
+        <div class="trust-stats-dashboard">
+          <div class="stat-premium-card highlight-card">
+            <div class="stat-p-label">공공 종합 자문·컨설팅</div>
+            <div class="stat-p-num">50<em>+건</em></div>
+          </div>
+          <div class="stat-premium-card">
+            <div class="stat-p-label">프로젝트 최종 완료율</div>
+            <div class="stat-p-num" style="color: #059669;">100<em>%</em></div>
+          </div>
+          <div class="stat-premium-card">
+            <div class="stat-p-label">인프라 정밀 점검 항목</div>
+            <div class="stat-p-num" style="color: #1e6fcf;">346<em>개</em></div>
+          </div>
+          <div class="stat-premium-card">
+            <div class="stat-p-label">컴플라이언스 통과율</div>
+            <div class="stat-p-num" style="color: #dc2626;">100<em>%</em></div>
+          </div>
+        </div>
+
+        <div class="trust-clients-showcase">
+          <div class="showcase-title">주요 파트너십 기관</div>
+          <p class="showcase-desc">기관명을 선택하시면 딥시큐가 매핑한 핵심 사업 자문 포트폴리오를 바로 확인하실 수 있습니다.</p>
+          
+          <div class="client-logo-interactive-grid">
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">🎭</span>
+              <span class="c-name">국립극단</span>
+              <span class="c-dept">웹구축 보안 자문</span>
+            </div>
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">📊</span>
+              <span class="c-name">한국통계진흥원</span>
+              <span class="c-dept">거버넌스 진단</span>
+            </div>
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">🏛️</span>
+              <span class="c-name">송파구시설관리공단</span>
+              <span class="c-dept">수준평가 컨설팅</span>
+            </div>
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">🏛️</span>
+              <span class="c-name">은평구시설관리공단</span>
+              <span class="c-dept">전산 장비 자문</span>
+            </div>
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">🏛️</span>
+              <span class="c-name">강남구도시관리공단</span>
+              <span class="c-dept">인프라 사양 최적화</span>
+            </div>
+            <div class="c-logo-item" onclick="showPage('performance','records')">
+              <span class="c-icon">🌍</span>
+              <span class="c-name">해외농업자원개발협회</span>
+              <span class="c-dept">데이터 표준 공유</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="text-align:center;margin-top:40px;">
-        <a class="btn-p" href="#" onclick="showPage('performance');return false;">상세 수행 실적 확인하기</a>
+
+      <div style="text-align:center; margin-top:50px;">
+        <a class="btn-p" href="#" onclick="showPage('performance');return false;">전체 수행실적 데이터룸 보기</a>
       </div>
     </div>
   </section>
@@ -364,7 +460,6 @@
         <button class="biz-tab" onclick="switchBizTab(5)">교육·훈련 및 세미나</button>
       </div>
 
-      <!-- 비즈니스 패널 01 -->
       <div class="biz-panel active" id="bp0">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/it_consulting.jpg" alt="it_consulting"></div>
@@ -428,7 +523,6 @@
         </table>
       </div>
 
-      <!-- 비즈니스 패널 02 -->
       <div class="biz-panel" id="bp1">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/public_data.jpg" alt="Data"></div>
@@ -482,7 +576,6 @@
         </div>
       </div>
 
-      <!-- 비즈니스 패널 03 -->
       <div class="biz-panel" id="bp2">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/IT_Infrastructure.jpg" alt="IT_Infrastructure"></div>
@@ -507,7 +600,7 @@
           </div>
         </div>
 
-        <h3 class="biz-sub-title">🛡️ 공공기관 전산 담당 부재 시 법정 의무 지정 리스크 진단</h3>
+        <h3 class="biz-sub-title">🗺️ 공공기관 전산 담당 부재 시 법정 의무 지정 리스크 진단</h3>
         <table class="data-table">
           <thead>
             <tr>
@@ -541,7 +634,6 @@
         </table>
       </div>
 
-      <!-- 비즈니스 패널 04 -->
       <div class="biz-panel" id="bp3">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/InfoSec.jpg" alt="Security"></div>
@@ -595,7 +687,6 @@
         </table>
       </div>
 
-      <!-- 비즈니스 패널 05 [★ image_37c846.jpg 줄바꿈 오류 완벽 수정 영역] -->
       <div class="biz-panel" id="bp4">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/privacy.jpg" alt="Privacy"></div>
@@ -641,7 +732,6 @@
         </div>
       </div>
 
-      <!-- 비즈니스 패널 06 -->
       <div class="biz-panel" id="bp5">
         <div class="biz-detail">
           <div class="biz-visual"><img src="assets/images/seminar.jpg" alt="Seminar"></div>
