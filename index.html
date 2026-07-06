@@ -90,13 +90,25 @@
         
         .c-logo-item:hover { background: #ffffff; border-color: #1e6fcf; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(30, 111, 207, 0.08); }
         .c-logo-item:hover .c-icon { transform: scale(1.1); }
+
+        /* [수행실적 - 주요 고객사 페이지 고도화 스타일 마감] */
+        .premium-client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 10px; }
+        .premium-client-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.01); position: relative; }
+        .premium-client-card:hover { transform: translateY(-5px); border-color: #1e6fcf; box-shadow: 0 12px 24px rgba(30, 111, 207, 0.06); }
+        .premium-logo-wrap { width: 100%; height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; }
+        .premium-logo-wrap img { max-width: 85%; max-height: 100%; object-fit: contain; filter: grayscale(10%) contrast(105%); transition: filter 0.3s ease; }
+        .premium-client-card:hover .premium-logo-wrap img { filter: grayscale(0%) contrast(100%); }
+        .premium-client-card .p-client-name { font-size: 1rem; font-weight: 800; color: #1e6fcf; margin-bottom: 4px; }
+        .premium-client-card .p-client-type { font-size: 0.82rem; color: #64748b; font-weight: 600; }
         
         @media (max-width: 1024px) {
             .trust-layout { grid-template-columns: 1fr; gap: 40px; }
+            .premium-client-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
         @media (max-width: 640px) {
             .trust-stats-dashboard { grid-template-columns: 1fr; }
             .client-logo-interactive-grid { grid-template-columns: repeat(2, 1fr); }
+            .premium-client-grid { grid-template-columns: 1fr; gap: 16px; }
         }
     </style>
 </head>
@@ -365,7 +377,7 @@
         <p class="sec-label">About DeepSecu</p>
         <h2 class="sec-title">전산 인프라 기획부터 보안까지<br>원스톱 거버넌스를 정립합니다</h2>
         <p class="sec-desc" style="margin-bottom:20px; font-size: 1.1rem; line-height: 1.8;">딥시큐(DeepSecu)는 복잡한 공공 컴플라이언스와 정보시스템 아키텍처를 유기적으로 분석하여 발주기관의 권익을 보호하고 성공적인 사업 완수를 이끄는 기술 자문 파트너입니다.</p>
-        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협 and 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
+        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협 및 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
         
         <h3 class="biz-sub-title">🎯 딥시큐의 4대 자문 핵심 가치</h3>
         <div class="grid-2-col" style="margin-top: 15px;">
@@ -491,15 +503,15 @@
               <li>
                 <div class="list-keyword">하이브리드 변환 아키텍처</div>
                 <div class="list-desc">문서 깨짐을 완벽 방지하는 **이미지 변환 방식**과 텍스트 검색 및 복사가 유연한 **HTML 변환 방식**을 유기적으로 선택 적용 가능하며, 다국어 번역 및 TTS 오디오 스트리밍을 동시 지원합니다.</div>
-              </li>
+              </tr>
               <li>
                 <div class="list-keyword">다문화 인공지능(AI) 지원</div>
                 <div class="list-desc">국내 체류 외국인과 다문화 가정을 위해 **Llama 3.3 대용량 모델** 기반의 32개국 실시간 문서 번역 기능 및 고품질 다국어 음성 출력(TTS) 기술이 완벽히 내재화되어 있습니다.</div>
-              </li>
+              </tr>
               <li>
                 <div class="list-keyword">검증된 대규모 도입 실적</div>
                 <div class="list-desc">**서울시 누리집 현황 총 133개소 중 115개 사이트**에 성공적으로 적용 완료하여 압도적인 무중단·무장애 안정성을 검증 완료했습니다.</div>
-              </li>
+              </tr>
             </ul>
           </div>
         </div>
@@ -559,21 +571,21 @@
           </div>
           <div class="biz-info keep-all">
             <h2>조직 보안 체질 개선, 악성메일 모의훈련 서비스 <span style="color:#1e6fcf;">Mind-SAT 자문 패키지</span></h2>
-            <p style="font-weight: 600; color:#475569;">조직 구성원의 보안 인식을 진단하고 선제적 컴플라이언스 인프라를 수립합니다.</p>
+            <p style="font-weight: 600; color:#475569;">조직 구성원의 보안 인식을 진단하고선제적 컴플라이언스 인프라를 수립합니다.</p>
             <p>딥시큐는 과학기술정보통신부 지정 정보보호 전문 서비스 인증을 획득한 **Mind-SAT** 솔루션의 공식 공급 및 연계 기술 자문 파트너입니다. 공공기관 및 유관단체의 보안 환경(화이트리스트 지정 및 메일 시스템 연동 가이드라인)을 객관적으로 분석하고, 성공적인 모의훈련 집행과 사후 지표 보정을 위한 **딥시큐 단독 연계형 보안 행정 컨설팅**을 올인원으로 무상 지원합니다.</p>
             <ul class="biz-list-modern" style="margin-top: 15px;">
               <li>
                 <div class="list-keyword">가벼운 시스템 실사 및 화이트리스트 가이드</div>
                 <div class="list-desc">M365, 구글 워크스페이스 및 다각화된 기관 자체 메일 서버 방화벽의 IP 우회 화이트리스트(White List) 기술 사양을 사전 검토하여 정밀한 실전 훈련 환경을 조율합니다.</div>
-              </li>
+              </tr>
               <li>
                 <div class="list-keyword">사회공학적 최신 위협 시나리오 매핑</div>
                 <div class="list-desc">불법 소프트웨어 과태료 통지, 가상 해외 로그인 경고, 정부24 민원 고지 등 공공 실무 임직원들이 실제 업무 중 노출되기 쉬운 **생활밀착형 고도화 피싱 템플릿** 매핑 및 훈련 집행</div>
-              </li>
+              </tr>
               <li>
                 <div class="list-keyword">딥시큐 특화 사후 거버넌스 컨설팅</div>
                 <div class="list-desc">단순 훈련 대장 발송 대행을 넘어, 부서별 열람율 및 첨부파일 실행율 통계를 기반으로 **기관 내부 개인정보 보호수준평가 및 정보보안 실태점검 증적 지표에 완벽 대응하는 행정 매뉴얼** 수립을 밀착 가이드합니다.</div>
-              </li>
+              </tr>
             </ul>
           </div>
         </div>
@@ -767,7 +779,7 @@
             <ul class="biz-list-modern">
               <li>
                 <div class="list-keyword">노후 인프라 장비 교체</div>
-                <div class="list-desc">핵심 자산(서버, 스토리지, 백백기기) 성능 실사 및 데이터 가이드를 준수하는 교체 타당성 분석</div>
+                <div class="list-desc">핵심 자산(서버, 스토리지, 백업기기) 성능 실사 및 데이터 가이드를 준수하는 교체 타당성 분석</div>
               </li>
               <li>
                 <div class="list-keyword">RFP 기술 규격 최적화</div>
@@ -946,7 +958,7 @@
           </div>
         </div>
 
-        <h3 class="biz-sub-title">📆 연간 보안 교육훈련 및 인식제고 표준 이행 로드맵</h3>
+        <h3 class="biz-sub-title">🛡️ 연간 보안 교육훈련 및 인식제고 표준 이행 로드맵</h3>
         <div class="timeline-container">
           <div class="timeline-node">
             <div class="timeline-time">1분기 (Q1). 기반 조성 단계</div>
@@ -1015,14 +1027,65 @@
       <div class="inner">
         <p class="sec-label">Our Clients</p>
         <h2 class="sec-title">주요 파트너 및 고객사</h2>
-        <div class="client-grid">
-          <div class="client-card"><div class="client-ico">🎭</div><div class="client-name">유관기관</div><div class="client-type">국립문화예술단체</div></div>
-          <div class="client-card"><div class="client-ico">📊</div><div class="client-name">정부유관기관</div><div class="client-type">정부지정 통계진흥단체</div></div>
-          <div class="client-card"><div class="client-ico">🏛️</div><div class="client-name">공공·정부</div><div class="client-type">지자체 출연 문화예술재단</div></div>
-          <div class="client-card"><div class="client-ico">🏛️</div><div class="client-name">지자체 공단</div><div class="client-type">서울 자치구 시설관리공단 A</div></div>
-          <div class="client-card"><div class="client-ico">🏛️</div><div class="client-name">지자체 공단</div><div class="client-type">서울 자치구 시설관리공단 B</div></div>
-          <div class="client-card"><div class="client-ico">🏛️</div><div class="client-name">지자체 공단</div><div class="client-type">서울 자치구 시설관리공단 C</div></div>
+        
+        <div class="premium-client-grid">
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/yjcj_logo.jpg" alt="여주세종문화관광재단 로고">
+            </div>
+            <div class="p-client-name">여주세종문화관광재단</div>
+            <div class="p-client-type">지자체 출연 문화예술재단</div>
+          </div>
+          
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/ntck_logo.png" alt="국립극단 로고">
+            </div>
+            <div class="p-client-name">국립극단</div>
+            <div class="p-client-type">국립문화예술단체</div>
+          </div>
+          
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/oads_logo.png" alt="해외농업자원개발협회 로고">
+            </div>
+            <div class="p-client-name">해외농업자원개발협회</div>
+            <div class="p-client-type">정부 공익 자문 유관단체</div>
+          </div>
+          
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/labors_logo.png" alt="서울노동권익센터 로고">
+            </div>
+            <div class="p-client-name">서울노동권익센터</div>
+            <div class="p-client-type">서울 자치구 위탁 기관</div>
+          </div>
+          
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/stat_logo.jpg" alt="한국통계진흥원 로고">
+            </div>
+            <div class="p-client-name">한국통계진흥원</div>
+            <div class="p-client-type">정부지정 통계진흥단체</div>
+          </div>
+
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <div style="font-size: 2.2rem; filter: grayscale(20%);">🏛️</div>
+            </div>
+            <div class="p-client-name">은평구시설관리공단</div>
+            <div class="p-client-type">서울 자치구 시설관리공단</div>
+          </div>
+
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <div style="font-size: 2.2rem; filter: grayscale(20%);">🏛️</div>
+            </div>
+            <div class="p-client-name">양천구시설관리공단</div>
+            <div class="p-client-type">서울 자치구 시설관리공단</div>
+          </div>
         </div>
+        
       </div>
     </section>
   </div>
