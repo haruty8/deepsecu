@@ -91,6 +91,13 @@
         /* 마우스 호버 연출 */
         .c-logo-item:hover { background: #ffffff; border-color: #1e6fcf; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(30, 111, 207, 0.08); }
         .c-logo-item:hover .c-icon { transform: scale(1.1); }
+
+        /* 제품 요금제 테이블 스타일 추가 */
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; background: #ffffff; }
+        .price-table th { background: #f1f5f9; color: #334155; font-weight: 700; padding: 10px 12px; border: 1px solid #e2e8f0; text-align: center; }
+        .price-table td { padding: 10px 12px; border: 1px solid #e2e8f0; color: #475569; text-align: center; }
+        .price-table .txt-left { text-align: left; }
+        .price-table .font-bold { font-weight: 700; color: #1e6fcf; }
         
         /* 반응형 대응 */
         @media (max-width: 1024px) {
@@ -127,6 +134,7 @@
       <a href="#" onclick="showPage('product');return false;">제품소개</a>
       <div class="dropdown">
         <a href="#" onclick="showPage('product','chatbot');return false;">지능형 AI 챗봇 (SaaS)</a>
+        <a href="#" onclick="showPage('product','viewstory');return false;">대민서비스 문서 미리보기 (VIEWSTORY)</a>
       </div>
     </li>
     <li>
@@ -211,47 +219,47 @@
           <div class="svc-tags"><span class="tag">구독형 SaaS</span><span class="tag">실시간 웹위젯</span></div>
           <button class="svc-more" onclick="showPage('product','chatbot')">자세히 보기 →</button>
         </div>
-        <div class="card svc-card bg-01">
+        <div class="card svc-card bg-07" style="background-image: linear-gradient(135deg, rgba(30,111,207,0.03) 0%, rgba(30,111,207,0.08) 100%);">
           <div class="svc-num">02</div>
+          <h3 class="svc-title keep-all">대민서비스 문서 미리보기 (VIEWSTORY)</h3>
+          <p class="svc-desc keep-all">다운로드 없이 공공 웹사이트 내의 문서를 HTML 또는 이미지 방식으로 깨짐 없이 즉시 미리보기 할 수 있는 GS인증 1등급 검증 솔루션입니다.</p>
+          <div class="svc-tags"><span class="tag">GS인증 1등급</span><span class="tag">조달청 나라장터</span></div>
+          <button class="svc-more" onclick="showPage('product','viewstory')">자세히 보기 →</button>
+        </div>
+        <div class="card svc-card bg-01">
+          <div class="svc-num">03</div>
           <h3 class="svc-title keep-all">통합 구축 자문 · PMO</h3>
           <p class="svc-desc keep-all">행정안전부 가이드라인 기반의 정보시스템 마스터플랜(ISMP) 수립 및 고도화, 기능점수(FP) 기반 대가 검증과 전 기간 사업관리(PMO) 대행으로 안정적 정시 오픈을 달성합니다.</p>
           <div class="svc-tags"><span class="tag">ISMP · FP 검증</span><span class="tag">PMO 총괄관리</span></div>
           <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-02">
-          <div class="svc-num">03</div>
+          <div class="svc-num">04</div>
           <h3 class="svc-title keep-all">공공데이터 자문</h3>
           <p class="svc-desc keep-all">행정·공공기관이 보유한 내부 데이터의 민간 개방 표준을 수립하고, 저작권 컴플라이언스 및 가명·비식별화 데이터 품질 관리를 조율합니다.</p>
           <div class="svc-tags"><span class="tag">데이터 비식별화</span><span class="tag">오류율 최소화</span></div>
           <button class="svc-more" onclick="showPage('business',1)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-03">
-          <div class="svc-num">04</div>
+          <div class="svc-num">05</div>
           <h3 class="svc-title keep-all">공공기관 전산 자문</h3>
           <p class="svc-desc keep-all">지자체 산하 기관의 서버·네트워크 장비 노후화 실태 진단 및 용량 분석(Capacity Planning)에 기반한 하드웨어 최적화 가이드를 제안합니다.</p>
           <div class="svc-tags"><span class="tag">인프라 실사</span><span class="tag">장비 규격 검토</span></div>
           <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-04">
-          <div class="svc-num">05</div>
+          <div class="svc-num">06</div>
           <h3 class="svc-title keep-all">정보보안 컨설팅</h3>
           <p class="svc-desc keep-all">ISMS-P 인증 기준 및 정보보호 지침 연계 분석을 통해 인프라 취약점을 진단하고, DMZ 구간 분리 및 침입방지(IPS) 체계를 구축합니다.</p>
           <div class="svc-tags"><span class="tag">Gap 분석</span><span class="tag">네트워크 보안</span></div>
           <button class="svc-more" onclick="showPage('business',3)">자세히 보기 →</button>
         </div>
         <div class="card svc-card bg-05">
-          <div class="svc-num">06</div>
+          <div class="svc-num">07</div>
           <h3 class="svc-title keep-all">개인정보보호 컨설팅</h3>
           <p class="svc-desc keep-all">개인정보 보호수준 평가 및 실태점검에 완벽하게 대응합니다. 수집·보유·이용·파기 등 생애주기별 필수 법정 보호조치를 수립합니다.</p>
           <div class="svc-tags"><span class="tag">수준평가 대응</span><span class="tag">생애주기 보호</span></div>
           <button class="svc-more" onclick="showPage('business',4)">자세히 보기 →</button>
-        </div>
-        <div class="card svc-card bg-06">
-          <div class="svc-num">07</div>
-          <h3 class="svc-title keep-all">교육·훈련 및 세미나</h3>
-          <p class="svc-desc keep-all">임직원 보안인식 제고를 위한 법정 의무 교육과 사회공학적 위협에 대비한 랜섬웨어·스피어피싱 악성메일 모의훈련 패키지를 대행합니다.</p>
-          <div class="svc-tags"><span class="tag">악성메일 훈련</span><span class="tag">임직원 보안교육</span></div>
-          <button class="svc-more" onclick="showPage('business',5)">자세히 보기 →</button>
         </div>
       </div>
     </div>
@@ -315,10 +323,10 @@
               <span class="c-name">공공데이터법</span>
               <span class="c-dept">민간 데이터 개방 및<br>가명·비식별화 조율</span>
             </div>
-            <div class="c-logo-item" onclick="showPage('business',5)">
+            <div class="c-logo-item" onclick="showPage('product','viewstory')">
               <span class="c-icon">🎯</span>
               <span class="c-name">장애인차별금지법</span>
-              <span class="c-dept">웹 접근성(WA) 및<br>대민 챗봇 UI/UX 검증</span>
+              <span class="c-dept">웹 접근성(WA) 및<br>문서 미리보기 솔루션 검증</span>
             </div>
           </div>
         </div>
@@ -385,7 +393,7 @@
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>국립기관 및 대형 공공 자문 고도화</h4><p>[국립문화예술단체] 대규모 통합 홈페이지 및 미디어 플랫폼 개편 사업 정보시스템 마스터플랜(ISMP) 및 현황(AS-IS) 정밀 자문 총괄. 기능점수(FP) 방식 기반 소프트웨어 개발비 및 직접경비 적정성 교차 검증 검토.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>정부 평가대상 기관 긴급 거버넌스 구축</h4><p>[정부유관진흥원] 공공기관 평가대상(개인정보 보호수준 평가, 공공데이터 제공 운영실태 평가) 신규 지정에 따른 긴급 거버넌스 진단. 내부 전산 전담 인력 공석에 따른 책임관 지정 가이드 및 전사 개인정보파일 전수조사 행정 서식 정비 자문.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>공공기관 인프라 및 보안수준 진단 고도화</h4><p>[서울 다수 자치구 시설관리공단] 전산실 핵심 하드웨어 장비 실태 조사, 용량 분석(Capacity Planning) 기반 규격 표준 가이드 수립 및 개인정보 보호수준 평가 대응 특화 컨설팅 집중 수행.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>정보보안 및 개인정보보호 거버넌스 확립</h4><p>[문화예술진흥재단 및 유관단체] 전사 정보보안 관리체계(ISMS 기반) 정밀 점검, 법정 필수 내부관리계획 고도화 및 개인정보 처리방침 가시성 개선 리스크 스크리닝 용역 수행.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>조달청 나라장터 우수 솔루션 매핑 및 확산</h4><p>서울시 누리집 현황 총 133개소 중 115개 사이트에 검증된 영구/연간 라이선스 방식의 대민 미리보기 엔진 공급 및 조달 계약 기술 자문 완료.</p></div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>딥시큐 창립</h4><p>정보통신 인프라 설계 자문, PMO, 공공데이터 정책 및 보안 거버넌스 특화 기업 정식 창립.</p></div></div>
         </div>
       </div>
@@ -397,16 +405,17 @@
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Product</span></div>
     <h1>제품 소개</h1>
-    <p>딥시큐(DeepSecu)가 자체 개발하고 공급하는 인텔리전트 소프트웨어 제품 라인업입니다.</p>
+    <p>딥시큐(DeepSecu)가 검증하고 공식 공급하는 고성능 공공 디지털 서비스 소프트웨어 라인업입니다.</p>
   </div>
 
   <section class="sec">
     <div class="inner">
-      <div class="biz-tabs">
-        <button class="biz-tab active">지능형 AI 챗봇 (SaaS)</button>
+      <div class="biz-tabs" id="prodTabs">
+        <button class="biz-tab active" onclick="switchProductTab(this, 'chatbot')">지능형 AI 챗봇 (SaaS)</button>
+        <button class="biz-tab" onclick="switchProductTab(this, 'viewstory')">문서 미리보기 솔루션 (VIEWSTORY)</button>
       </div>
 
-      <div class="biz-panel active" style="margin-bottom: 60px;">
+      <div id="ptab-chatbot" class="biz-panel active" style="margin-bottom: 60px;">
         <div class="biz-detail">
           <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
             <img src="assets/images/chatbot.jpg" class="chatbot-img" alt="AI Chatbot SaaS" style="width: 100%; height: auto; object-fit: contain; display: block;">
@@ -420,21 +429,84 @@
             </ul>
           </div>
         </div>
-      </div>
-
-      <div class="price-policy-box" style="background-color: #f4f6f9; padding: 40px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 12px var(--shadow);">
-        <div style="max-width: 800px;">
-          <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 12px;">💰 합리적인 구독형 과금 체계</h3>
-          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px; font-weight: 500; word-break: keep-all;">
-            초기 대규모 시스템 기획 및 구축 인프라 비용 부담이 전혀 없으며, 도입 기관의 실제 이용 트래픽 규모에 맞추어 라이선스 비용이 유연하게 산정되는 합리적인 SaaS(구독형) 모델을 지향합니다.
-          </p>
-          
-          <div style="background-color: #ffffff; padding: 24px; border-radius: 8px; border-left: 4px solid var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-            <p style="margin: 0; font-size: 1.05rem; color: var(--text-main); font-weight: 700;">기관 및 기업별 도입 환경 맞춤 요금 구성</p>
-            <p style="margin: 8px 0 0 0; font-size: 0.95rem; color: var(--text-light); line-height: 1.6; word-break: keep-all;">
-              운영 채널의 대민 월간 방문자 수, API 호출 한도 및 커스텀 지식 데이터베이스 연동 범위 등을 종합적으로 분석하여 최적의 요금을 매핑해 드립니다. 상세 라이선스 산정 정책 및 맞춤 견적은 종합 자문 상담을 통해 신속하게 확인하실 수 있습니다.
+        
+        <div class="price-policy-box" style="background-color: #f4f6f9; padding: 40px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 12px var(--shadow); margin-top: 30px;">
+          <div style="max-width: 800px;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #1e6fcf; margin-bottom: 12px;">💰 합리적인 구독형 과금 체계</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6;">
+              초기 시스템 기획 및 대형 구축 비용 없이 실제 이용 트래픽과 연동 범위에 따라 라이선스 비용이 유연하게 산정되는 합리적인 SaaS 모델입니다. 상세 맞춤 견적은 종합 상담을 통해 확인하실 수 있습니다.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div id="ptab-viewstory" class="biz-panel" style="margin-bottom: 60px; display: none;">
+        <div class="biz-detail">
+          <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
+            <img src="assets/images/viewstory_main.jpg" class="chatbot-img" alt="VIEWSTORY 솔루션" style="width: 100%; height: auto; object-fit: contain; display: block; border: 1px solid #e2e8f0; border-radius: 8px;">
+          </div>
+          <div class="biz-info keep-all">
+            <h2>대민서비스 필수 솔루션 <span style="color:#1e6fcf;">VIEWSTORY</span></h2>
+            <p style="font-weight: 600; color:#475569;">간단하지만 강력한 대민 서비스! 다운로드 없이 브라우저에서 즉시 확인하는 고품질 문서 뷰어</p>
+            <p>공공기관 및 행정용 누리집 웹사이트 방문자가 첨부파일을 별도의 프로그램 설치나 다운로드 없이 원클릭으로 안전하고 빠르게 확인할 수 있도록 지원하는 검증된 **1등급 굿소프트웨어(GS) 인증** 솔루션입니다.</p>
+            <ul class="biz-list-modern" style="margin-top: 15px;">
+              <li>
+                <div class="list-keyword">두 가지 변환 아키텍처</div>
+                <div class="list-desc">문서 깨짐을 완벽 방지하는 **이미지 변환 방식**과 텍스트 검색 및 스크롤이 유연한 **HTML 변환 방식**을 유기적으로 선택 적용 가능</div>
+              </li>
+              <li>
+                <div class="list-keyword">웹 접근성(WA) 완벽 준수</div>
+                <div class="list-desc">장애인차별금지법을 만족하는 스크린리더 음성 지원 구조 및 대한민국 국민브랜드 대상(大賞) 수상으로 안전성 증명</div>
+              </li>
+              <li>
+                <div class="list-keyword">검증된 대규모 도입 실적</div>
+                <div class="list-desc">**서울시 누리집 현황 총 133개소 중 115개 사이트**에 성공적으로 적용 완료하여 압도적인 안정성 검증 완료</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-policy-box" style="background-color: #f8fafc; padding: 35px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 30px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #1e6fcf; margin-bottom: 5px; display: flex; align-items: center; gap: 6px;">
+            🏛️ 조달청 나라장터 디지털서비스몰 공식 등록 가격
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+            본 가격 정책은 조달청 계약 규격에 준하며, 수요기관의 운영 환경 및 사이트 수(EA)에 맞춰 라이선스를 다각도로 분할 선택하실 수 있습니다.
+          </p>
+
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">라이선스 구분</th>
+                <th style="width: 15%;">적용 규격 (수량)</th>
+                <th style="width: 25%;">조달청 등록 금액 (VAT 포함)</th>
+                <th style="width: 40%;">특징 및 도입 가이드라인</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold">영구 라이선스 (Standard)</td>
+                <td>41개 사이트 기준</td>
+                <td class="font-bold">902,000,000 원</td>
+                <td class="txt-left">대규모 지자체 통합 본청 및 산하 기관 패키지 전용. 소유권 영구 귀속.</td>
+              </tr>
+              <tr>
+                <td class="font-bold">연간 라이선스 (Subscription)</td>
+                <td>26개 사이트 기준</td>
+                <td class="font-bold">111,540,000 원</td>
+                <td class="txt-left">예산 유연성을 확보할 수 있는 연도별 갱신 구독형 아키텍처.</td>
+              </tr>
+              <tr style="background: #f8fafc;">
+                <td class="font-bold" style="color: #059669;">라이선스 총계 (EA 종합)</td>
+                <td style="font-weight: 700;">67개 채널</td>
+                <td class="font-bold" style="color: #059669; font-size: 1.05rem;">1,013,540,000 원</td>
+                <td class="txt-left" style="font-weight: 600;">총 82개소 이상 유기적 연동 및 다각도 조달 납품 및 영수증(KONEPS) 발행 검증 완료</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px; text-align: right;">
+            ※ 개별 공공기관 단일 도입 규격 및 소규모 분할 견적은 <strong>[종합 자문 상담]</strong> 채널을 통해 조달청 규격서 기준으로 긴급 매핑 제안해 드립니다.
+          </p>
         </div>
       </div>
 
@@ -681,7 +753,7 @@
             <tr>
               <td><strong>백업/스토리지 인프라</strong></td>
               <td><span class="badge-yellow">주의</span> 로컬 단일 보관 및 소산(분리 백업) 부재</td>
-              <td>Ahsay CBS Suite 등 독립 소산 백업 알고리즘 정립</td>
+              <td>독립 소산 백업 알고리즘 및 뷰어 소스 엔진 분리 정립</td>
             </tr>
           </tbody>
         </table>
@@ -808,12 +880,12 @@
 
         <div class="pf-grid" id="pfGrid">
           <div class="pf-card" data-cat="pmo"><div class="pf-year">2026</div><div class="pf-name keep-all">[국립기관] 국립문화예술단체</div><p class="pf-desc keep-all">홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 및 대가 산정 기능점수(FP) 검증 자문 총괄</p><span class="pf-badge">통합 구축 · PMO</span></div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 엔진 조달 단가 검증 및 구축 정시 정착 지원</p><span class="pf-badge">통합 구축 · PMO</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[정부유관기관] 정부 지정 통계진흥단체</div><p class="pf-desc keep-all">신규 평가대상 지정에 따른 전산·보안·개인정보보호 거버넌스 진단 및 보호수준 평가 정량지표 수립 자문</p><span class="pf-badge">정보보안 · 개인정보</span></div>
           <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 서울 다수 자치구 시설관리공단</div><p class="pf-desc keep-all">전산실 인프라 고도화 가이드 및 전산 정보화 장비 사양 규격 최적화 자문</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
           <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[유관기관] 해외 농업 진출 지원 단체</div><p class="pf-desc keep-all">공공데이터 표준 공유 체계 수립 및 공공 클라우드 이전 타당성 검토</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 지자체 출연 자치구 시설관리공단</div><p class="pf-desc keep-all">행정안전부 주관 개인정보 보호수준 평가 정밀 대응 솔루션 컨설팅</p><span class="pf-badge">정보보안 · 개인정보</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2025</div><div class="pf-name keep-all">[공공기관] 지자체 출연 문화 예술 진흥 재단</div><p class="pf-desc keep-all">전사 정보보안 관리체계(ISMS 기반) 정밀 점검 및 종합 감사 대응 컨설팅</p><span class="pf-badge">정보보안 · 개인정보</span></div>
-          <div class="pf-card" data-cat="security"><div class="pf-year">2025</div><div class="pf-name keep-all">[공공기관] 환경부 산하 전문 공공기관</div><p class="pf-desc keep-all">개인정보 처리방침 가시성 개선 및 보호수준 정밀 리스크 스크리닝</p><span class="pf-badge">정보보안 · 개인정보</span></div>
         </div>
       </div>
     </section>
@@ -873,6 +945,7 @@
             <select name="문의서비스" required>
               <option value="">서비스를 선택해주세요</option>
               <option>지능형 AI 챗봇 서비스 도입 (SaaS형 과금)</option>
+              <option>대민서비스 문서 미리보기 솔루션 도입 (VIEWSTORY)</option>
               <option>통합 인프라 구축 자문 및 PMO</option>
               <option>공공데이터 개방 및 품질 자문</option>
               <option>공공기관 전산 장비 및 기술 규격 자문</option>
@@ -926,6 +999,7 @@
     <div class="footer-col">
       <h5>Product</h5>
       <a href="#" onclick="showPage('product','chatbot');return false;">지능형 AI 챗봇 (SaaS)</a>
+      <a href="#" onclick="showPage('product','viewstory');return false;">문서 미리보기 (VIEWSTORY)</a>
     </div>
     <div class="footer-col">
       <h5>Business</h5>
@@ -949,6 +1023,42 @@
 </footer>
 
 <script src="assets/js/script.js"></script>
+
+<script>
+  function switchProductTab(element, tabId) {
+    // 1. 모든 제품 탭 버튼의 활성화 상태 해제
+    const tabs = document.querySelectorAll('#prodTabs .biz-tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    
+    // 2. 클릭한 버튼 활성화
+    element.classList.add('active');
+    
+    // 3. 모든 제품 패널 숨김 처리
+    document.getElementById('ptab-chatbot').style.display = 'none';
+    document.getElementById('ptab-viewstory').style.display = 'none';
+    
+    // 4. 대상 패널 표시
+    document.getElementById('ptab-' + tabId).style.display = 'block';
+  }
+
+  // 외부(GNB 드롭다운 등)에서 특정 서브 탭으로 직접 진입할 때 매핑 처리 확장
+  const originalShowPage = window.showPage || function(){};
+  window.showPage = function(pageId, subTarget) {
+    // 기존 내장 라우팅 로직 실행
+    if (typeof originalShowPage === 'function') {
+      try { originalShowPage(pageId, subTarget); } catch(e) {}
+    }
+    
+    // 제품 페이지 진입 시 서브 타깃(챗봇 vs 뷰스토리) 스위칭 제어 추가
+    if (pageId === 'product' && subTarget) {
+      const tabButton = document.querySelector(`#prodTabs .biz-tab[onclick*="${subTarget}"]`) 
+                        || document.querySelectorAll('#prodTabs .biz-tab')[subTarget === 'viewstory' ? 1 : 0];
+      if (tabButton) {
+        switchProductTab(tabButton, subTarget);
+      }
+    }
+  }
+</script>
 
 <script
   src="https://chat.deepsecu.co.kr/widget.js"
