@@ -223,15 +223,28 @@ nav{
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
-/* 🛠️ 경로 유기적 매핑 보정 (HTML 구조와 CSS 완벽 교차 일치) */
-.svc-card.bg-00 { background-image: url('../images/chatbot.jpg'); } 
-.svc-card.bg-01 { background-image: url('../images/it_consulting.jpg'); }
-.svc-card.bg-02 { background-image: url('../images/public_data.jpg'); }
-.svc-card.bg-03 { background-image: url('../images/IT_Infrastructure.jpg'); }
-.svc-card.bg-04 { background-image: url('../images/InfoSec.jpg'); }
-.svc-card.bg-05 { background-image: url('../images/privacy.jpg'); }
-.svc-card.bg-06 { background-image: url('../images/seminar.jpg'); }
-.svc-card.bg-07 { background-image: url('../images/viewstory_main.jpg'); } /* HTML 내 bg-07 매핑을 위해 추가 보정 */
+/* ==========================================================================
+   [완벽 순서 동기화] HTML 카드 배치 순서에 맞춘 배경 이미지 매핑 
+   ========================================================================== */
+
+/* 01. 지능형 AI 챗봇 서비스 (SaaS) */
+.svc-card.bg-01 { background-image: url('../images/chatbot.jpg'); } 
+/* 02. 대민서비스 문서 미리보기 (VIEWSTORY) */
+.svc-card.bg-02 { background-image: url('../images/viewstory_main.jpg'); } 
+/* 03. 악성메일 모의훈련 서비스 (Mind-SAT 자문) */
+.svc-card.bg-03 { background-image: url('../images/Mind-SAT.jpg'); } 
+/* 04. 통합 구축 자문 · PMO */
+.svc-card.bg-04 { background-image: url('../images/it_consulting.jpg'); } 
+/* 05. 공공데이터 자문 */
+.svc-card.bg-05 { background-image: url('../images/public_data.jpg'); } 
+/* 06. 공공기관 전산 자문 */
+.svc-card.bg-06 { background-image: url('../images/IT_Infrastructure.jpg'); } 
+/* 07. 정보보안 컨설팅 */
+.svc-card.bg-07 { background-image: url('../images/InfoSec.jpg'); } 
+/* 08. 개인정보보호 컨설팅 */
+.svc-card.bg-08 { background-image: url('../images/privacy.jpg'); } 
+/* 09. 교육·훈련 및 세미나 */
+.svc-card.bg-09 { background-image: url('../images/seminar.jpg'); }
 
 /* 🌌 프리미엄 딥 다크 스페이스 그라데이션 오버레이 (텍스트 깨짐 원천 방지) */
 .svc-card::before {
