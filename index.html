@@ -94,10 +94,11 @@
 
         /* 제품 요금제 테이블 스타일 추가 */
         .price-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; background: #ffffff; }
-        .price-table th { background: #f1f5f9; color: #334155; font-weight: 700; padding: 10px 12px; border: 1px solid #e2e8f0; text-align: center; }
-        .price-table td { padding: 10px 12px; border: 1px solid #e2e8f0; color: #475569; text-align: center; }
+        .price-table th { background: #f1f5f9; color: #334155; font-weight: 700; padding: 12px; border: 1px solid #e2e8f0; text-align: center; }
+        .price-table td { padding: 12px; border: 1px solid #e2e8f0; color: #475569; text-align: center; }
         .price-table .txt-left { text-align: left; }
         .price-table .font-bold { font-weight: 700; color: #1e6fcf; }
+        .price-table .accent-price { color: #dc2626; font-weight: 800; font-size: 0.95rem; }
         
         /* 반응형 대응 */
         @media (max-width: 1024px) {
@@ -359,7 +360,7 @@
         <p class="sec-label">About DeepSecu</p>
         <h2 class="sec-title">전산 인프라 기획부터 보안까지<br>원스톱 거버넌스를 정립합니다</h2>
         <p class="sec-desc" style="margin-bottom:20px; font-size: 1.1rem; line-height: 1.8;">딥시큐(DeepSecu)는 복잡한 공공 컴플라이언스와 정보시스템 아키텍처를 유기적으로 분석하여 발주기관의 권익을 보호하고 성공적인 사업 완수를 이끄는 기술 자문 파트너입니다.</p>
-        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협과 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
+        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협과 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
         
         <h3 class="biz-sub-title">🎯 딥시큐의 4대 자문 핵심 가치</h3>
         <div class="grid-2-col" style="margin-top: 15px;">
@@ -415,6 +416,7 @@
         <button class="biz-tab" onclick="switchProductTab(this, 'viewstory')">문서 미리보기 솔루션 (VIEWSTORY)</button>
       </div>
 
+      <!-- [탭 1] 지능형 AI 챗봇 영역 -->
       <div id="ptab-chatbot" class="biz-panel active" style="margin-bottom: 60px;">
         <div class="biz-detail">
           <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
@@ -440,6 +442,7 @@
         </div>
       </div>
 
+      <!-- [탭 2] 문서 미리보기 솔루션 (VIEWSTORY) 영역 -->
       <div id="ptab-viewstory" class="biz-panel" style="margin-bottom: 60px; display: none;">
         <div class="biz-detail">
           <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
@@ -451,61 +454,70 @@
             <p>공공기관 및 행정용 누리집 웹사이트 방문자가 첨부파일을 별도의 프로그램 설치나 다운로드 없이 원클릭으로 안전하고 빠르게 확인할 수 있도록 지원하는 검증된 **1등급 굿소프트웨어(GS) 인증** 솔루션입니다.</p>
             <ul class="biz-list-modern" style="margin-top: 15px;">
               <li>
-                <div class="list-keyword">두 가지 변환 아키텍처</div>
-                <div class="list-desc">문서 깨짐을 완벽 방지하는 **이미지 변환 방식**과 텍스트 검색 및 스크롤이 유연한 **HTML 변환 방식**을 유기적으로 선택 적용 가능</div>
+                <div class="list-keyword">하이브리드 변환 아키텍처</div>
+                <div class="list-desc">문서 깨짐을 완벽 방지하는 **이미지 변환 방식**과 텍스트 검색 및 복사가 유연한 **HTML 변환 방식**을 유기적으로 선택 적용 가능하며, 다국어 번역 및 TTS 오디오 스트리밍을 동시 지원합니다.</div>
               </li>
               <li>
-                <div class="list-keyword">웹 접근성(WA) 완벽 준수</div>
-                <div class="list-desc">장애인차별금지법을 만족하는 스크린리더 음성 지원 구조 및 대한민국 국민브랜드 대상(大賞) 수상으로 안전성 증명</div>
+                <div class="list-keyword">다문화 인공지능(AI) 지원</div>
+                <div class="list-desc">국내 체류 외국인과 다문화 가정을 위해 **Llama 3.3 대용량 모델** 기반의 32개국 실시간 문서 번역 기능 및 고품질 다국어 음성 출력(TTS) 기술이 완벽히 내재화되어 있습니다.</div>
               </li>
               <li>
                 <div class="list-keyword">검증된 대규모 도입 실적</div>
-                <div class="list-desc">**서울시 누리집 현황 총 133개소 중 115개 사이트**에 성공적으로 적용 완료하여 압도적인 안정성 검증 완료</div>
+                <div class="list-desc">**서울시 누리집 현황 총 133개소 중 115개 사이트**에 성공적으로 적용 완료하여 압도적인 무중단·무장애 안정성을 검증 완료했습니다.</div>
               </li>
             </ul>
           </div>
         </div>
 
+        <!-- 조달청 나라장터 디지털서비스몰 상용 S/W 가격 정책 -->
         <div class="price-policy-box" style="background-color: #f8fafc; padding: 35px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 30px;">
           <h3 style="font-size: 1.3rem; font-weight: 800; color: #1e6fcf; margin-bottom: 5px; display: flex; align-items: center; gap: 6px;">
-            🏛️ 조달청 나라장터 디지털서비스몰 공식 등록 가격
+            🏛️ 조달청 나라장터 디지털서비스몰 등록 단가 가이드
           </h3>
           <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
-            본 가격 정책은 조달청 계약 규격에 준하며, 수요기관의 운영 환경 및 사이트 수(EA)에 맞춰 라이선스를 다각도로 분할 선택하실 수 있습니다.
+            본 가격 정책은 조달청 디지털서비스몰에 정식 계약 체결된 <strong>3자단가계약 상품 가격(VAT 포함)</strong> 기준이며, 1개 API 연동 스펙당 책정 단가입니다.
           </p>
 
           <table class="price-table">
             <thead>
               <tr>
-                <th style="width: 20%;">라이선스 구분</th>
-                <th style="width: 15%;">적용 규격 (수량)</th>
-                <th style="width: 25%;">조달청 등록 금액 (VAT 포함)</th>
-                <th style="width: 40%;">특징 및 도입 가이드라인</th>
+                <th style="width: 8%;">식별번호</th>
+                <th style="width: 47%;">나라장터 등록 제품명 (상용소프트웨어 규격)</th>
+                <th style="width: 10%;">라이선스 유형</th>
+                <th style="width: 15%;">조달청 등록 금액 (단가)</th>
+                <th style="width: 20%;">인도조건 / 납품기한</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="font-bold">영구 라이선스 (Standard)</td>
-                <td>41개 사이트 기준</td>
-                <td class="font-bold">902,000,000 원</td>
-                <td class="txt-left">대규모 지자체 통합 본청 및 산하 기관 패키지 전용. 소유권 영구 귀속.</td>
+                <td>23455770</td>
+                <td class="txt-left font-bold">사무용소프트웨어, 유비스토리, 뷰스토리 v1.0, 문서바로보기솔루션, 연간라이선스</td>
+                <td>연간형 (1 API)</td>
+                <td class="accent-price">4,290,000 원</td>
+                <td rowspan="4" style="background: #ffffff; font-size: 0.85rem;">현장설치도<br>(납품요구일로부터 30일 이내)</td>
               </tr>
               <tr>
-                <td class="font-bold">연간 라이선스 (Subscription)</td>
-                <td>26개 사이트 기준</td>
-                <td class="font-bold">111,540,000 원</td>
-                <td class="txt-left">예산 유연성을 확보할 수 있는 연도별 갱신 구독형 아키텍처.</td>
+                <td>26062454</td>
+                <td class="txt-left font-bold" style="color: #0369a1;">사무용소프트웨어, 유비스토리, 뷰스토리 v1.0, 문서바로보기솔루션, 1API, 다문화음성팩, 연간라이선스</td>
+                <td>연간형 (1 API)</td>
+                <td class="accent-price" style="color: #0369a1;">6,600,000 원</td>
               </tr>
-              <tr style="background: #f8fafc;">
-                <td class="font-bold" style="color: #059669;">라이선스 총계 (EA 종합)</td>
-                <td style="font-weight: 700;">67개 채널</td>
-                <td class="font-bold" style="color: #059669; font-size: 1.05rem;">1,013,540,000 원</td>
-                <td class="txt-left" style="font-weight: 600;">총 82개소 이상 유기적 연동 및 다각도 조달 납품 및 영수증(KONEPS) 발행 검증 완료</td>
+              <tr>
+                <td>25052724</td>
+                <td class="txt-left font-bold">사무용소프트웨어, 유비스토리, 뷰스토리 v1.0, 문서바로보기솔루션, 1API, 영구라이선스</td>
+                <td>영구형 (1 API)</td>
+                <td class="accent-price">22,000,000 원</td>
+              </tr>
+              <tr>
+                <td>25559490</td>
+                <td class="txt-left font-bold" style="color: #065f46;">사무용소프트웨어, 유비스토리, 뷰스토리 v1.0, 문서바로보기솔루션, 1API, 다문화음성팩, 영구라이선스</td>
+                <td>영구형 (1 API)</td>
+                <td class="accent-price" style="color: #065f46;">33,000,000 원</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px; text-align: right;">
-            ※ 개별 공공기관 단일 도입 규격 및 소규모 분할 견적은 <strong>[종합 자문 상담]</strong> 채널을 통해 조달청 규격서 기준으로 긴급 매핑 제안해 드립니다.
+          <p style="font-size: 0.85rem; color: #64748b; margin-top: 12px; line-height: 1.5;">
+            💡 <strong>라이선스 매핑 팁:</strong> 다문화 버전 도입 시 대민 웹사이트 내 공지사항 및 고시공고 첨부문서를 전 세계 32개국 언어로 실시간 상호 호환 번역 및 4개국 기본 TTS 오디오 스트리밍 출력을 완전 무제한으로 지원합니다.
           </p>
         </div>
       </div>
@@ -880,7 +892,7 @@
 
         <div class="pf-grid" id="pfGrid">
           <div class="pf-card" data-cat="pmo"><div class="pf-year">2026</div><div class="pf-name keep-all">[국립기관] 국립문화예술단체</div><p class="pf-desc keep-all">홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 및 대가 산정 기능점수(FP) 검증 자문 총괄</p><span class="pf-badge">통합 구축 · PMO</span></div>
-          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 엔진 조달 단가 검증 및 구축 정시 정착 지원</p><span class="pf-badge">통합 구축 · PMO</span></div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 조달 패키지 구매 및 기술 검증 자문 완료</p><span class="pf-badge">통합 구축 · PMO</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[정부유관기관] 정부 지정 통계진흥단체</div><p class="pf-desc keep-all">신규 평가대상 지정에 따른 전산·보안·개인정보보호 거버넌스 진단 및 보호수준 평가 정량지표 수립 자문</p><span class="pf-badge">정보보안 · 개인정보</span></div>
           <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 서울 다수 자치구 시설관리공단</div><p class="pf-desc keep-all">전산실 인프라 고도화 가이드 및 전산 정보화 장비 사양 규격 최적화 자문</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
           <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[유관기관] 해외 농업 진출 지원 단체</div><p class="pf-desc keep-all">공공데이터 표준 공유 체계 수립 및 공공 클라우드 이전 타당성 검토</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
@@ -1024,6 +1036,7 @@
 
 <script src="assets/js/script.js"></script>
 
+<!-- 제품소개 페이지 내 탭 전환을 제어하는 프론트엔드 함수 추가 정의 -->
 <script>
   function switchProductTab(element, tabId) {
     // 1. 모든 제품 탭 버튼의 활성화 상태 해제
