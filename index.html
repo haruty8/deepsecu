@@ -434,26 +434,47 @@
         <button class="biz-tab" onclick="switchProductTab(this, 'mindsat')">악성메일 모의훈련 (Mind-SAT)</button>
       </div>
 
-      <!-- [완벽 레이아웃 수정] 지능형 AI 챗봇 (SaaS) 패널 -->
+      <!-- [시각적 클릭 유도 강화] 지능형 AI 챗봇 (SaaS) 패널 -->
       <div id="ptab-chatbot" class="biz-panel active" style="margin-bottom: 60px;">
-        <div class="biz-detail" style="align-items: center;">
+        <div class="biz-detail" style="align-items: flex-start;">
           
-          <!-- 좌측: 카드형 이미지 & 바로가기 버튼 영역 -->
-          <div class="biz-visual-wrap" style="flex: 1; max-width: 450px; width: 100%; margin: 0 auto; text-align: center;">
-            <div style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: #ffffff;">
-              <img src="assets/images/chatbot.jpg" class="chatbot-img" alt="AI Chatbot SaaS" style="width: 100%; height: auto; display: block; object-fit: contain;">
-            </div>
+          <!-- 좌측: 클릭 유도 인터랙티브 카드 & 버튼 -->
+          <div class="biz-visual-wrap" style="flex: 1; max-width: 450px; width: 100%; margin: 0 auto;">
             
-            <!-- 🚀 독립 배치된 바로가기 버튼 -->
-            <div style="margin-top: 20px;">
+            <!-- 클릭 가능한 가이드 카드 -->
+            <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" 
+               style="display: block; text-decoration: none; position: relative; border: 2px solid #1e6fcf; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,111,207,0.12); background: #ffffff; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+              
+              <!-- 상단 안내 배지 -->
+              <div style="background: #1e6fcf; color: #ffffff; font-size: 0.88rem; font-weight: 800; padding: 10px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <span>⚡ Real-time Demo</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px; font-size: 0.78rem;">클릭하여 체험하기</span>
+              </div>
+
+              <!-- 이미지 영역 -->
+              <div style="position: relative;">
+                <img src="assets/images/chatbot.jpg" class="chatbot-img" alt="AI Chatbot SaaS" style="width: 100%; height: auto; display: block; object-fit: contain;">
+                
+                <!-- 이미지 하단 반투명 오버레이 힌트 -->
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(15,23,42,0.75) 100%); color: #fff; padding: 25px 15px 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">
+                  🔍 화면을 누르시면 챗봇 서비스로 연결됩니다
+                </div>
+              </div>
+            </a>
+            
+            <!-- 하단 대형 강조 버튼 -->
+            <div style="margin-top: 16px;">
               <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" 
-                 style="display: block; width: 100%; padding: 14px 0; background: #1e6fcf; color: #ffffff; font-weight: 800; font-size: 1rem; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(30, 111, 207, 0.25); text-align: center; box-sizing: border-box; transition: all 0.3s ease;">
-                 🚀 딥시큐 AI 챗봇 바로가기 (체험하기) →
+                 style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px 0; background: linear-gradient(135deg, #1e6fcf 0%, #0f4c92 100%); color: #ffffff; font-weight: 800; font-size: 1.05rem; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 15px rgba(30, 111, 207, 0.3); text-align: center; box-sizing: border-box;">
+                 <span>🚀</span>
+                 <span>딥시큐 AI 챗봇 실시간 체험하기</span>
+                 <span style="font-size: 0.85rem; opacity: 0.8;">(chat.deepsecu.co.kr)</span>
               </a>
             </div>
+
           </div>
 
-          <!-- 우측: 서비스 특징 및 링크 안내 박스 -->
+          <!-- 우측: 서비스 설명 및 안내 -->
           <div class="biz-info keep-all" style="flex: 1.2;">
             <h2>공공·기업 맞춤형 지능형 AI 챗봇 공급</h2>
             <p>초기 대규모 개발 및 가이드 설계에 대한 부담 없이, 운영 중인 웹사이트에 간단한 스크립트 플러그인 연동만으로 즉시 활성화하여 사용하는 고성능 대민 가이드용 AI 챗봇 위젯 솔루션입니다.</p>
@@ -465,14 +486,12 @@
             </ul>
 
             <!-- 💡 하단 강조 링크 상자 -->
-            <div style="margin-top: 25px; padding: 16px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px;">
-              <p style="margin: 0; font-size: 0.95rem; color: #0369a1; font-weight: 700;">
-                💡 딥시큐 AI 챗봇 서비스를 직접 체험해보세요.
+            <div style="margin-top: 25px; padding: 18px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px;">
+              <p style="margin: 0; font-size: 0.98rem; color: #0369a1; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+                <span>💡</span> 딥시큐 AI 챗봇 엔진 직접 체험
               </p>
-              <p style="margin: 6px 0 0 0; font-size: 0.88rem; color: #0284c7;">
-                <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: 800; text-decoration: underline;">
-                  https://chat.deepsecu.co.kr/
-                </a> 에 접속하시면 실시간 AI 챗봇 가이드 엔진을 바로 테스트하실 수 있습니다.
+              <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #0284c7; line-height: 1.5;">
+                공식 데모 웹사이트 <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: 800; text-decoration: underline;">https://chat.deepsecu.co.kr/</a> 에 접속하시면 대민 안내 AI 엔진의 응답 속도와 성능을 직접 확인하실 수 있습니다.
               </p>
             </div>
           </div>
