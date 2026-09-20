@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="naver-site-verification" content="3c5bd4193cb7968bf94887206303c40dadd91c03" />
-    <meta name="description" content="딥시큐(DeepSecu)는 공공기관 통합 IT 인프라 구축 자문, PMO, 공공데이터 및 정보보안·개인정보보호 종합 컨설팅 전문 기업입니다.">
-    <title>딥시큐 DeepSecu | IT 인프라 구축 자문 · PMO · 공공데이터 컨설팅</title>
+    <meta name="description" content="딥시큐(DeepSecu)는 공공기관 정보화 기획·PMO, 정보화 진단·중장기 개선, 공공데이터 및 정보보안·개인정보보호 종합 컨설팅 전문 기업입니다.">
+    <title>딥시큐 DeepSecu | 정보화 기획·PMO · 정보화 진단·중장기 개선 · 정보보호 컨설팅</title>
 
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -128,10 +128,6 @@
   <ul class="gnb">
     <li>
       <a href="#" onclick="showPage('company');return false;">회사소개</a>
-      <div class="dropdown">
-        <a href="#" onclick="showPage('company','about');return false;">회사 소개</a>
-        <a href="#" onclick="showPage('company','history');return false;">주요 연혁</a>
-      </div>
     </li>
     <li>
       <a href="#" onclick="showPage('product');return false;">제품소개</a>
@@ -144,9 +140,9 @@
     <li>
       <a href="#" onclick="showPage('business');return false;">사업영역</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
+        <a href="#" onclick="showPage('business',0);return false;">정보화 기획 · PMO</a>
         <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
-        <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
+        <a href="#" onclick="showPage('business',2);return false;">정보화 진단 · 중장기 개선</a>
         <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
         <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
         <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
@@ -239,7 +235,7 @@
         </div>
         <div class="card svc-card bg-04">
           <div class="svc-num">04</div>
-          <h3 class="svc-title keep-all">통합 구축 자문 · PMO</h3>
+          <h3 class="svc-title keep-all">정보화 기획 · PMO</h3>
           <p class="svc-desc keep-all">행정안전부 가이드라인 기반의 정보시스템 마스터플랜(ISMP) 수립 및 고도화, 기능점수(FP) 기반 대가 검증과 전 기간 사업관리(PMO) 대행으로 안정적 정시 오픈을 달성합니다.</p>
           <div class="svc-tags"><span class="tag">ISMP · FP 검증</span><span class="tag">PMO 총괄관리</span></div>
           <button class="svc-more" onclick="showPage('business',0)">자세히 보기 →</button>
@@ -253,7 +249,7 @@
         </div>
         <div class="card svc-card bg-06">
           <div class="svc-num">06</div>
-          <h3 class="svc-title keep-all">공공기관 전산 자문</h3>
+          <h3 class="svc-title keep-all">정보화 진단 · 중장기 개선</h3>
           <p class="svc-desc keep-all">지자체 산하 기관의 서버·네트워크 장비 노후화 실태 진단 및 용량 분석(Capacity Planning)에 기반한 하드웨어 최적화 가이드를 제안합니다.</p>
           <div class="svc-tags"><span class="tag">인프라 실사</span><span class="tag">장비 규격 검토</span></div>
           <button class="svc-more" onclick="showPage('business',2)">자세히 보기 →</button>
@@ -361,14 +357,7 @@
   <div class="page-banner">
     <div class="breadcrumb">Home > <span>Company</span></div>
     <h1>회사 소개</h1>
-    <p class="keep-all">딥시큐(DeepSecu)는 공공 통합 IT 구축 PMO, 공공데이터, 정보보안 및 개인정보보호를 아우르는 프리미엄 자문 파트너입니다.</p>
-  </div>
-
-  <div style="border-bottom:1px solid var(--border); background:#ffffff;">
-    <div class="inner" style="display:flex;">
-      <button class="biz-tab active" onclick="switchCompanyTab(this,'about')">회사 소개</button>
-      <button class="biz-tab" onclick="switchCompanyTab(this,'history')">연혁</button>
-    </div>
+    <p class="keep-all">딥시큐(DeepSecu)는 공공 정보화 기획·PMO, 정보화 진단·중장기 개선, 공공데이터, 정보보안 및 개인정보보호를 아우르는 프리미엄 자문 파트너입니다.</p>
   </div>
 
   <div id="ctab-about" class="biz-panel active">
@@ -377,7 +366,7 @@
         <p class="sec-label">About DeepSecu</p>
         <h2 class="sec-title">전산 인프라 기획부터 보안까지<br>원스톱 거버넌스를 정립합니다</h2>
         <p class="sec-desc" style="margin-bottom:20px; font-size: 1.1rem; line-height: 1.8;">딥시큐(DeepSecu)는 복잡한 공공 컴플라이언스와 정보시스템 아키텍처를 유기적으로 분석하여 발주기관의 권익을 보호하고 성공적인 사업 완수를 이끄는 기술 자문 파트너입니다.</p>
-        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보시스템 통합(SI) 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협 및 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
+        <p class="sec-desc" style="margin-bottom:30px; line-height: 1.7;">단순 일회성 보안 검토를 넘어 행정안전부 및 개인정보보호위원회 지침을 완벽하게 만족하는 종합 마스터플랜을 도출하며, 정보화 기획 및 정보시스템 구축 사업을 체계적으로 관리·감독하는 독보적인 Slim & Agile PMO 역량을 보유하고 있습니다. 끊임없이 진화하는 보안 위협 및 복잡한 규제 환경 속에서, 공공기관이 가장 안전하고 효율적인 디지털 자산을 구축할 수 있도록 독립적이고 객관적인 제3자의 시각에서 명확한 가이드를 제공합니다.</p>
         
         <h3 class="biz-sub-title">🎯 딥시큐의 4대 자문 핵심 가치</h3>
         <div class="grid-2-col" style="margin-top: 15px;">
@@ -397,22 +386,6 @@
             <div class="info-status-title">⚡ 선제적 리스크 통제</div>
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">구축 사업 전 과정의 일정·품질 마일스톤을 밀착 모니터링하여, 개발 지연 및 보안 취약점 리스크를 선제적으로 식별하고 차단합니다.</p>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div id="ctab-history" class="biz-panel">
-    <section class="sec">
-      <div class="inner" style="max-width:700px;">
-        <p class="sec-label">History</p>
-        <h2 class="sec-title">연혁</h2>
-        <div class="timeline" style="word-break: keep-all;">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>국립기관 및 대형 공공 자문 고도화</h4><p>[국립문화예술단체] 대규모 통합 홈페이지 및 미디어 플랫폼 개편 사업 정보시스템 마스터플랜(ISMP) 및 현황(AS-IS) 정밀 자문 총괄. 기능점수(FP) 방식 기반 소프트웨어 개발비 및 직접경비 적정성 교차 검증 검토.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>정부 평가대상 기관 긴급 거버넌스 구축</h4><p>[정부유관진흥원] 공공기관 평가대상(개인정보 보호수준 평가, 공공데이터 제공 운영실태 평가) 신규 지정에 따른 긴급 거버넌스 진단. 내부 전산 전담 인력 공석에 따른 책임관 지정 가이드 및 전사 개인정보파일 전수조사 행정 서식 정비 자문.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>공공기관 인프라 및 보안수준 진단 고도화</h4><p>[서울 다수 자치구 시설관리공단] 전산실 핵심 하드웨어 장비 실태 조사, 용량 분석(Capacity Planning) 기반 규격 표준 가이드 수립 및 개인정보 보호수준 평가 대응 특화 컨설팅 집중 수행.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>우수 조달 정보보호 서비스 포트폴리오 확장</h4><p>과학기술정보통신부 지정 정보보호 전문 서비스 인증 규격을 기반으로 임직원 체감형 보안 수준 향상을 위한 악성메일 모의훈련(Mind-SAT) 자문 프로세스 공식 도입.</p></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>딥시큐 창립</h4><p>정보통신 인프라 설계 자문, PMO, 공공데이터 정책 및 보안 거버넌스 특화 기업 정식 창립.</p></div></div>
         </div>
       </div>
     </section>
@@ -466,9 +439,9 @@
             <div style="margin-top: 16px;">
               <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" 
                  style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px 0; background: linear-gradient(135deg, #1e6fcf 0%, #0f4c92 100%); color: #ffffff; font-weight: 800; font-size: 1.05rem; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 15px rgba(30, 111, 207, 0.3); text-align: center; box-sizing: border-box;">
-                 <span>🚀</span>
-                 <span>딥시큐 AI 챗봇 실시간 체험하기</span>
-                 <span style="font-size: 0.85rem; opacity: 0.8;">(chat.deepsecu.co.kr)</span>
+                <span>🚀</span>
+                <span>딥시큐 AI 챗봇 실시간 체험하기</span>
+                <span style="font-size: 0.85rem; opacity: 0.8;">(chat.deepsecu.co.kr)</span>
               </a>
             </div>
 
@@ -694,9 +667,9 @@
   <section class="sec">
     <div class="inner">
       <div class="biz-tabs" id="bizTabs">
-        <button class="biz-tab active" onclick="switchBizTab(0)">통합 구축 자문 · PMO</button>
+        <button class="biz-tab active" onclick="switchBizTab(0)">정보화 기획 · PMO</button>
         <button class="biz-tab" onclick="switchBizTab(1)">공공데이터 자문</button>
-        <button class="biz-tab" onclick="switchBizTab(2)">공공기관 전산 자문</button>
+        <button class="biz-tab" onclick="switchBizTab(2)">정보화 진단 · 중장기 개선</button>
         <button class="biz-tab" onclick="switchBizTab(3)">정보보안 컨설팅</button>
         <button class="biz-tab" onclick="switchBizTab(4)">개인정보보호 컨설팅</button>
         <button class="biz-tab" onclick="switchBizTab(5)">교육·훈련 및 세미나</button>
@@ -1055,16 +1028,16 @@
 
         <div class="pf-filter" id="pfFilter">
           <button class="pf-btn active" onclick="filterPf(this,'all')">전체</button>
-          <button class="pf-btn" onclick="filterPf(this,'pmo')">통합 구축 · PMO</button>
-          <button class="pf-btn" onclick="filterPf(this,'data')">공공데이터 · 전산자문</button>
+          <button class="pf-btn" onclick="filterPf(this,'pmo')">정보화 기획 · PMO</button>
+          <button class="pf-btn" onclick="filterPf(this,'data')">정보화 진단 · 공공데이터</button>
           <button class="pf-btn" onclick="filterPf(this,'security')">정보보안 · 개인정보</button>
         </div>
 
         <div class="pf-grid" id="pfGrid">
-          <div class="pf-card" data-cat="pmo"><div class="pf-year">2026</div><div class="pf-name keep-all">[국립기관] 국립문화예술단체</div><p class="pf-desc keep-all">홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 및 대가 산정 기능점수(FP) 검증 자문 총괄</p><span class="pf-badge">통합 구축 · PMO</span></div>
-          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 조달 패키지 구매 및 기술 검증 자문 완료</p><span class="pf-badge">통합 구축 · PMO</span></div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2026</div><div class="pf-name keep-all">[국립기관] 국립문화예술단체</div><p class="pf-desc keep-all">홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 및 대가 산정 기능점수(FP) 검증 자문 총괄</p><span class="pf-badge">정보화 기획 · PMO</span></div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 조달 패키지 구매 및 기술 검증 자문 완료</p><span class="pf-badge">정보화 기획 · PMO</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[정부유관기관] 정부 지정 통계진흥단체</div><p class="pf-desc keep-all">신규 평가대상 지정에 따른 전산·보안·개인정보보호 거버넌스 진단 및 보호수준 평가 정량지표 수립 자문</p><span class="pf-badge">정보보안 · 개인정보</span></div>
-          <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 서울 다수 자치구 시설관리공단</div><p class="pf-desc keep-all">전산실 인프라 고도화 가이드 및 전산 정보화 장비 사양 규격 최적화 자문</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
+          <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 서울 다수 자치구 시설관리공단</div><p class="pf-desc keep-all">전산실 인프라 고도화 가이드 및 전산 정보화 장비 사양 규격 최적화 자문</p><span class="pf-badge">정보화 진단 · 중장기 개선</span></div>
           <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 지자체 출연 자치구 시설관리공단</div><p class="pf-desc keep-all">행정안전부 주관 개인정보 보호수준 평가 대응 및 임직원 악성메일 대응력 진단 수행</p><span class="pf-badge">정보보안 · 개인정보</span></div>
         </div>
       </div>
@@ -1177,9 +1150,9 @@
               <option>지능형 AI 챗봇 서비스 도입 (SaaS형 과금)</option>
               <option>대민서비스 문서 미리보기 솔루션 도입 (VIEWSTORY)</option>
               <option>임직원 악성메일 모의훈련 서비스 도입 (Mind-SAT)</option>
-              <option>통합 인프라 구축 자문 및 PMO</option>
+              <option>정보화 기획 및 PMO</option>
               <option>공공데이터 개방 및 품질 자문</option>
-              <option>공공기관 전산 장비 및 기술 규격 자문</option>
+              <option>정보화 진단 및 중장기 개선 자문</option>
               <option>정보보안 종합 컨설팅</option>
               <option>개인정보보호 수준평가 대응</option>
               <option>교육·훈련 및 세미나 요청</option>
@@ -1225,7 +1198,6 @@
     <div class="footer-col">
       <h5>Company</h5>
       <a href="#" onclick="showPage('company','about');return false;">회사 소개</a>
-      <a href="#" onclick="showPage('company','history');return false;">연혁</a>
     </div>
     <div class="footer-col">
       <h5>Product</h5>
@@ -1235,9 +1207,9 @@
     </div>
     <div class="footer-col">
       <h5>Business</h5>
-      <a href="#" onclick="showPage('business',0);return false;">통합 구축 자문 · PMO</a>
+      <a href="#" onclick="showPage('business',0);return false;">정보화 기획 · PMO</a>
       <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
-      <a href="#" onclick="showPage('business',2);return false;">공공기관 전산 자문</a>
+      <a href="#" onclick="showPage('business',2);return false;">정보화 진단 · 중장기 개선</a>
       <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
       <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
       <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
