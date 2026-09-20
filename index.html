@@ -91,15 +91,15 @@
         .c-logo-item:hover { background: #ffffff; border-color: #1e6fcf; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(30, 111, 207, 0.08); }
         .c-logo-item:hover .c-icon { transform: scale(1.1); }
 
-        /* [수행실적 - 주요 고객사 페이지 고도화 스타일] */
-        .premium-client-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 15px; }
-        .premium-client-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 18px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.01); position: relative; min-height: 160px; }
-        .premium-client-card:hover { transform: translateY(-5px); border-color: #1e6fcf; box-shadow: 0 12px 24px rgba(30, 111, 207, 0.08); }
-        .premium-logo-wrap { width: 100%; height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; overflow: hidden; }
+        /* [수행실적 - 주요 고객사 페이지 고도화 스타일 마감] */
+        .premium-client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 10px; }
+        .premium-client-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.01); position: relative; }
+        .premium-client-card:hover { transform: translateY(-5px); border-color: #1e6fcf; box-shadow: 0 12px 24px rgba(30, 111, 207, 0.06); }
+        .premium-logo-wrap { width: 100%; height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; }
         .premium-logo-wrap img { max-width: 85%; max-height: 100%; object-fit: contain; filter: grayscale(10%) contrast(105%); transition: filter 0.3s ease; }
         .premium-client-card:hover .premium-logo-wrap img { filter: grayscale(0%) contrast(100%); }
-        .premium-client-card .p-client-name { font-size: 1rem; font-weight: 800; color: #1e6fcf; margin-bottom: 4px; word-break: keep-all; }
-        .premium-client-card .p-client-type { font-size: 0.82rem; color: #64748b; font-weight: 600; line-height: 1.35; word-break: keep-all; }
+        .premium-client-card .p-client-name { font-size: 1rem; font-weight: 800; color: #1e6fcf; margin-bottom: 4px; }
+        .premium-client-card .p-client-type { font-size: 0.82rem; color: #64748b; font-weight: 600; }
         
         @media (max-width: 1024px) {
             .trust-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -404,66 +404,15 @@
 
   <div id="ctab-history" class="biz-panel">
     <section class="sec">
-      <div class="inner" style="max-width:750px;">
+      <div class="inner" style="max-width:700px;">
         <p class="sec-label">History</p>
-        <h2 class="sec-title">주요 연혁</h2>
+        <h2 class="sec-title">연혁</h2>
         <div class="timeline" style="word-break: keep-all;">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2026</div>
-            <div class="tl-content">
-              <h4>국립극단 정보화 사업 ISMP 및 대가산정 검증</h4>
-              <p>대규모 통합 홈페이지 및 온라인 미디어 플랫폼 개편 사업의 정보시스템 마스터플랜(ISMP) 수립 및 기능점수(FP) 기반 SW 적정 대가산정 교차 검증 컨설팅 총괄 수행.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2026</div>
-            <div class="tl-content">
-              <h4>한국통계진흥원 공공 거버넌스 및 수준평가 대응</h4>
-              <p>공공기관 신규 지정에 따른 개인정보 보호수준 평가 대응 체계 정립, 공공데이터 운영실태 평가 대비 전사 개인정보파일 전수조사 및 내부 보안 서식 정비 자문.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2026</div>
-            <div class="tl-content">
-              <h4>서울시 자치구 공단 인프라 실사 및 개인정보 컨설팅</h4>
-              <p>송파구시설관리공단, 은평구시설관리공단, 양천구시설관리공단 등 서울시 산하 공공기관 전산 장비 노후화 실태 진단, 규격 표준화 자문 및 개인정보 보호수준평가 특화 컨설팅 수행.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2026</div>
-            <div class="tl-content">
-              <h4>문화·농업·노동 공공기관 보안 거버넌스 확장</h4>
-              <p>여주세종문화관광재단, 해외농업자원개발협회, 서울노동권익센터 등 주요 기관별 대민 채널 보안 취약점 점검 및 개인정보 컴플라이언스 체계 수립.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2025</div>
-            <div class="tl-content">
-              <h4>서울시 핵심 대민 서비스 VIEWSTORY 조달 공급 및 자문</h4>
-              <p>서울시 대표 누리집 및 자치구 웹사이트 총 133개소 중 115개 사이트에 무설치 문서 미리보기(VIEWSTORY) 조달 패키지 공급 및 연계 아키텍처 기술 자문 완수.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2025</div>
-            <div class="tl-content">
-              <h4>우수 조달 정보보호 서비스(Mind-SAT) 자문 프로세스 도입</h4>
-              <p>과기정통부 지정 정보보호 전문 서비스 인증 규격을 기반으로 공공기관 임직원 보안 체질 개선을 위한 악성메일 모의훈련 패키지 도입 및 사후 거버넌스 컨설팅 체계 정립.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-year">2025</div>
-            <div class="tl-content">
-              <h4>딥시큐(DeepSecu) 창립</h4>
-              <p>공공 통합 IT 인프라 구축 자문, PMO, 공공데이터 및 정보보안·개인정보보호 종합 컨설팅 특화 기업 출범.</p>
-            </div>
-          </div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>국립기관 및 대형 공공 자문 고도화</h4><p>[국립문화예술단체] 대규모 통합 홈페이지 및 미디어 플랫폼 개편 사업 정보시스템 마스터플랜(ISMP) 및 현황(AS-IS) 정밀 자문 총괄. 기능점수(FP) 방식 기반 소프트웨어 개발비 및 직접경비 적정성 교차 검증 검토.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>정부 평가대상 기관 긴급 거버넌스 구축</h4><p>[정부유관진흥원] 공공기관 평가대상(개인정보 보호수준 평가, 공공데이터 제공 운영실태 평가) 신규 지정에 따른 긴급 거버넌스 진단. 내부 전산 전담 인력 공석에 따른 책임관 지정 가이드 및 전사 개인정보파일 전수조사 행정 서식 정비 자문.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-content"><h4>공공기관 인프라 및 보안수준 진단 고도화</h4><p>[서울 다수 자치구 시설관리공단] 전산실 핵심 하드웨어 장비 실태 조사, 용량 분석(Capacity Planning) 기반 규격 표준 가이드 수립 및 개인정보 보호수준 평가 대응 특화 컨설팅 집중 수행.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>우수 조달 정보보호 서비스 포트폴리오 확장</h4><p>과학기술정보통신부 지정 정보보호 전문 서비스 인증 규격을 기반으로 임직원 체감형 보안 수준 향상을 위한 악성메일 모의훈련(Mind-SAT) 자문 프로세스 공식 도입.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-content"><h4>딥시큐 창립</h4><p>정보통신 인프라 설계 자문, PMO, 공공데이터 정책 및 보안 거버넌스 특화 기업 정식 창립.</p></div></div>
         </div>
       </div>
     </section>
@@ -485,42 +434,58 @@
         <button class="biz-tab" onclick="switchProductTab(this, 'mindsat')">악성메일 모의훈련 (Mind-SAT)</button>
       </div>
 
-      <!-- 지능형 AI 챗봇 (SaaS) 패널 -->
+      <!-- [시각적 클릭 유도 강화] 지능형 AI 챗봇 (SaaS) 패널 -->
       <div id="ptab-chatbot" class="biz-panel active" style="margin-bottom: 60px;">
         <div class="biz-detail" style="align-items: flex-start;">
+          
+          <!-- 좌측: 클릭 유도 인터랙티브 카드 & 버튼 -->
           <div class="biz-visual-wrap" style="flex: 1; max-width: 450px; width: 100%; margin: 0 auto;">
+            
+            <!-- 클릭 가능한 가이드 카드 -->
             <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" 
                style="display: block; text-decoration: none; position: relative; border: 2px solid #1e6fcf; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(30,111,207,0.12); background: #ffffff; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+              
+              <!-- 상단 안내 배지 -->
               <div style="background: #1e6fcf; color: #ffffff; font-size: 0.88rem; font-weight: 800; padding: 10px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
                 <span>⚡ Real-time Demo</span>
                 <span style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px; font-size: 0.78rem;">클릭하여 체험하기</span>
               </div>
+
+              <!-- 이미지 영역 -->
               <div style="position: relative;">
                 <img src="assets/images/chatbot.jpg" class="chatbot-img" alt="AI Chatbot SaaS" style="width: 100%; height: auto; display: block; object-fit: contain;">
+                
+                <!-- 이미지 하단 반투명 오버레이 힌트 -->
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(15,23,42,0.75) 100%); color: #fff; padding: 25px 15px 12px; text-align: center; font-size: 0.9rem; font-weight: 700;">
                   🔍 화면을 누르시면 챗봇 서비스로 연결됩니다
                 </div>
               </div>
             </a>
+            
+            <!-- 하단 대형 강조 버튼 -->
             <div style="margin-top: 16px;">
               <a href="https://chat.deepsecu.co.kr/" target="_blank" rel="noopener noreferrer" 
                  style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px 0; background: linear-gradient(135deg, #1e6fcf 0%, #0f4c92 100%); color: #ffffff; font-weight: 800; font-size: 1.05rem; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 15px rgba(30, 111, 207, 0.3); text-align: center; box-sizing: border-box;">
-                <span>🚀</span>
-                <span>딥시큐 AI 챗봇 실시간 체험하기</span>
-                <span style="font-size: 0.85rem; opacity: 0.8;">(chat.deepsecu.co.kr)</span>
+                 <span>🚀</span>
+                 <span>딥시큐 AI 챗봇 실시간 체험하기</span>
+                 <span style="font-size: 0.85rem; opacity: 0.8;">(chat.deepsecu.co.kr)</span>
               </a>
             </div>
+
           </div>
 
+          <!-- 우측: 서비스 설명 및 안내 -->
           <div class="biz-info keep-all" style="flex: 1.2;">
             <h2>공공·기업 맞춤형 지능형 AI 챗봇 공급</h2>
             <p>초기 대규모 개발 및 가이드 설계에 대한 부담 없이, 운영 중인 웹사이트에 간단한 스크립트 플러그인 연동만으로 즉시 활성화하여 사용하는 고성능 대민 가이드용 AI 챗봇 위젯 솔루션입니다.</p>
+            
             <ul class="biz-list">
               <li><strong>즉시 연동 플러그인:</strong> 별도의 대형 서버 인프라 구축이나 복잡한 개발 프로세스 없이 코드 삽입 형태로 가볍게 즉시 연동됩니다.</li>
               <li><strong>공공 컴플라이언스 안전망 세트:</strong> 개인정보보호 사전 스크리닝 필터 및 실시간 데이터 무결성 보장 기술이 탑재되어 민감한 데이터 노출 우려 없이 안전하게 상담 서비스를 수행합니다.</li>
               <li><strong>실시간 지식 학습 기반 서비스:</strong> 기관 내부 문서 및 FAQ 데이터베이스와 연동하여 정확한 행정 정보를 대국민에게 실시간 안내합니다.</li>
             </ul>
 
+            <!-- 💡 하단 강조 링크 상자 -->
             <div style="margin-top: 25px; padding: 18px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px;">
               <p style="margin: 0; font-size: 0.98rem; color: #0369a1; font-weight: 800; display: flex; align-items: center; gap: 6px;">
                 <span>💡</span> 딥시큐 AI 챗봇 엔진 직접 체험
@@ -530,6 +495,7 @@
               </p>
             </div>
           </div>
+
         </div>
         
         <div class="price-policy-box" style="background-color: #f8fafc; padding: 35px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 30px;">
@@ -573,7 +539,6 @@
         </div>
       </div>
 
-      <!-- VIEWSTORY 패널 -->
       <div id="ptab-viewstory" class="biz-panel" style="margin-bottom: 60px; display: none;">
         <div class="biz-detail">
           <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
@@ -582,19 +547,19 @@
           <div class="biz-info keep-all">
             <h2>대민서비스 필수 솔루션 <span style="color:#1e6fcf;">VIEWSTORY</span></h2>
             <p style="font-weight: 600; color:#475569;">간단하지만 강력한 대민 서비스! 다운로드 없이 브라우저에서 즉시 확인하는 고품질 문서 뷰어</p>
-            <p>공공기관 및 행정용 누리집 웹사이트 방문자가 첨부파일을 별도의 프로그램 설치나 다운로드 없이 원클릭으로 안전하고 빠르게 확인할 수 있도록 지원하는 검증된 <strong>1등급 굿소프트웨어(GS) 인증</strong> 솔루션입니다.</p>
+            <p>공공기관 및 행정용 누리집 웹사이트 방문자가 첨부파일을 별도의 프로그램 설치나 다운로드 없이 원클릭으로 안전하고 빠르게 확인할 수 있도록 지원하는 검증된 **1등급 굿소프트웨어(GS) 인증** 솔루션입니다.</p>
             <ul class="biz-list-modern" style="margin-top: 15px;">
               <li>
                 <div class="list-keyword">하이브리드 변환 아키텍처</div>
-                <div class="list-desc">문서 깨짐을 완벽 방지하는 <strong>이미지 변환 방식</strong>과 텍스트 검색 및 복사가 유연한 <strong>HTML 변환 방식</strong>을 유기적으로 선택 적용 가능하며, 다국어 번역 및 TTS 오디오 스트리밍을 동시 지원합니다.</div>
+                <div class="list-desc">문서 깨짐을 완벽 방지하는 **이미지 변환 방식**과 텍스트 검색 및 복사가 유연한 **HTML 변환 방식**을 유기적으로 선택 적용 가능하며, 다국어 번역 및 TTS 오디오 스트리밍을 동시 지원합니다.</div>
               </li>
               <li>
                 <div class="list-keyword">다문화 인공지능(AI) 지원</div>
-                <div class="list-desc">국내 체류 외국인과 다문화 가정을 위해 <strong>Llama 3.3 대용량 모델</strong> 기반의 32개국 실시간 문서 번역 기능 및 고품질 다국어 음성 출력(TTS) 기술이 완벽히 내재화되어 있습니다.</div>
+                <div class="list-desc">국내 체류 외국인과 다문화 가정을 위해 **Llama 3.3 대용량 모델** 기반의 32개국 실시간 문서 번역 기능 및 고품질 다국어 음성 출력(TTS) 기술이 완벽히 내재화되어 있습니다.</div>
               </li>
               <li>
                 <div class="list-keyword">검증된 대규모 도입 실적</div>
-                <div class="list-desc"><strong>서울시 누리집 현황 총 133개소 중 115개 사이트</strong>에 성공적으로 적용 완료하여 압도적인 무중단·무장애 안정성을 검증 완료했습니다.</div>
+                <div class="list-desc">**서울시 누리집 현황 총 133개소 중 115개 사이트**에 성공적으로 적용 완료하여 압도적인 무중단·무장애 안정성을 검증 완료했습니다.</div>
               </li>
             </ul>
           </div>
@@ -648,7 +613,6 @@
         </div>
       </div>
 
-      <!-- Mind-SAT 패널 -->
       <div id="ptab-mindsat" class="biz-panel" style="margin-bottom: 60px; display: none;">
         <div class="biz-detail">
           <div class="biz-visual" style="width: 100%; height: auto; min-height: auto; max-height: none; overflow: visible; background: none;">
@@ -656,8 +620,8 @@
           </div>
           <div class="biz-info keep-all">
             <h2>조직 보안 체질 개선, 악성메일 모의훈련 서비스 <span style="color:#1e6fcf;">Mind-SAT 자문 패키지</span></h2>
-            <p style="font-weight: 600; color:#475569;">조직 구성원의 보안 인식을 진단하고 선제적 컴플라이언스 인프라를 수립합니다.</p>
-            <p>딥시큐는 과학기술정보통신부 지정 정보보호 전문 서비스 인증을 획득한 <strong>Mind-SAT</strong> 솔루션의 공식 공급 및 연계 기술 자문 파트너입니다. 공공기관 및 유관단체의 보안 환경을 분석하고, 성공적인 모의훈련 집행과 사후 지표 보정을 위한 <strong>딥시큐 단독 연계형 보안 행정 컨설팅</strong>을 올인원으로 무상 지원합니다.</p>
+            <p style="font-weight: 600; color:#475569;">조직 구성원의 보안 인식을 진단하고선제적 컴플라이언스 인프라를 수립합니다.</p>
+            <p>딥시큐는 과학기술정보통신부 지정 정보보호 전문 서비스 인증을 획득한 **Mind-SAT** 솔루션의 공식 공급 및 연계 기술 자문 파트너입니다. 공공기관 및 유관단체의 보안 환경(화이트리스트 지정 및 메일 시스템 연동 가이드라인)을 객관적으로 분석하고, 성공적인 모의훈련 집행과 사후 지표 보정을 위한 **딥시큐 단독 연계형 보안 행정 컨설팅**을 올인원으로 무상 지원합니다.</p>
             <ul class="biz-list-modern" style="margin-top: 15px;">
               <li>
                 <div class="list-keyword">가벼운 시스템 실사 및 화이트리스트 가이드</div>
@@ -665,11 +629,11 @@
               </li>
               <li>
                 <div class="list-keyword">사회공학적 최신 위협 시나리오 매핑</div>
-                <div class="list-desc">불법 소프트웨어 과태료 통지, 가상 해외 로그인 경고, 정부24 민원 고지 등 공공 실무 임직원들이 실제 업무 중 노출되기 쉬운 <strong>생활밀착형 고도화 피싱 템플릿</strong> 매핑 및 훈련 집행</div>
+                <div class="list-desc">불법 소프트웨어 과태료 통지, 가상 해외 로그인 경고, 정부24 민원 고지 등 공공 실무 임직원들이 실제 업무 중 노출되기 쉬운 **생활밀착형 고도화 피싱 템플릿** 매핑 및 훈련 집행</div>
               </li>
               <li>
                 <div class="list-keyword">딥시큐 특화 사후 거버넌스 컨설팅</div>
-                <div class="list-desc">단순 훈련 대장 발송 대행을 넘어, 부서별 열람율 및 첨부파일 실행율 통계를 기반으로 <strong>기관 내부 개인정보 보호수준평가 및 정보보안 실태점검 증적 지표에 완벽 대응하는 행정 매뉴얼</strong> 수립을 밀착 가이드합니다.</div>
+                <div class="list-desc">단순 훈련 대장 발송 대행을 넘어, 부서별 열람율 및 첨부파일 실행율 통계를 기반으로 **기관 내부 개인정보 보호수준평가 및 정보보안 실태점검 증적 지표에 완벽 대응하는 행정 매뉴얼** 수립을 밀착 가이드합니다.</div>
               </li>
             </ul>
           </div>
@@ -710,7 +674,7 @@
           <div style="background-color: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #1e6fcf;">
             <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); font-weight: 700;">🛡️ 공공기관 정부수준평가 증적 완비 안전망 가이드</p>
             <p style="margin: 6px 0 0 0; font-size: 0.88rem; color: #475569; line-height: 1.6;">
-              정부 및 주무부처의 보안 점검 지침에 부합하도록, 모의훈련 집행 결과보고서를 공공 감사 서식 규격에 맞춰 정밀 보정해 드립니다. 소속 기관의 인프라 독소 조항 배제와 예산 검토 가이드라인은 <strong>[종합 자문 상담]</strong> 채널을 통해 제3자 독립 감리 관점에서 신속하게 도출해 드립니다.
+              정부 및 주무부처의 보안 점검 지침에 부합하도록, 모의훈련 집행 결과보고서를 공공 감사 서식 규격에 맞춰 정밀 보정해 드립니다. 소속 기관의 인프라 독소 조항 배제와 예산 검토 가이드라인은 **[종합 자문 상담]** 채널을 통해 제3자 독립 감리 관점에서 신속하게 도출해 드립니다.
             </p>
           </div>
         </div>
@@ -1097,68 +1061,11 @@
         </div>
 
         <div class="pf-grid" id="pfGrid">
-          <div class="pf-card" data-cat="pmo">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[국립기관] 국립극단</div>
-            <p class="pf-desc keep-all">대표 홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 수립 및 기능점수(FP) 기반 SW 적정 개발대가 교차 검증 총괄</p>
-            <span class="pf-badge">통합 구축 · PMO</span>
-          </div>
-
-          <div class="pf-card" data-cat="security">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[공공기관] 송파구시설관리공단</div>
-            <p class="pf-desc keep-all">행정안전부·개보위 주관 개인정보 보호수준 평가 대응 정량·정성 지표 정밀 진단, 전사 개인정보파일 전수조사 및 취약점 개선 자문</p>
-            <span class="pf-badge">정보보안 · 개인정보</span>
-          </div>
-
-          <div class="pf-card" data-cat="security">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[정부유관단체] 한국통계진흥원</div>
-            <p class="pf-desc keep-all">공공기관 신규 평가대상 지정에 따른 전산·보안·개인정보보호 종합 거버넌스 진단 및 보호수준평가·공공데이터 평가 대응 체계 수립</p>
-            <span class="pf-badge">정보보안 · 개인정보</span>
-          </div>
-
-          <div class="pf-card" data-cat="data">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[공공기관] 은평구시설관리공단</div>
-            <p class="pf-desc keep-all">전산실 노후 인프라(서버·네트워크) 장비 실태 진단, 용량 분석(Capacity Planning) 기반 최적 사양 규격 표준화 및 조달 자문</p>
-            <span class="pf-badge">공공데이터 · 전산자문</span>
-          </div>
-
-          <div class="pf-card" data-cat="security">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[공공기관] 양천구시설관리공단</div>
-            <p class="pf-desc keep-all">개인정보 보호수준 평가 대응 컨설팅 및 임직원 사회공학적 사이버 침해 방어를 위한 악성메일 모의훈련 연계 자문</p>
-            <span class="pf-badge">정보보안 · 개인정보</span>
-          </div>
-
-          <div class="pf-card" data-cat="security">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[문화재단] 여주세종문화관광재단</div>
-            <p class="pf-desc keep-all">문화정보시스템 및 홈페이지 대민 서비스 개인정보 처리방침 현행화, 내부관리계획 고도화 및 전산 보안 감사 대응 자문</p>
-            <span class="pf-badge">정보보안 · 개인정보</span>
-          </div>
-
-          <div class="pf-card" data-cat="data">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[농림축산단체] 해외농업자원개발협회</div>
-            <p class="pf-desc keep-all">보유 데이터 민간 개방 표준 체계화, 공공데이터 품질 관리 가이드라인 수립 및 전산 행정 인프라 최적화 자문</p>
-            <span class="pf-badge">공공데이터 · 전산자문</span>
-          </div>
-
-          <div class="pf-card" data-cat="security">
-            <div class="pf-year">2026</div>
-            <div class="pf-name keep-all">[서울시 지정] 서울노동권익센터</div>
-            <p class="pf-desc keep-all">대민 노동상담 포털 개인정보 생애주기 안전성 진단, 취약점 스크리닝 및 위탁수탁사 보안 관리체계 점검 자문</p>
-            <span class="pf-badge">정보보안 · 개인정보</span>
-          </div>
-
-          <div class="pf-card" data-cat="pmo">
-            <div class="pf-year">2025</div>
-            <div class="pf-name keep-all">[광역자치단체] 서울시 핵심 누리집 채널</div>
-            <p class="pf-desc keep-all">서울시 대표 포털 및 자치구 웹사이트 133개소 중 115개소 문서 바로보기(VIEWSTORY) 조달 납품 및 안정적 무장애 연동 기술 자문</p>
-            <span class="pf-badge">통합 구축 · PMO</span>
-          </div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2026</div><div class="pf-name keep-all">[국립기관] 국립문화예술단체</div><p class="pf-desc keep-all">홈페이지 및 온라인 미디어 플랫폼 통합 재구축 사업 마스터플랜(ISMP) 및 대가 산정 기능점수(FP) 검증 자문 총괄</p><span class="pf-badge">통합 구축 · PMO</span></div>
+          <div class="pf-card" data-cat="pmo"><div class="pf-year">2025</div><div class="pf-name keep-all">[대형공공] 서울시 핵심 대민 서비스 채널</div><p class="pf-desc keep-all">누리집 총 133개소 중 115개소 문서 미리보기(VIEWSTORY) 조달 패키지 구매 및 기술 검증 자문 완료</p><span class="pf-badge">통합 구축 · PMO</span></div>
+          <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[정부유관기관] 정부 지정 통계진흥단체</div><p class="pf-desc keep-all">신규 평가대상 지정에 따른 전산·보안·개인정보보호 거버넌스 진단 및 보호수준 평가 정량지표 수립 자문</p><span class="pf-badge">정보보안 · 개인정보</span></div>
+          <div class="pf-card" data-cat="data"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 서울 다수 자치구 시설관리공단</div><p class="pf-desc keep-all">전산실 인프라 고도화 가이드 및 전산 정보화 장비 사양 규격 최적화 자문</p><span class="pf-badge">공공데이터 · 전산자문</span></div>
+          <div class="pf-card" data-cat="security"><div class="pf-year">2026</div><div class="pf-name keep-all">[공공기관] 지자체 출연 자치구 시설관리공단</div><p class="pf-desc keep-all">행정안전부 주관 개인정보 보호수준 평가 대응 및 임직원 악성메일 대응력 진단 수행</p><span class="pf-badge">정보보안 · 개인정보</span></div>
         </div>
       </div>
     </section>
@@ -1170,78 +1077,62 @@
         <p class="sec-label">Our Clients</p>
         <h2 class="sec-title">주요 파트너 및 고객사</h2>
         
-        <!-- [고도화된 프리미엄 고객사 카드 그리드 영역 (8개사)] -->
+        <!-- [고도화된 프리미엄 고객사 로고 그리드 영역] -->
         <div class="premium-client-grid">
-          <!-- 1. 국립극단 -->
-          <div class="premium-client-card">
-            <div class="premium-logo-wrap">
-              <img src="assets/images/ntck_logo.png" alt="국립극단">
-            </div>
-            <div class="p-client-name">국립극단</div>
-            <div class="p-client-type">국립문화예술단체</div>
-          </div>
-
-          <!-- 2. 한국통계진흥원 -->
-          <div class="premium-client-card">
-            <div class="premium-logo-wrap">
-              <img src="assets/images/stat_logo.png" alt="한국통계진흥원">
-            </div>
-            <div class="p-client-name">한국통계진흥원</div>
-            <div class="p-client-type">국가 통계 전문 공공기관</div>
-          </div>
-
-          <!-- 3. 송파구시설관리공단 -->
-          <div class="premium-client-card">
-            <div class="premium-logo-wrap">
-              <img src="assets/images/sfmc_logo.png" alt="송파구시설관리공단" onerror="this.onerror=null; this.src='assets/images/efmc_logo.png';">
-            </div>
-            <div class="p-client-name">송파구시설관리공단</div>
-            <div class="p-client-type">서울 자치구 시설관리공단</div>
-          </div>
-
-          <!-- 4. 은평구시설관리공단 -->
-          <div class="premium-client-card">
-            <div class="premium-logo-wrap">
-              <img src="assets/images/efmc_logo.png" alt="은평구시설관리공단">
-            </div>
-            <div class="p-client-name">은평구시설관리공단</div>
-            <div class="p-client-type">서울 자치구 시설관리공단</div>
-          </div>
-
-          <!-- 5. 양천구시설관리공단 -->
-          <div class="premium-client-card">
-            <div class="premium-logo-wrap">
-              <img src="assets/images/ycs_logo.png" alt="양천구시설관리공단">
-            </div>
-            <div class="p-client-name">양천구시설관리공단</div>
-            <div class="p-client-type">서울 자치구 시설관리공단</div>
-          </div>
-
-          <!-- 6. 여주세종문화관광재단 -->
+          <!-- 1. 여주세종문화관광재단 -->
           <div class="premium-client-card">
             <div class="premium-logo-wrap">
               <img src="assets/images/yjcj_logo.png" alt="여주세종문화관광재단">
             </div>
-            <div class="p-client-name">여주세종문화관광재단</div>
             <div class="p-client-type">지자체 출연 문화예술재단</div>
           </div>
           
-          <!-- 7. 해외농업자원개발협회 -->
+          <!-- 2. 국립극단 -->
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/ntck_logo.png" alt="국립극단">
+            </div>
+            <div class="p-client-type">국립문화예술단체</div>
+          </div>
+          
+          <!-- 3. 해외농업자원개발협회 -->
           <div class="premium-client-card">
             <div class="premium-logo-wrap">
               <img src="assets/images/oads_logo.png" alt="해외농업자원개발협회">
             </div>
-            <div class="p-client-name">해외농업자원개발협회</div>
             <div class="p-client-type">농림축산식품부 산하 법정단체</div>
           </div>
           
-          <!-- 8. 서울노동권익센터 -->
+          <!-- 4. 서울노동권익센터 -->
           <div class="premium-client-card">
             <div class="premium-logo-wrap">
               <img src="assets/images/labors_logo.png" alt="서울노동권익센터">
             </div>
-            <div class="p-client-name">서울노동권익센터</div>
             <div class="p-client-type">서울시 지정 노동정책 전문기관</div>
+          </div>
+          
+          <!-- 5. 한국통계진흥원 -->
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/stat_logo.png" alt="한국통계진흥원">
+            </div>
+            <div class="p-client-type">국가 통계 전문 공공기관</div>
+          </div>
+
+          <!-- 6. 은평구시설관리공단 -->
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/efmc_logo.png" alt="은평구시설관리공단">
+            </div>
+            <div class="p-client-type">서울 자치구 시설관리공단</div>
+          </div>
+
+          <!-- 7. 양천구시설관리공단 -->
+          <div class="premium-client-card">
+            <div class="premium-logo-wrap">
+              <img src="assets/images/ycs_logo.png" alt="양천구시설관리공단">
+            </div>
+            <div class="p-client-type">서울 자치구 시설관리공단</div>
           </div>
         </div>
           
@@ -1367,29 +1258,37 @@
 
 <script>
   function switchProductTab(element, tabId) {
+    // 1. 모든 제품 탭 버튼의 활성화 상태 해제
     const tabs = document.querySelectorAll('#prodTabs .biz-tab');
     tabs.forEach(tab => tab.classList.remove('active'));
     
+    // 2. 클릭한 버튼 활성화
     element.classList.add('active');
     
+    // 3. 모든 제품 패널 숨김 처리
     document.getElementById('ptab-chatbot').style.display = 'none';
     document.getElementById('ptab-viewstory').style.display = 'none';
     document.getElementById('ptab-mindsat').style.display = 'none';
     
+    // 4. 대상 패널 표시
     document.getElementById('ptab-' + tabId).style.display = 'block';
   }
 
+  // 외부(GNB 드롭다운 등)에서 특정 서브 탭으로 직접 진입할 때 매핑 처리 확장
   const originalShowPage = window.showPage || function(){};
   window.showPage = function(pageId, subTarget) {
+    // 기존 내장 라우팅 로직 실행
     if (typeof originalShowPage === 'function') {
       try { originalShowPage(pageId, subTarget); } catch(e) {}
     }
     
+    // 제품 페이지 진입 시 서브 타깃(chatbot, viewstory, mindsat) 스위칭 제어 추가
     if (pageId === 'product' && subTarget) {
       const tabButton = document.querySelector(`#prodTabs .biz-tab[onclick*="${subTarget}"]`);
       if (tabButton) {
         switchProductTab(tabButton, subTarget);
       } else {
+        // 백업 인덱싱 처리
         const indexMap = { 'chatbot': 0, 'viewstory': 1, 'mindsat': 2 };
         const backupButton = document.querySelectorAll('#prodTabs .biz-tab')[indexMap[subTarget] || 0];
         if (backupButton) switchProductTab(backupButton, subTarget);
