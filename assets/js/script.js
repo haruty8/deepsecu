@@ -79,17 +79,12 @@ function showPage(id, sub) {
     const product = id === 'product' ? showProduct(sub) : null;
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
     // 전문 컨설팅 기본 화면: 정보보안 컨설팅
     if(id === 'business') switchBizTab(typeof sub === 'number' ? sub : 4);
     if(id === 'company' && sub) switchCompanyTab(null, sub);
-    if(id === 'performance' && sub) switchPerfTab(null, sub);
-    if(id === 'contact' && sub === 'location') {
-        setTimeout(() => {
-            document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' });
-        }, 200);
-    }
+    if(id === 'performance') switchPerfTab(null, sub || 'records');
 
     // GNB 네비게이션 활성화 처리
     document.querySelectorAll('.gnb > li > a').forEach(a => a.classList.remove('active'));
