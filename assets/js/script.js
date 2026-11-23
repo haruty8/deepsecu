@@ -57,7 +57,26 @@ function anim() {
 anim();
 
 /* ── 메인 페이지/레이어 전환 로직 ── */
+const productPages = {
+    chatbot: ["이음봇", "이음봇 AI 챗봇 구독", "딥시큐가 개발·운영하는 문서 기반 AI 챗봇입니다."],
+    viewstory: ["VIEWSTORY", "VIEWSTORY 문서뷰어 공급", "누리집의 첨부 문서를 브라우저에서 미리 볼 수 있도록 지원합니다."],
+    mindsat: ["악성메일 모의훈련", "Mind-SAT 기반 악성메일 모의훈련", "파수 솔루션을 활용하며 딥시큐가 훈련 운영과 결과 분석을 지원합니다."]
+};
+
+function showProduct(sub) {
+    const key = Object.hasOwn(productPages, sub) ? sub : "chatbot";
+    const [label, title, intro] = productPages[key];
+    document.getElementById("product-breadcrumb").textContent = label;
+    document.getElementById("product-title").textContent = title;
+    document.getElementById("product-intro").textContent = intro;
+    for (const name of Object.keys(productPages)) {
+        document.getElementById("ptab-" + name).style.display = name === key ? "block" : "none";
+    }
+    return key;
+}
+
 function showPage(id, sub) {
+    const product = id === 'product' ? showProduct(sub) : null;
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -77,7 +96,8 @@ function showPage(id, sub) {
 
     const map = {
         company: '회사소개',
-        product: '솔루션 및 서비스',
+        product: product === 'viewstory' ? '홈페이지 개선·유지관리' : product === 'mindsat' ? '전문 컨설팅' : '이음봇',
+        website: '홈페이지 개선·유지관리',
         business: '전문 컨설팅',
         performance: '수행실적',
         contact: '문의하기'
@@ -93,8 +113,9 @@ function showPage(id, sub) {
     document.querySelectorAll('.quick-item').forEach(item => item.classList.remove('active'));
 
     if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
-    if(id === 'product') document.getElementById('m-btn-prod')?.classList.add('active');
-    if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
+    if(product === 'chatbot') document.getElementById('m-btn-prod')?.classList.add('active');
+    if(id === 'website' || product === 'viewstory') document.getElementById('m-btn-web')?.classList.add('active');
+    if(id === 'business' || product === 'mindsat') document.getElementById('m-btn-biz')?.classList.add('active');
     if(id === 'contact') document.getElementById('m-btn-contact')?.classList.add('active');
 }
 
