@@ -176,3 +176,13 @@ function filterPf(btn, cat) {
         c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
     });
 }
+
+
+function showPageAt(page, sub, headingId) {
+    showPage(page, sub);
+    const heading = document.getElementById(headingId);
+    if (!heading) return;
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({ preventScroll: true });
+    heading.scrollIntoView({ behavior: "instant", block: "start" });
+}
