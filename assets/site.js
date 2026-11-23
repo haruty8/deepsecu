@@ -47,21 +47,6 @@ selectProduct("chatbot");
 syncLocation();
 window.addEventListener("hashchange", syncLocation);
 
-for (const button of document.querySelectorAll("[data-filter]")) {
-  button.addEventListener("click", () => {
-    const stage = button.dataset.filter;
-    let count = 0;
-    for (const filter of document.querySelectorAll("[data-filter]")) {
-      filter.setAttribute("aria-pressed", String(filter === button));
-    }
-    for (const project of document.querySelectorAll("[data-status]")) {
-      project.hidden = stage !== "all" && stage !== project.dataset.status;
-      if (!project.hidden) count++;
-    }
-    document.getElementById("result-count").textContent = "프로젝트 " + count + "건";
-  });
-}
-
 const fallback = document.getElementById("chat-fallback");
 const widgetHost = "[data-ieumbot-chatbot-id]";
 function updateChatFallback() {
