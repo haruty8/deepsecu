@@ -61,7 +61,8 @@ function showPage(id, sub) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
+    // 전문 컨설팅 기본 화면: 정보보안 컨설팅
     if(id === 'business') switchBizTab(typeof sub === 'number' ? sub : 3);
     if(id === 'company' && sub) switchCompanyTab(null, sub);
     if(id === 'performance' && sub) switchPerfTab(null, sub);
@@ -70,18 +71,27 @@ function showPage(id, sub) {
             document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' });
         }, 200);
     }
-    
+
     // GNB 네비게이션 활성화 처리
     document.querySelectorAll('.gnb > li > a').forEach(a => a.classList.remove('active'));
-    const map = { company: '회사소개', product: '솔루션 및 서비스', business: '전문 컨설팅', performance: '수행실적', contact: '문의하기' };
+
+    const map = {
+        company: '회사소개',
+        product: '솔루션 및 서비스',
+        business: '전문 컨설팅',
+        performance: '수행실적',
+        contact: '문의하기'
+    };
+
     if(map[id]) {
         document.querySelectorAll('.gnb > li > a').forEach(a => {
             if(a.textContent.trim() === map[id]) a.classList.add('active');
         });
     }
-    
+
     // 모바일 하단 플로팅 퀵바 상태 동기화
     document.querySelectorAll('.quick-item').forEach(item => item.classList.remove('active'));
+
     if(id === 'home') document.getElementById('m-btn-home')?.classList.add('active');
     if(id === 'product') document.getElementById('m-btn-prod')?.classList.add('active');
     if(id === 'business') document.getElementById('m-btn-biz')?.classList.add('active');
@@ -92,37 +102,55 @@ function showPage(id, sub) {
 function switchBizTab(idx) {
     const tabs = document.querySelectorAll('#bizTabs .biz-tab');
     const panels = document.querySelectorAll('#page-business [id^="bp"]');
-    tabs.forEach((t, i) => { t.classList.toggle('active', i === idx); });
-    panels.forEach((p, i) => { p.classList.toggle('active', i === idx); });
+
+    // 탭의 표시 순서가 바뀌어도 원래 상세페이지와 연결되도록 처리
+    tabs.forEach(t => {
+        t.classList.toggle('active', Number(t.dataset.bizIndex) === idx);
+    });
+
+    panels.forEach(p => {
+        p.classList.toggle('active', p.id === 'bp' + idx);
+    });
 }
 
 function switchCompanyTab(btn, id) {
     document.querySelectorAll('#page-company .biz-tab').forEach(t => t.classList.remove('active'));
+
     if(btn) btn.classList.add('active');
     else {
         document.querySelectorAll('#page-company .biz-tab').forEach(t => {
-            if(t.textContent.includes(id === 'history' ? '걸어온' : '회사')) t.classList.add('active');
+            if(t.textContent.includes(id === 'history' ? '걸어온' : '회사')) {
+                t.classList.add('active');
+            }
         });
     }
+
     document.getElementById('ctab-about').classList.toggle('active', id !== 'history');
     document.getElementById('ctab-history').classList.toggle('active', id === 'history');
 }
 
 function switchPerfTab(btn, id) {
     document.querySelectorAll('#page-performance .biz-tab').forEach(t => t.classList.remove('active'));
+
     if(btn) btn.classList.add('active');
     else {
         document.querySelectorAll('#page-performance .biz-tab').forEach(t => {
-            if((id === 'clients' && t.textContent.includes('고객')) || (id === 'records' && t.textContent.includes('실적'))) t.classList.add('active');
+            if((id === 'clients' && t.textContent.includes('고객')) ||
+               (id === 'records' && t.textContent.includes('실적'))) {
+                t.classList.add('active');
+            }
         });
     }
+
     document.getElementById('ptab-records').style.display = id === 'clients' ? 'none' : 'block';
     document.getElementById('ptab-clients').style.display = id === 'clients' ? 'block' : 'none';
 }
 
 function filterPf(btn, cat) {
     document.querySelectorAll('#pfFilter .pf-btn').forEach(b => b.classList.remove('active'));
+
     btn.classList.add('active');
+
     document.querySelectorAll('#pfGrid .pf-card').forEach(c => {
         c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
     });
