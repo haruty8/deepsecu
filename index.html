@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="naver-site-verification" content="3c5bd4193cb7968bf94887206303c40dadd91c03" />
-    <meta name="description" content="딥시큐(DeepSecu)는 공공기관 정보화 기획·PMO, 정보화 진단·중장기 개선, 정보보안·개인정보보호 종합 컨설팅 전문 기업입니다.">
-    <title>딥시큐 DeepSecu | 정보화 기획·PMO · 정보화 진단·중장기 개선 · 정보보호 컨설팅</title>
+    <meta name="description" content="딥시큐(DeepSecu)는 정보보안·개인정보보호 컨설팅을 중심으로 정보화 자문과 자체 개발 AI 챗봇 서비스를 제공하는 전문 기업입니다.">
+    <title>딥시큐 DeepSecu | 정보보안·개인정보보호 전문 컨설팅 · AI 챗봇</title>
 
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -126,26 +126,24 @@
     <span>Deep<em>Secu</em></span>
   </div>
   <ul class="gnb">
+    <li><a href="#" onclick="showPage('company');return false;">회사소개</a></li>
     <li>
-      <a href="#" onclick="showPage('company');return false;">회사소개</a>
-    </li>
-    <li>
-      <a href="#" onclick="showPage('product');return false;">제품소개</a>
+      <a href="#" onclick="showPage('business');return false;">전문 컨설팅</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('product','chatbot');return false;">지능형 AI 챗봇 (SaaS)</a>
-        <a href="#" onclick="showPage('product','viewstory');return false;">대민서비스 문서 미리보기 (VIEWSTORY)</a>
-        <a href="#" onclick="showPage('product','mindsat');return false;">악성메일 모의훈련 (Mind-SAT)</a>
+        <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
+        <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
+        <a href="#" onclick="showPage('business',2);return false;">정보화 진단 · 중장기 개선</a>
+        <a href="#" onclick="showPage('business',0);return false;">정보화 기획 · PMO</a>
+        <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
+        <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
       </div>
     </li>
     <li>
-      <a href="#" onclick="showPage('business');return false;">사업영역</a>
+      <a href="#" onclick="showPage('product');return false;">솔루션 및 서비스</a>
       <div class="dropdown">
-        <a href="#" onclick="showPage('business',0);return false;">정보화 기획 · PMO</a>
-        <a href="#" onclick="showPage('business',1);return false;">공공데이터 자문</a>
-        <a href="#" onclick="showPage('business',2);return false;">정보화 진단 · 중장기 개선</a>
-        <a href="#" onclick="showPage('business',3);return false;">정보보안 컨설팅</a>
-        <a href="#" onclick="showPage('business',4);return false;">개인정보보호 컨설팅</a>
-        <a href="#" onclick="showPage('business',5);return false;">교육·훈련 및 세미나</a>
+        <a href="#" onclick="showPage('product','chatbot');return false;">AI 챗봇 (자체 개발·운영)</a>
+        <a href="#" onclick="showPage('product','mindsat');return false;">악성메일 모의훈련 (딥시큐 수행)</a>
+        <a href="#" onclick="showPage('product','viewstory');return false;">문서뷰어 VIEWSTORY (공급)</a>
       </div>
     </li>
     <li>
@@ -173,11 +171,11 @@
   <a href="#" class="quick-item active" id="m-btn-home" onclick="showPage('home'); return false;">
     <span class="ico">🏠</span><span>홈</span>
   </a>
-  <a href="#" class="quick-item" id="m-btn-prod" onclick="showPage('product'); return false;">
-    <span class="ico">💻</span><span>제품소개</span>
-  </a>
   <a href="#" class="quick-item" id="m-btn-biz" onclick="showPage('business'); return false;">
-    <span class="ico">💼</span><span>사업영역</span>
+    <span class="ico">🛡️</span><span>전문 컨설팅</span>
+  </a>
+  <a href="#" class="quick-item" id="m-btn-prod" onclick="showPage('product'); return false;">
+    <span class="ico">💻</span><span>솔루션</span>
   </a>
   <a href="tel:0507-1353-0046" class="quick-item highlight" id="m-btn-contact">
     <span class="ico">📞</span><span>전화상담</span>
