@@ -62,42 +62,6 @@ for (const button of document.querySelectorAll("[data-filter]")) {
   });
 }
 
-const form = document.getElementById("contact-form");
-const serviceField = form.elements.namedItem("문의서비스");
-const formStatus = document.getElementById("form-status");
-const submitButton = form.querySelector("button[type=submit]");
-for (const link of document.querySelectorAll("[data-service]")) {
-  link.addEventListener("click", () => {
-    serviceField.value = link.dataset.service;
-  });
-}
-
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  if (submitButton.disabled) return;
-  const data = new FormData(form);
-  const timeout = new AbortController();
-  const timer = setTimeout(() => timeout.abort(), 12000);
-  submitButton.disabled = true;
-  formStatus.textContent = "문의를 보내는 중입니다.";
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      headers: { Accept: "application/json" },
-      body: data,
-      signal: timeout.signal
-    });
-    if (!response.ok) throw new Error("Inquiry delivery failed");
-    form.reset();
-    formStatus.textContent = "문의가 접수되었습니다.";
-  } catch {
-    formStatus.textContent = "접수 여부를 확인하지 못했습니다. 잠시 후 다시 시도하거나 전화·이메일로 문의해 주세요.";
-  } finally {
-    clearTimeout(timer);
-    submitButton.disabled = false;
-  }
-});
-
 const fallback = document.getElementById("chat-fallback");
 const widgetHost = "[data-ieumbot-chatbot-id]";
 function updateChatFallback() {
