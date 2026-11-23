@@ -58,7 +58,7 @@ anim();
 
 /* ── 메인 페이지/레이어 전환 로직 ── */
 const productPages = {
-    chatbot: ["이음봇", "이음봇 AI 챗봇 구독", "딥시큐가 개발·운영하는 문서 기반 AI 챗봇입니다."],
+    chatbot: ["AI 챗봇(이음봇)", "AI 챗봇(이음봇)", "딥시큐가 개발·운영하는 문서 기반 AI 챗봇입니다."],
     viewstory: ["VIEWSTORY", "VIEWSTORY 문서뷰어 공급", "누리집의 첨부 문서를 브라우저에서 미리 볼 수 있도록 지원합니다."],
     mindsat: ["악성메일 모의훈련", "Mind-SAT 기반 악성메일 모의훈련", "파수 솔루션을 활용하며 딥시큐가 훈련 운영과 결과 분석을 지원합니다."]
 };
@@ -96,7 +96,7 @@ function showPage(id, sub) {
 
     const map = {
         company: '회사소개',
-        product: product === 'viewstory' ? '홈페이지 개선·유지관리' : product === 'mindsat' ? '전문 컨설팅' : '이음봇',
+        product: product === 'viewstory' ? '홈페이지 개선·유지관리' : product === 'mindsat' ? '전문 컨설팅' : 'AI 챗봇(이음봇)',
         website: '홈페이지 개선·유지관리',
         business: '전문 컨설팅',
         performance: '수행실적',
