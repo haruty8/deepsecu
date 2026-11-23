@@ -1,3 +1,4 @@
+
 /* ── 파티클 캔버스 효과 제어 ── */
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
@@ -61,7 +62,7 @@ function showPage(id, sub) {
     document.getElementById('page-' + id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    if(id === 'business' && sub !== undefined) switchBizTab(typeof sub === 'number' ? sub : 0);
+    if(id === 'business') switchBizTab(typeof sub === 'number' ? sub : 3);
     if(id === 'company' && sub) switchCompanyTab(null, sub);
     if(id === 'performance' && sub) switchPerfTab(null, sub);
     if(id === 'contact' && sub === 'location') {
@@ -72,7 +73,7 @@ function showPage(id, sub) {
     
     // GNB 네비게이션 활성화 처리
     document.querySelectorAll('.gnb > li > a').forEach(a => a.classList.remove('active'));
-    const map = { company: '회사소개', product: '제품소개', business: '사업영역', performance: '수행실적', contact: '문의하기' };
+    const map = { company: '회사소개', product: '솔루션 및 서비스', business: '전문 컨설팅', performance: '수행실적', contact: '문의하기' };
     if(map[id]) {
         document.querySelectorAll('.gnb > li > a').forEach(a => {
             if(a.textContent.trim() === map[id]) a.classList.add('active');
