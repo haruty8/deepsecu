@@ -266,3 +266,16 @@
 .ds-record-lead dt{word-break:keep-all}
 .ds-record-tabs .biz-tab:not(.active):hover{border-bottom-color:transparent}
 @media(max-width:480px){.ds-record-lead dl div{grid-template-columns:90px minmax(0,1fr)}}
+.ds-privacy-board{position:relative;min-width:0;margin:0;padding:clamp(13px,2.4vw,26px);border:1px solid #c5daee;border-radius:17px;background:#fff;color:#132843;box-shadow:0 12px 28px #12385a16}
+.ds-privacy-board::before{position:absolute;top:0;left:20px;right:20px;height:3px;background:#2773bd;content:"";border-radius:0 0 4px 4px}
+.ds-privacy-board-head{display:grid;grid-template-columns:43px minmax(0,1fr);gap:11px;align-items:center;padding-bottom:11px;color:#132843}
+.ds-privacy-board-head div>span{display:block;color:#18589a;font-size:.82rem;font-weight:750}
+.ds-privacy-board-head strong{display:block;font-size:clamp(1.02rem,2.1vw,1.45rem);line-height:1.38;word-break:keep-all}
+.ds-privacy-board-mark{display:grid;place-items:center;height:43px;border-radius:12px;background:#e6f1fc;color:#18589a;font-size:1.3rem;font-weight:800}
+.ds-privacy-board-list{padding:0;margin:0;list-style:none}
+.ds-privacy-board-list li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:9px;align-items:start;padding:9px 0;border-top:1px solid #d5e4f2}
+.ds-privacy-board-list li>span{font-size:.85rem;font-weight:800;color:#18589a;padding-top:1px}
+.ds-privacy-board-list li p{margin:2px 0 0;color:#405872;font-size:.88rem;line-height:1.5;word-break:keep-all}
+
+.ds-privacy-board{text-align:left}
+@media(max-width:760px){.ds-privacy-board{margin-inline:14px}}
