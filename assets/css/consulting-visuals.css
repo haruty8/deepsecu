@@ -1,0 +1,34 @@
+.ds-guide{text-align:center;padding-block:clamp(48px,7vw,92px)}
+.ds-guide-grid,.ds-flow-grid,.ds-case-grid{display:grid;gap:16px}
+.ds-guide-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:26px 0}
+.ds-guide-card,.ds-flow-grid li{background:#fff;border:1px solid #d7e4f0;border-radius:16px;padding:22px;color:#132843;word-break:keep-all}
+.ds-guide-card{text-align:left;display:grid;align-content:start;gap:9px;font:inherit;cursor:pointer}
+.ds-guide-card:hover,.ds-guide-card:focus-visible{background:#f3f8ff;border-color:#3678bd}
+.ds-guide-card strong{font-size:1.18rem;line-height:1.45}
+.ds-guide-card>span:not(.ds-guide-icon){line-height:1.55}
+.ds-guide-icon,.ds-flow-number{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#e9f2fc;font-size:1.24rem}
+.ds-guide-label,.ds-guide-link,.ds-flow-number{font-weight:750;color:#144f91}
+.ds-guide-link{text-decoration:underline;text-underline-offset:4px;margin-top:8px}
+.ds-flow{margin:28px 0}
+.ds-flow-grid{grid-template-columns:repeat(4,minmax(0,1fr));padding:0;list-style:none;margin:14px 0 10px;counter-reset:step}
+.ds-flow-grid li{position:relative;display:flex;flex-direction:column;gap:9px;padding:16px}
+.ds-flow-grid li:not(:last-child)::after{content:"";position:absolute;z-index:1;right:-12px;top:31px;width:7px;height:7px;border:solid #346aa1;border-width:2px 2px 0 0;transform:rotate(45deg)}
+.ds-flow-grid h4,.ds-case h2{margin:0;line-height:1.45}
+.ds-flow-grid p,.ds-case dd,.ds-flow-note{margin:0;color:#405872;line-height:1.6;word-break:keep-all}
+.ds-output{margin-top:auto;padding-top:8px;border-top:1px solid #d7e4f0;font-weight:700;color:#144f91}
+.ds-flow-note{font-size:.9rem}
+.ds-case{background:#edf5fc;color:#132843;border-radius:16px;margin:0 0 28px;padding:clamp(17px,3vw,32px)}
+.ds-case-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:15px 0 0}
+.ds-case-grid>div{background:#fff;border-radius:12px;padding:16px}
+.ds-case dt{font-weight:750;margin-bottom:6px}
+.ds-contact.contact-grid{grid-template-columns:minmax(0,1fr)}
+.ds-contact .ci-val a{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:850px){.ds-flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ds-flow-grid li:nth-child(2)::after{display:none}}
+@media(max-width:650px){
+ .ds-guide-grid,.ds-case-grid{grid-template-columns:1fr}
+ .ds-guide-card{padding:16px}
+ .ds-flow-grid{grid-template-columns:1fr}
+ .ds-flow-grid li:not(:last-child)::after{display:block;right:auto;left:31px;top:auto;bottom:-12px;transform:rotate(135deg)}
+}
+@media(prefers-reduced-motion:no-preference){.ds-guide-card{transition:background-color .18s,border-color .18s,box-shadow .18s}.ds-guide-card:hover{box-shadow:0 8px 18px #12457916}}
+
