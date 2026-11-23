@@ -63,7 +63,7 @@ function showPage(id, sub) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // 전문 컨설팅 기본 화면: 정보보안 컨설팅
-    if(id === 'business') switchBizTab(typeof sub === 'number' ? sub : 3);
+    if(id === 'business') switchBizTab(typeof sub === 'number' ? sub : 4);
     if(id === 'company' && sub) switchCompanyTab(null, sub);
     if(id === 'performance' && sub) switchPerfTab(null, sub);
     if(id === 'contact' && sub === 'location') {
