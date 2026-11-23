@@ -200,3 +200,8 @@
 .ds-web-case-captures figcaption{display:grid;align-content:start;justify-items:start;gap:6px;padding:14px}
 .ds-web-case-captures figcaption .ds-product-button{margin-top:4px}
 
+.ds-web-case .ds-web-case-variants-title{margin-top:18px}
+.ds-web-case-captures figcaption{grid-template-rows:auto auto 1fr auto;flex:1}
+.ds-web-case-captures figcaption>strong{font-size:.92rem;color:#18589a}
+.ds-web-case-live{font-weight:750;color:#18589a;text-decoration:underline;text-underline-offset:4px}
+
